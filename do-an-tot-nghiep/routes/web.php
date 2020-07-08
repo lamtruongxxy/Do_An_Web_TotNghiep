@@ -11,6 +11,16 @@
 |
 */
 
+
+
 Route::get('/', function () {
+    return view('master-page');
+});
+
+Route::get('/san-pham', function () {
+    return view('SanPham/ds-sanpham');
+});
+
+Route::get('/w', function () {
     return view('welcome');
 });
