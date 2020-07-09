@@ -12,12 +12,15 @@
 */
 
 
+// Route::get('/', function () {
+//     return view('master-page');
+// });
 
-Route::get('/', function () {
+Route::get('/a/a', function () {
     return view('master-page');
 });
 
-Route::get('/san-pham', function () {
+Route::get('/san-pham/a', function () {
     return view('SanPham/ds-sanpham');
 });
 
