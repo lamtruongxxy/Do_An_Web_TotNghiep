@@ -29,32 +29,26 @@
         <!-- Datatables init -->
         <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>   
 @endsection
-           
 @section('main-content')
 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h3>Danh sach san pham</h3>
-                                <p class="text-muted font-13 mb-4">
-                                    DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
-                                    function:
-                                    <code>$().DataTable();</code>.
-                                </p>
-
+                                <h4>Danh sách sản phẩm</h4>
+                                <button type="button" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></button>
+                                <p></p>
                                 <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Mã sản phẩm</th>
                                             <th>Position</th>
                                             <th>Office</th>
                                             <th>Age</th>
                                             <th>Start date</th>
                                             <th>Salary</th>
+                                            <th>Thao tac</th>
                                         </tr>
-                                    </thead>
-                                
-                                
+                                    </thead>                              
                                     <tbody>
                                         <tr>
                                             <td>Tiger Nixon</td>
@@ -63,12 +57,16 @@
                                             <td>61</td>
                                             <td>2011/04/25</td>
                                             <td>$320,800</td>
+                                            <td>
+                                            <button type="button" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></button>
+                                            <button type="button" class="btn btn-primary waves-effect waves-light"><i class="fe-delete"></i></button>    
+                                        </td>
                                         </tr>
                                     </tbody>
                                 </table>
-
                             </div> <!-- end card body-->
                         </div> <!-- end card -->
                     </div><!-- end col-->
                 </div>
+                
 @endsection

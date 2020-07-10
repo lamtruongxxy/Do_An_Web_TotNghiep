@@ -16,14 +16,15 @@
 //     return view('master-page');
 // });
 
-Route::get('/a/a', function () {
+Route::get('/', function () {
     return view('master-page');
-});
+})->name('dashboard');
 
-Route::get('/san-pham/a', function () {
-    return view('SanPham/ds-sanpham');
-});
-
-Route::get('/w', function () {
-    return view('welcome');
-});
+Route::prefix('san-pham')->group(function(){
+		Route::name('san-pham.')->group(function(){
+            // Danh sach san pham
+            Route::get('/danh-sach','SanPhamController@index')->name('danh-sach');
+            
+            
+		});	
+    });
