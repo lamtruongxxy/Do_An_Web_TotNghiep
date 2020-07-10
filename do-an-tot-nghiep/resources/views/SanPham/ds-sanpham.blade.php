@@ -59,7 +59,7 @@
                                             <td>$320,800</td>
                                             <td>
                                             <button type="button" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></button>
-                                            <button type="button" class="btn btn-primary waves-effect waves-light"><i class="fe-delete"></i></button>    
+                                            <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>    
                                         </td>
                                         </tr>
                                     </tbody>
