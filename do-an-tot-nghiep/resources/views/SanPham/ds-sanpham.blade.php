@@ -42,27 +42,35 @@
                                     <thead>
                                         <tr>
                                             <th>Mã sản phẩm</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th>Thao tac</th>
+                                            <th>Nhà sản xuất</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Mô tả</th>
+                                            <th>Giá bán</th>
+                                            <th>Số lượng</th>
+                                            <th>Loại</th>
+                                            <th>Chế độ bảo hành</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
                                         </tr>
                                     </thead>                              
                                     <tbody>
+                                        @foreach($dsSanPham as $sp)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>{{ $sp->masp }}</td>
+                                            <td>{{ $sp->manhasanxuat }}</td>
+                                            <td>{{ $sp->tensp }}</td>
+                                            <td maxlength="2" >{{ $sp->motasp }}</td>
+                                            <td>{{ $sp->giasp }}</td>
+                                            <td>{{ $sp->soluongtonkho }}</td>
+                                            <td>{{ $sp->loaisp }}</td>
+                                            <td>{{ $sp->chedobaohanh }}</td>
+                                            <td>{{ $sp->trangthai }}</td>
                                             <td>
                                             <a href="{{ route('san-pham.edit') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></a>
                                             <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>    
                                         </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div> <!-- end card body-->

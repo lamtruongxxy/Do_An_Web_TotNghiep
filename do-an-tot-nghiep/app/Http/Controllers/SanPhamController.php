@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\SanPham;
 class SanPhamController extends Controller
 {
     /**
@@ -15,7 +15,9 @@ class SanPhamController extends Controller
     public function index()
     {
         // Danh sach san pham
-        return view('SanPham/ds-sanpham');
+        // return view('SanPham/ds-sanpham');
+        $dsSanPham = SanPham::all();
+        return view('SanPham/ds-sanpham',compact('dsSanPham'));
     }
 
     /**
