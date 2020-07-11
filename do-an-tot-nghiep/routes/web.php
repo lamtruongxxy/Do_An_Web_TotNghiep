@@ -24,7 +24,15 @@ Route::prefix('san-pham')->group(function(){
 		Route::name('san-pham.')->group(function(){
             // Danh sach san pham
             Route::get('/danh-sach','SanPhamController@index')->name('danh-sach');
-            
-            
+            Route::get('/edit-san-pham','SanPhamController@edit_page')->name('edit');       
 		});	
-    });
+});
+
+Route::prefix('loai-san-pham')->group(function(){
+    Route::name('loai-san-pham.')->group(function(){
+        // Danh sach san pham
+        Route::get('/danh-sach','LoaiSPController@index')->name('danh-sach');
+        Route::get('/edit-loai-san-pham','LoaiSPController@edit_page')->name('edit');       
+    });	
+});
+

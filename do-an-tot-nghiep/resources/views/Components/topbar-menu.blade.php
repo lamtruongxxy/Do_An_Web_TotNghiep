@@ -3,7 +3,6 @@
                     <div id="navigation">
                         <!-- Navigation Menu-->
                         <ul class="navigation-menu">
-
                             <li class="has-submenu">
                                 <a href="#">
                                     <!-- <i class="la la-dashboard"></i>San pham <div class="arrow-down"></div></a> -->
@@ -13,11 +12,13 @@
                                         <a href="{{ route('san-pham.danh-sach') }}">Danh sach san pham</a>
                                     </li>
                                     <li>
-                                        <a href="#">Nha san xuat</a>
+                                        <a href="{{ route('loai-san-pham.danh-sach') }}">Loại sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nhà sản xuất</a>
                                     </li>
                                 </ul>
                             </li>
-
                             <li class="has-submenu">
                                 <a href="#">
                                     <i class="la la-cube"></i>Apps <div class="arrow-down"></div></a>
@@ -337,10 +338,8 @@
                                     </li>
                                 </ul>
                             </li>
-
                         </ul>
                         <!-- End navigation menu -->
-
                         <div class="clearfix"></div>
                     </div>
                     <!-- end #navigation -->

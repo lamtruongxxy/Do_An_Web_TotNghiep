@@ -35,19 +35,17 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4>Danh sách sản phẩm</h4>
-                                <a href="{{ route('san-pham.edit') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
+                                <h4>Loại sản phẩm</h4>
+                                <a href="{{ route('loai-san-pham.edit') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
                                 <p></p>
                                 <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
-                                            <th>Mã sản phẩm</th>
+                                            <th>Mã loại sản phẩm</th>
                                             <th>Position</th>
                                             <th>Office</th>
                                             <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th>Thao tac</th>
+                                            <th></th>
                                         </tr>
                                     </thead>                              
                                     <tbody>
@@ -56,10 +54,8 @@
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
                                             <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
                                             <td>
-                                            <a href="{{ route('san-pham.edit') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></a>
+                                            <a href="#" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></a>
                                             <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>    
                                         </td>
                                         </tr>

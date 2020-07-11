@@ -48,6 +48,7 @@
         <!-- Footer Start -->
         @include('Components.footer')
         <!-- end Footer -->
+        
         <!-- Vendor js -->
         <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
         <!-- App js-->

@@ -23,9 +23,9 @@ class SanPhamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function edit_page()
     {
-        //
+        return view('SanPham/edit-sanpham');
     }
 
     /**
@@ -56,7 +56,7 @@ class SanPhamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function aedit($id)
     {
         //
     }
