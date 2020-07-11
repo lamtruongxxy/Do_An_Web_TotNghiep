@@ -2,7 +2,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        2020 &copy; Le Hong Lam Truong | Do Anh Tu <a href=""> By Coderthemes</a> 
+                        2020 &copy; Le Hong Lam Truong | Do Anh Tu 
                     </div>
                     <div class="col-md-6">
                         <div class="text-md-right footer-links d-none d-sm-block">

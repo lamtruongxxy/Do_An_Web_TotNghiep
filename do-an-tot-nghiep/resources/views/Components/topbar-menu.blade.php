@@ -6,13 +6,16 @@
                             <li class="has-submenu">
                                 <a href="#">
                                     <!-- <i class="la la-dashboard"></i>San pham <div class="arrow-down"></div></a> -->
-                                    <i class="la la-list-ul"></i>San pham <div class="arrow-down"></div></a>
+                                    <i class="la la-list-ul"></i>Sản Phẩm <div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="{{ route('san-pham.danh-sach') }}">Danh sach san pham</a>
+                                        <a href="{{ route('san-pham.danh-sach') }}">Danh sách sản phẩm</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('loai-san-pham.danh-sach') }}">Loại sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('hinh-anh.danh-sach') }}">Hình ảnh</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('nha-san-xuat.danh-sach') }}">Nhà sản xuất</a>

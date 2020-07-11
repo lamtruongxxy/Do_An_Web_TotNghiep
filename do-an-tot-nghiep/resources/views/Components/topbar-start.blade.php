@@ -165,12 +165,12 @@
                     <div class="logo-box">
                         <a href="{{ route('dashboard') }}" class="logo text-center">
                             <span class="logo-lg">
-                                <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="26">
+                                <img src="{{ asset('assets/images/logoadmin-dark.png') }}" alt="" height="60">
                                 <!-- <span class="logo-lg-text-dark">Upvex</span> -->
                             </span>
                             <span class="logo-sm">
                                 <!-- <span class="logo-sm-text-dark">X</span> -->
-                                <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="28">
+                                <img src="{{ asset('assets/images/logoadmin-sm.png') }}" alt="" height="28">
                             </span>
                         </a>
                     </div>

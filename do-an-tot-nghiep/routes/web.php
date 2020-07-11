@@ -43,3 +43,11 @@ Route::prefix('nha-san-xuat')->group(function(){
         Route::get('/create-nha-san-xuat','NhaSXController@create_page')->name('create');       
     });	
 });
+
+Route::prefix('hinh-anh')->group(function(){
+    Route::name('hinh-anh.')->group(function(){ // đặt tên cho đường dẫn route 
+        // Danh sach nhà sản xuất
+        Route::get('/danh-sach','HinhAnhController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
+        Route::get('/create-hinh-anh','HinhAnhController@create_page')->name('create');       
+    });	
+});

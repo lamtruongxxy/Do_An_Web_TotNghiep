@@ -14,7 +14,7 @@ class HinhAnhController extends Controller
      */
     public function index()
     {
-        //
+        return view('HinhAnh/ds-hinhanh');
     }
 
     /**
@@ -22,9 +22,9 @@ class HinhAnhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_page()
     {
-        //
+        return view('HinhAnh/create-hinhanh');
     }
 
     /**
