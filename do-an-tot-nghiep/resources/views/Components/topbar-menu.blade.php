@@ -15,7 +15,7 @@
                                         <a href="{{ route('loai-san-pham.danh-sach') }}">Loại sản phẩm</a>
                                     </li>
                                     <li>
-                                        <a href="#">Nhà sản xuất</a>
+                                        <a href="{{ route('nha-san-xuat.danh-sach') }}">Nhà sản xuất</a>
                                     </li>
                                 </ul>
                             </li>

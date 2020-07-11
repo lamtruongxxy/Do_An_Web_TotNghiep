@@ -24,7 +24,7 @@ Route::prefix('san-pham')->group(function(){
 		Route::name('san-pham.')->group(function(){
             // Danh sach san pham
             Route::get('/danh-sach','SanPhamController@index')->name('danh-sach');
-            Route::get('/edit-san-pham','SanPhamController@edit_page')->name('edit');       
+            Route::get('/create-san-pham','SanPhamController@create_page')->name('create');       
 		});	
 });
 
@@ -32,7 +32,14 @@ Route::prefix('loai-san-pham')->group(function(){
     Route::name('loai-san-pham.')->group(function(){
         // Danh sach san pham
         Route::get('/danh-sach','LoaiSPController@index')->name('danh-sach');
-        Route::get('/edit-loai-san-pham','LoaiSPController@edit_page')->name('edit');       
+        Route::get('/create-loai-san-pham','LoaiSPController@create_page')->name('create');       
     });	
 });
 
+Route::prefix('nha-san-xuat')->group(function(){
+    Route::name('nha-san-xuat.')->group(function(){ // đặt tên cho đường dẫn route 
+        // Danh sach nhà sản xuất
+        Route::get('/danh-sach','NhaSXController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
+        Route::get('/create-nha-san-xuat','NhaSXController@create_page')->name('create');       
+    });	
+});

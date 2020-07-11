@@ -25,9 +25,9 @@ class SanPhamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit_page()
+    public function create_page()
     {
-        return view('SanPham/edit-sanpham');
+        return view('SanPham/create-sanpham');
     }
 
     /**

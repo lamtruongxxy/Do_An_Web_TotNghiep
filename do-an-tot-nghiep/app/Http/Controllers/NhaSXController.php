@@ -14,7 +14,7 @@ class NhaSXController extends Controller
      */
     public function index()
     {
-        //
+        return view('NhaSanXuat/ds-nsx');
     }
 
     /**
@@ -22,9 +22,9 @@ class NhaSXController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_page()
     {
-        //
+        return view('NhaSanXuat/create-nsx');
     }
 
     /**

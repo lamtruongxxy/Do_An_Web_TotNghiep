@@ -36,7 +36,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Loại sản phẩm</h4>
-                                <a href="{{ route('loai-san-pham.edit') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
+                                <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
                                 <p></p>
                                 <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead>

@@ -22,9 +22,9 @@ class LoaiSPController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit_page()
+    public function create_page()
     {
-        return view('LoaiSanPham/edit-loaisp');
+        return view('LoaiSanPham/create-loaisp');
     }
 
     /**

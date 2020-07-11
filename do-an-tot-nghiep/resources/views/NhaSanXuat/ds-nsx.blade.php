@@ -35,42 +35,30 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4>Danh sách sản phẩm</h4>
-                                <a href="{{ route('san-pham.create') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
+                                <h4>Loại sản phẩm</h4>
+                                <a href="{{ route('nha-san-xuat.create') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
                                 <p></p>
                                 <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
-                                            <th>Mã sản phẩm</th>
-                                            <th>Nhà sản xuất</th>
-                                            <th>Tên sản phẩm</th>
-                                            <th>Mô tả</th>
-                                            <th>Giá bán</th>
-                                            <th>Số lượng</th>
-                                            <th>Loại</th>
-                                            <th>Chế độ bảo hành</th>
+                                            <th>Mã nhà sản xuất</th>
+                                            <th>Tên nhà sản xuất</th>
+                                            <th>Logo NSX</th>
                                             <th>Trạng thái</th>
                                             <th></th>
                                         </tr>
                                     </thead>                              
                                     <tbody>
-                                        @foreach($dsSanPham as $sp)
                                         <tr>
-                                            <td>{{ $sp->masp }}</td>
-                                            <td>{{ $sp->manhasanxuat }}</td>
-                                            <td>{{ $sp->tensp }}</td>
-                                            <td maxlength="2" >{{ $sp->motasp }}</td>
-                                            <td>{{ $sp->giasp }}</td>
-                                            <td>{{ $sp->soluongtonkho }}</td>
-                                            <td>{{ $sp->loaisp }}</td>
-                                            <td>{{ $sp->chedobaohanh }}</td>
-                                            <td>{{ $sp->trangthai }}</td>
+                                            <td>Tiger Nixon</td>
+                                            <td>Samsung</td>
+                                            <td>samsung</td>
+                                            <td>1</td>
                                             <td>
                                             <a href="#" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></a>
                                             <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>    
                                         </td>
                                         </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div> <!-- end card body-->
