@@ -59,7 +59,7 @@
                                             <td>{{ $sp->masp }}</td>
                                             <td>{{ $sp->manhasanxuat }}</td>
                                             <td>{{ $sp->tensp }}</td>
-                                            <td maxlength="2" >{{ $sp->motasp }}</td>
+                                            <td>{{ $sp->motasp }}</td>
                                             <td>{{ $sp->giasp }}</td>
                                             <td>{{ $sp->soluongtonkho }}</td>
                                             <td>{{ $sp->loaisp }}</td>
