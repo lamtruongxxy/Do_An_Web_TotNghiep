@@ -9,13 +9,13 @@ class HoaDon extends Model
     protected $table = "hoadon";
 
     protected $fillable= [
-        'mahd',
-        'tennguoimua',
-        'ngaylap',
-        'tennguoinhan',
-        'diachigiaohang',
-        'sdtgiaohang',
-        'tongtien',
-        'trangthai'
+        // 'ma_hd',
+        'ten_nguoi_mua',
+        'ngay_lap',
+        'ten_nguoi_nhan',
+        'dia_chi_gia_ohang',
+        'sdt_giao_hang',
+        'tong_tien',
+        'trang_thai'
     ];
 }

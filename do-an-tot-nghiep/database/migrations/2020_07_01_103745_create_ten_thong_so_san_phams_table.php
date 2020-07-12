@@ -13,7 +13,7 @@ class CreateTenThongSoSanPhamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('TenThongSoSP', function (Blueprint $table) {
+        Schema::create('ThongSoSP', function (Blueprint $table) {
             $table->increments('id_thong_so_sp');
             $table->string('masp');
             $table->integer('gia_tri');
@@ -28,6 +28,6 @@ class CreateTenThongSoSanPhamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('TenThongSoSP');
+        Schema::dropIfExists('ThongSoSP');
     }
 }

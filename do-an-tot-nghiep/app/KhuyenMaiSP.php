@@ -9,8 +9,8 @@ class KhuyenMaiSP extends Model
     protected $table= "khuyenmaisp";
 
     protected $fillable= [
-        'id_chuongtrinhkm',
+        'id_chuong_trinh_km',
         'masp',
-        'trangthai'
+        'trang_thai'
     ];
 }

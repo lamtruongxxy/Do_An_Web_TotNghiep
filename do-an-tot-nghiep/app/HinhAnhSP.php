@@ -9,9 +9,9 @@ class HinhAnhSP extends Model
     protected $table = "hinhanh";
 
     protected $fillable= [
-        'mahinhanh',
-        'duongdan',
-        'trangthai',
-        'masp'
+        // 'ma_hinh_anh',
+        'masp',
+        'url',
+        'trang_thai'
     ];
 }

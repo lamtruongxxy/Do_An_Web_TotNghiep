@@ -9,13 +9,13 @@ class ChuongTrinhKhuyenMai extends Model
     protected $table = "chuongtrinhkhuyenmai";
 
     protected $fillable= [
-        'machuongtrinhkm',
-        'tenchuongtrinh',
-        'tgianbatdau',
-        'tgianketthuc',
-        'giatrikm',
-        'loaigiatri',
-        'toida',
-        'trangthai'
+        // 'ma_chuong_trinh_km',
+        'ten_chuong_trinh',
+        'tgian_batdau',
+        'tgian_ketthuc',
+        'gia_tri_km',
+        'loai_gia_tri',
+        'toi_da',
+        'trang_thai'
     ];
 }

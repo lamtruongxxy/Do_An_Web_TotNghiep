@@ -11,8 +11,8 @@ class ChiTietHoaDon extends Model
     protected $fillable= [
         'mahd',
         'masp',
-        'soluong',
-        'dongia',
-        'trangthai'
+        'so_luong',
+        'don_gia',
+        'trang_thai'
     ];
 }

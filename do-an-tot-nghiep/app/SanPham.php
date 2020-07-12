@@ -9,6 +9,7 @@ class SanPham extends Model
     protected $table ='sanpham';
 
     protected $fillable =[
+        // 'masp',
         'ma_nha_sx',
         'ten_sp',
         'mo_ta_sp',

@@ -9,10 +9,10 @@ class GioHang extends Model
     protected $table = "giohang";
 
     protected $fillable= [
-        'id_giohang',
-        'nguoimua',
+        // 'id_gio_hang',
+        'nguoi_mua',
         'masp',
-        'soluong',
-        'trangthai'
+        'so_luong',
+        'trang_thai'
     ];
 }

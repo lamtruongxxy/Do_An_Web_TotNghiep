@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class BinhLuan extends Model
 {
     protected $table = "binhluan";
-
+    
     protected $fillable= [
-        'mabinhluan',
+        // 'ma_binh_luan',
         'masp',
-        'nguoibinhluan',
-        'thoigianbl',
-        'noidungbl',
-        'sdtnguoibl',
-        'trangthai'
+        'nguoi_binh_luan',
+        'thoi_gian_bl',
+        'noi_dung_bl',
+        'sdt_nguoi_bl',
+        'trang_thai'
     ];
 }

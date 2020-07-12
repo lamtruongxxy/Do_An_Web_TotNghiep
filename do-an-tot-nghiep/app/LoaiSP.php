@@ -9,9 +9,9 @@ class LoaiSP extends Model
     protected $table= "loaisp";
 
     protected $fillable= [
-        'id_loai',
+        // 'id_loai',
         'ten_loai_sp',
-        'ghichu',
-        'trangthai',
+        'ghi_chu',
+        'trang_thai',
     ];
 }

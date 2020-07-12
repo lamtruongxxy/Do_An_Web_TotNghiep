@@ -9,9 +9,9 @@ class NhaSanXuat extends Model
     protected $table = "nhasanxuat";
     
     protected $fillable = [
-        'manhasx',
-        'tennhasx',
-        'logonhasx',
-        'trangthai'
+        // 'ma_nha_sx',
+        'ten_nha_sx',
+        'logo_nha_sx',
+        'logo_nha_sx'
     ];
 }

@@ -9,13 +9,13 @@ class TaiKhoan extends Model
     protected $table = "taikhoan";
 
     protected $fillable = [
-        'tentaikhoan',
-        'matkhau',
+        'ten_tai_khoan',
+        'mat_khau',
         'sdt',
         'email',
-        'diachi',
-        'hoten',
-        'anhdaidien',
-        'trangthai'
+        'dia_chi',
+        'ho_ten',
+        'anh_dai_dien',
+        'trang_thai'
     ];
 }

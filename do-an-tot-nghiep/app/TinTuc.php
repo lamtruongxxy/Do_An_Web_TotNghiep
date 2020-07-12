@@ -9,10 +9,11 @@ class TinTuc extends Model
     protected $table = 'tintuc';
 
     protected $fillable = [
-        'matintuc',
-        'tieude',
-        'nguoidang',
-        'baiviet',
-        'trangthai'
+        // 'ma_tin_tuc',
+        'tieu_de',
+        'nguoi_dang',
+        'ngay_dang',
+        'bai_viet',
+        'trang_thai'
     ];
 }
