@@ -14,12 +14,12 @@ class CreateTinTucsTable extends Migration
     public function up()
     {
         Schema::create('TinTuc', function (Blueprint $table) {
-            $table->string('matintuc');
-            $table->string('tieude');
-            $table->string('nguoidang');
-            $table->datetime('ngaydang');
-            $table->string('baiviet');
-            $table->integer('trangthai');
+            $table->increments('ma_tin_tuc');
+            $table->string('tieu_de');
+            $table->string('nguoi_dang');
+            $table->datetime('ngay_dang');
+            $table->string('bai_viet');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

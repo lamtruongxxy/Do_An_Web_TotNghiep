@@ -14,14 +14,14 @@ class CreateTaiKhoansTable extends Migration
     public function up()
     {
         Schema::create('TaiKhoan', function (Blueprint $table) {
-            $table->string('tentaikhoan');
-            $table->string('matkhau');
+            $table->string('ten_tai_khoan');
+            $table->string('mat_khau');
             $table->string('sdt');
             $table->string('email');
-            $table->string('diachi');
-            $table->string('hoten');
-            $table->string('anhdaidien');
-            $table->integer('trangthai');
+            $table->string('dia_chi');
+            $table->string('ho_ten');
+            $table->string('anh_dai_dien');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

@@ -14,10 +14,10 @@ class CreateLoaiSPSTable extends Migration
     public function up()
     {
         Schema::create('LoaiSP', function (Blueprint $table) {
-            $table->string('id_loai');
+            $table->increments('id_loai');
             $table->string('ten_loai_sp');
-            $table->string('ghichu');
-            $table->integer('trangthai');
+            $table->string('ghi_chu');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

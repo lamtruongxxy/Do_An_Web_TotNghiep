@@ -13,11 +13,11 @@ class CreateThongSosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ThongSo', function (Blueprint $table) {
-            $table->string('id_thongso');
-            $table->string('tenthongso');
-            $table->string('donvi');
-            $table->integer('trangthai');
+        Schema::create('TenThongSo', function (Blueprint $table) {
+            $table->string('id_thong_so');
+            $table->string('ten_thong_so');
+            $table->string('don_vi');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateThongSosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ThongSo');
+        Schema::dropIfExists('TenThongSo');
     }
 }

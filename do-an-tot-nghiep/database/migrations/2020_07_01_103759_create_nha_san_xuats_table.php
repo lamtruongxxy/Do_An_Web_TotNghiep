@@ -14,10 +14,10 @@ class CreateNhaSanXuatsTable extends Migration
     public function up()
     {
         Schema::create('NhaSanXuat', function (Blueprint $table) {
-            $table->string('manhasx');
-            $table->string('tennhasx');
-            $table->string('logonhasx');
-            $table->integer('trangthai');
+            $table->increments('ma_nha_sx');
+            $table->string('ten_nha_sx');
+            $table->string('logo_nha_sx');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

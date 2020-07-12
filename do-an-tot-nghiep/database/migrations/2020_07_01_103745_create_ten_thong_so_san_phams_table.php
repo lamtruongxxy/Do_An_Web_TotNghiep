@@ -14,14 +14,13 @@ class CreateTenThongSoSanPhamsTable extends Migration
     public function up()
     {
         Schema::create('TenThongSoSP', function (Blueprint $table) {
-            $table->string('id_thongsosp');
+            $table->increments('id_thong_so_sp');
             $table->string('masp');
-            $table->integer('giatri');
-            $table->integer('trangthai');
+            $table->integer('gia_tri');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

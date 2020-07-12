@@ -14,10 +14,10 @@ class CreateHinhAnhSPSTable extends Migration
     public function up()
     {
         Schema::create('HinhAnh', function (Blueprint $table) {
-            $table->string('mahinhanh');
+            $table->increments('ma_hinh_anh');
             $table->string('masp');
-            $table->string('duongdan');
-            $table->integer('trangthai');
+            $table->string('url');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

@@ -14,14 +14,14 @@ class CreateHoaDonsTable extends Migration
     public function up()
     {
         Schema::create('HoaDon', function (Blueprint $table) {
-            $table->string('mahd');
-            $table->string('tennguoimua');
-            $table->datetime('ngaylap');
-            $table->string('tennguoinhan');
-            $table->string('diachigiaohang');
-            $table->string('sdtgiaohang');
-            $table->integer('tongtien');
-            $table->integer('trangthai');
+            $table->increments('ma_hd');
+            $table->string('ten_nguoi_mua');
+            $table->datetime('ngay_lap');
+            $table->string('ten_nguoi_nhan');
+            $table->string('dia_chi_gia_ohang');
+            $table->string('sdt_giao_hang');
+            $table->integer('tong_tien');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

@@ -14,9 +14,9 @@ class CreateKhuyenMaiSPSTable extends Migration
     public function up()
     {
         Schema::create('KhuyenMaiSP', function (Blueprint $table) {
-            $table->string('id_chuongtrinhkm');
+            $table->string('id_chuong_trinh_km');
             $table->string('masp');
-            $table->integer('trangthai');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

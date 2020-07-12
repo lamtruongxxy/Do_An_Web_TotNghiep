@@ -14,14 +14,14 @@ class CreateChuongTrinhKhuyenMaisTable extends Migration
     public function up()
     {
         Schema::create('ChuongTrinhKhuyenMai', function (Blueprint $table) {
-            $table->string('machuongtrinhkm');
-            $table->string('tenchuongtrinh');
-            $table->datetime('tgianbatdau');
-            $table->datetime('tgianketthuc');
-            $table->integer('giatrikm');
-            $table->string('loaigiatri');
-            $table->integer('toida');
-            $table->integer('trangthai');
+            $table->increments('ma_chuong_trinh_km');
+            $table->string('ten_chuong_trinh');
+            $table->datetime('tgian_batdau');
+            $table->datetime('tgian_ketthuc');
+            $table->integer('gia_tri_km');
+            $table->string('loai_gia_tri');
+            $table->integer('toi_da');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

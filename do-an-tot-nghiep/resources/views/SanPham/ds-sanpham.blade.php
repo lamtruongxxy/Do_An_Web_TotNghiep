@@ -57,14 +57,14 @@
                                         @foreach($dsSanPham as $sp)
                                         <tr>
                                             <td>{{ $sp->masp }}</td>
-                                            <td>{{ $sp->manhasanxuat }}</td>
-                                            <td>{{ $sp->tensp }}</td>
-                                            <td>{{ $sp->motasp }}</td>
-                                            <td>{{ $sp->giasp }}</td>
-                                            <td>{{ $sp->soluongtonkho }}</td>
-                                            <td>{{ $sp->loaisp }}</td>
-                                            <td>{{ $sp->chedobaohanh }}</td>
-                                            <td>{{ $sp->trangthai }}</td>
+                                            <td>{{ $sp->ma_nha_sx }}</td>
+                                            <td>{{ $sp->ten_sp }}</td>
+                                            <td>{{ $sp->mo_ta_sp }}</td>
+                                            <td>{{ $sp->gia_sp }}</td>
+                                            <td>{{ $sp->so_luong_ton_kho }}</td>
+                                            <td>{{ $sp->loai_sp }}</td>
+                                            <td>{{ $sp->che_do_bao_hanh }}</td>
+                                            <td>{{ $sp->trang_thai }}</td>
                                             <td>
                                             <a href="#" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></a>
                                             <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>    

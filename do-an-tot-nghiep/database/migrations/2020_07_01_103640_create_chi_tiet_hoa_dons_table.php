@@ -16,9 +16,9 @@ class CreateChiTietHoaDonsTable extends Migration
         Schema::create('ChiTietHoaDon', function (Blueprint $table) {
             $table->string('mahd');
             $table->string('masp');
-            $table->integer('soluong');
-            $table->integer('dongia');
-            $table->integer('trangthai');
+            $table->integer('so_luong');
+            $table->integer('don_gia');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

@@ -43,15 +43,14 @@ class SanPhamController extends Controller
         // dd($request->file('sp_hinh_anh'));
         $dsHinhAnh = $this->uploadHinh($request->file('sp_hinh_anh'));
         $sanPham = [
-            'masp' => $request->ma_sp,
-            'manhasanxuat' => $request->nha_sx,
-            'tensp' => $request->ten_sp,
-            'giasp'  => $request->gia_sp,
-            'soluongtonkho' => $request->so_luong,
-            'loaisp'   => $request->loai_sp,
-            'chedobaohanh' => $request->che_do_bh,
-            'motasp' => 'abc',
-            'trangthai'    => 1
+            'ma_nha_sx' => $request->nha_sx,
+            'ten_sp' => $request->ten_sp,
+            'gia_sp'  => $request->gia_sp,
+            'so_luong_ton_kho' => $request->so_luong,
+            'loai_sp'   => $request->loai_sp,
+            'che_do_bao_hanh' => $request->che_do_bh,
+            'mo_ta_sp' => 'abc',
+            'trang_thai'    => 1
         ];
         // $idSanPham = SanPham::create($sanPham);
         // foreach($dsHinhAnh as $hinhAnh) {

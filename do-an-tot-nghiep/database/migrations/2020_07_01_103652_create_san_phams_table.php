@@ -14,15 +14,15 @@ class CreateSanPhamsTable extends Migration
     public function up()
     {
         Schema::create('SanPham', function (Blueprint $table) {
-            $table->string('masp');
-            $table->string('manhasanxuat');
-            $table->string('tensp');
-            $table->string('motasp');
-            $table->integer('giasp');
-            $table->integer('soluongtonkho');
-            $table->string('loaisp');
-            $table->string('chedobaohanh');
-            $table->integer('trangthai');
+            $table->increments('masp');
+            $table->string('ma_nha_sx');
+            $table->string('ten_sp');
+            $table->string('mo_ta_sp');
+            $table->integer('gia_sp');
+            $table->integer('so_luong_ton_kho');
+            $table->string('loai_sp');
+            $table->string('che_do_bao_hanh');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }
