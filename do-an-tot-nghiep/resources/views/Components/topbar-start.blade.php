@@ -31,7 +31,7 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-bell noti-icon"></i>
-                                <span class="badge badge-danger rounded-circle noti-icon-badge">5</span>
+                                <span class="badge badge-danger rounded-circle noti-icon-badge">99+</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-lg">
                                 <!-- item-->

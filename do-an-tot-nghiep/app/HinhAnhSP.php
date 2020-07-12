@@ -10,8 +10,8 @@ class HinhAnhSP extends Model
 
     protected $fillable= [
         'mahinhanh',
-        'masp',
         'duongdan',
-        'trangthai'
+        'trangthai',
+        'masp'
     ];
 }

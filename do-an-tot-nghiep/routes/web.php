@@ -24,7 +24,8 @@ Route::prefix('san-pham')->group(function(){
 		Route::name('san-pham.')->group(function(){
             // Danh sach san pham
             Route::get('/danh-sach','SanPhamController@index')->name('danh-sach');
-            Route::get('/create-san-pham','SanPhamController@create_page')->name('create');       
+            Route::get('/create-san-pham','SanPhamController@create_page')->name('create');     
+            Route::post('/create-san-pham','SanPhamController@store')->name('store');     
 		});	
 });
 
