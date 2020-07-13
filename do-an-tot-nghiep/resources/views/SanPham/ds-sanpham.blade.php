@@ -54,6 +54,7 @@
                                         </tr>
                                     </thead>                              
                                     <tbody>
+                                        
                                         @foreach($dsSanPham as $sp)
                                         <tr>
                                             <td>{{ $sp->masp }}</td>
@@ -62,7 +63,21 @@
                                             <td>{{ $sp->mo_ta_sp }}</td>
                                             <td>{{ $sp->gia_sp }}</td>
                                             <td>{{ $sp->so_luong_ton_kho }}</td>
-                                            <td>{{ $sp->loai_sp }}</td>
+                                            <td>
+                                                {{-- 1: la dien thoai cam ung
+                                                2: la dien thoai nap gap vd: galaxy ford
+                                                3: dien thoai nut bam --}}
+                                            <?php
+                                               if( '{{ $sp->loai_sp }}'==1)
+                                               {
+                                                echo "Điện Thoại Cảm Ứng";
+                                               }
+                                               else if ( '{{ $sp->loai_sp }}'==2)
+                                               {
+                                                echo "Điện Thoại Nắp Gặp";
+                                               }
+                                            ?>
+                                            </td>
                                             <td>{{ $sp->che_do_bao_hanh }}</td>
                                             <td>{{ $sp->trang_thai }}</td>
                                             <td>
@@ -71,6 +86,7 @@
                                         </td>
                                         </tr>
                                         @endforeach
+                                        
                                     </tbody>
                                 </table>
                             </div> <!-- end card body-->
