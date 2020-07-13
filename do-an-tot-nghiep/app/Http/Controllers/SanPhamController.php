@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\SanPham;
 use App\HinhAnhSP;
 use Carbon\Carbon;
+use App\LoaiSP;
 class SanPhamController extends Controller
 {
     /**
