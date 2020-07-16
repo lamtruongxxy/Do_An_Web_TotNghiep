@@ -16,7 +16,9 @@
 //     return view('master-page');
 // });
 
-Route::get('/', function () {
+Route::get('/','TaiKhoanController@admin_page')->name('admin-page');
+
+Route::get('/dashboard', function () {
     return view('master-page');
 })->name('dashboard');
 

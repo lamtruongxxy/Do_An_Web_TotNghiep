@@ -12,6 +12,10 @@ class TaiKhoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function admin_page()
+    {
+        return view('Login-admin/admin-page');
+    }
     public function index()
     {
         //
