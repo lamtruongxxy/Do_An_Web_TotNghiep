@@ -1,81 +1,84 @@
-<!-- dung extends de ke thua master-page -->
 @extends('master-page')
 
 @section('css')
-<!-- third party css -->
-<link href="{{ asset('assets/libs/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('assets/libs/datatables/responsive.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('assets/libs/datatables/buttons.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('assets/libs/datatables/select.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-<!-- third party css end -->
+<!-- Custom styles for this page -->
+<link href="{{ asset ('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('js')
-<!-- third party js -->
-<script src="{{ asset ('assets/libs/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/dataTables.bootstrap4.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/responsive.bootstrap4.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/buttons.html5.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/buttons.flash.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/buttons.print.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/dataTables.keyTable.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/datatables/dataTables.select.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<script src="{{ asset ('assets/libs/pdfmake/vfs_fonts.js') }}"></script>
-<!-- third party js ends -->
-<!-- Datatables init -->
-<script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
+<!-- Page level plugins -->
+<script src="{{ asset ('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset ('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{ asset ('js/demo/datatables-demo.js') }}"></script>
 @endsection
 
 @section('main-content')
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <h4>Danh sách sản phẩm</h4>
-                <a href="{{ route('san-pham.create') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
-                <p></p>
-                <table id="basic-datatable" class="table dt-responsive nowrap">
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Danh sách sản phẩm</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to gen</a>.</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="#" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Thêm mới</span>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Mã sản phẩm</th>
-                            <th>Nhà sản xuất</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Mô tả</th>
-                            <th>Giá bán</th>
-                            <th>Số lượng</th>
-                            <th>Loại</th>
-                            <th>Chế độ bảo hành</th>
-                            <th>Trạng thái</th>
-                            <th></th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Thao tác</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach($dsSanPham as $sp)
+                    <tfoot>
                         <tr>
-                            <td>{{ $sp->masp }}</td>
-                            <td>{{ $sp->ma_nha_sx }}</td>
-                            <td>{{ $sp->ten_sp }}</td>
-                            <td>{{ $sp->mo_ta_sp }}</td>
-                            <td>{{ $sp->gia_sp }}</td>
-                            <td>{{ $sp->so_luong_ton_kho }}</td>
-                            <td>{{ $sp->loai_sp }}</td>
-                            <td>{{ $sp->che_do_bao_hanh }}</td>
-                            <td>{{ $sp->trang_thai }}</td>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Tiger </td>
+                            <td>System </td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>201</td>
+                            <td>$320</td>
                             <td>
-                                <a href="#" class="btn btn-primary waves-effect waves-light"><i class="fe-edit"></i></a>
-                                <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>
+                                <a href="#" class="btn btn-success btn-icon-split">
+                                    <span class="text"><i class="far fa-edit"></i>
+                                    </span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-icon-split">
+                                    <span class="text"><i class="far fa-trash-alt"></i>
+                                    </span>
+                                </a>
                             </td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
-            </div> <!-- end card body-->
-        </div> <!-- end card -->
-    </div><!-- end col-->
+            </div>
+        </div>
+    </div>
 </div>
-
 @endsection

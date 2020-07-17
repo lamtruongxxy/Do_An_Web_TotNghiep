@@ -18,9 +18,9 @@ class SanPhamController extends Controller
     public function index()
     {
         // Danh sach san pham
-        // return view('SanPham/ds-sanpham');
-        $dsSanPham = SanPham::all();
-        return view('SanPham/ds-sanpham',compact('dsSanPham'));
+        return view('SanPham/ds-sanpham');
+        // $dsSanPham = SanPham::all();
+        // return view('SanPham/ds-sanpham',compact('dsSanPham'));
     }
 
     /**
