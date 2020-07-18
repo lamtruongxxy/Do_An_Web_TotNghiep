@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>TTmobile-login</title>
+    <title>Admin-TTmobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -42,7 +42,7 @@
                 </form>
                 <div class="text-center">
                     <!-- <a class="d-block small mt-3" href="register.html">Register an Account</a> -->
-                    <a class="d-block small" href="{{ route('admin-page') }}">Quên mật khẩu</a>
+                    <!-- <a class="d-block small" href="{{ route('admin-page') }}">Quên mật khẩu</a> -->
                 </div>
             </div>
         </div>
@@ -51,7 +51,6 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset ('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset ('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="{{ asset ('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 

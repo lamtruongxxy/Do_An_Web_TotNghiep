@@ -14,7 +14,7 @@ class TaiKhoanController extends Controller
      */
     public function admin_page()
     {
-        return view('Login-admin/admin-page');
+        return view('Admin/admin-login');
     }
     public function index()
     {
