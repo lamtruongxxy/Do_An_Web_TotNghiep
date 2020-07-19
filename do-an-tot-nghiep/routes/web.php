@@ -12,11 +12,33 @@
 */
 
 
-// Route::get('/', function () {
-//     return view('master-page');
-// });
+Route::get('/', function () {
+    return view('master-page');
+});
+Route::prefix('admin')->group(function(){
+    Route::name('admin-')->group(function(){
+        //ADMIN
+        Route::get('/','TaiKhoanController@admin_page')->name('page');
+    });	
+});
 
-Route::get('/','TaiKhoanController@admin_page')->name('admin-page');
+Route::prefix('/')->group(function(){
+    Route::name('user-')->group(function(){
+        //ADMIN
+        Route::get('/','TaiKhoanController@user_index')->name('page');
+        Route::get('/register','TaiKhoanController@user_register')->name('register');
+    });	
+});
+
+
+
+// //ADMIN
+// Route::get('/admin','TaiKhoanController@admin_page')->name('admin-page');
+
+
+// //USERS
+// Route::get('/','TaiKhoanController@user_index')->name('user-page');
+
 
 Route::get('/dashboard', function () {
     return view('master-page');
