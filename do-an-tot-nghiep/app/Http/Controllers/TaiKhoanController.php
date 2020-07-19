@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\QuanTriVien;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,14 +14,21 @@ class TaiKhoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function dashboard()
+    {
+        return view('master-page');
+    }
+
     public function admin_page()
     {
         return view('Admin/admin-login');
     }
+
     public function user_index()
     {
         return view('User/user-login');
     }
+
     public function user_register()
     {
         return view('User/user-register');
@@ -89,5 +98,26 @@ class TaiKhoanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function xyLyDangNhap(Request $request)
+    {
+        //Lay du lieu tu form dang nhap
+        $thongTin = $request->only(['ten_tai_khoan', 'password']);
+        // if (Auth::attempt([
+        //     'ten_tai_khoan' => $thongTin['ten_tai_khoan'],
+        //     'password' => $thongTin['password']
+        // ])) 
+        if (Auth::attempt($thongTin))
+        {
+            return redirect()->route('admin-dashboard');
+        }
+
+        return  'Đăng nhập thất bại';
+    }
+    public function dangXuat()
+    {
+        Auth::logout();
+        return redirect()->route('admin-page');
     }
 }
