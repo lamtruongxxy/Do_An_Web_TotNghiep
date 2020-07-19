@@ -15,7 +15,15 @@
 Route::get('/', function () {
     return view('master-page');
 });
+
+
+
 Route::prefix('admin')->group(function(){
+
+    Route::get('/dashboard', function () {
+        return view('master-page');
+    })->name('dashboard');
+    
     Route::name('admin-')->group(function(){
         //ADMIN
         Route::get('/','TaiKhoanController@admin_page')->name('page');
@@ -49,9 +57,7 @@ Route::prefix('/')->group(function(){
 // Route::get('/','TaiKhoanController@user_index')->name('user-page');
 
 
-Route::get('/dashboard', function () {
-    return view('master-page');
-})->name('dashboard');
+
 
 Route::prefix('loai-san-pham')->group(function(){
     Route::name('loai-san-pham.')->group(function(){
