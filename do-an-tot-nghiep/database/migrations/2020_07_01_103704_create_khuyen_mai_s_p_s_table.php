@@ -13,10 +13,11 @@ class CreateKhuyenMaiSPSTable extends Migration
      */
     public function up()
     {
-        Schema::create('KhuyenMaiSP', function (Blueprint $table) {
-            $table->string('id_chuong_trinh_km');
-            $table->string('masp');
-            $table->integer('trang_thai');
+        Schema::create('khuyen_mai_san_pham', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('chuong_trinh_khuyen_mai_id');
+            $table->integer('san_pham_id');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

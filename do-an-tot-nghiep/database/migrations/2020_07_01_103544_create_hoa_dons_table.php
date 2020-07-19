@@ -13,15 +13,15 @@ class CreateHoaDonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('HoaDon', function (Blueprint $table) {
-            $table->increments('ma_hd');
+        Schema::create('hoa_don', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('ten_nguoi_mua');
             $table->datetime('ngay_lap');
             $table->string('ten_nguoi_nhan');
             $table->string('dia_chi_gia_ohang');
             $table->string('sdt_giao_hang');
             $table->integer('tong_tien');
-            $table->integer('trang_thai');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

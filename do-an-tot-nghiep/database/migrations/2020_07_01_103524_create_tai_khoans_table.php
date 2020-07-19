@@ -13,7 +13,8 @@ class CreateTaiKhoansTable extends Migration
      */
     public function up()
     {
-        Schema::create('TaiKhoan', function (Blueprint $table) {
+        Schema::create('tai_khoan', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('ten_tai_khoan');
             $table->string('mat_khau');
             $table->string('sdt');
@@ -21,7 +22,6 @@ class CreateTaiKhoansTable extends Migration
             $table->string('dia_chi');
             $table->string('ho_ten');
             $table->string('anh_dai_dien');
-            $table->integer('trang_thai');
             $table->timestamps();
         });
     }

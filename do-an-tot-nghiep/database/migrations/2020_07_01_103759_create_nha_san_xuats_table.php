@@ -13,11 +13,11 @@ class CreateNhaSanXuatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('NhaSanXuat', function (Blueprint $table) {
-            $table->increments('ma_nha_sx');
+        Schema::create('nha_san_xuat', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('ten_nha_sx');
             $table->string('logo_nha_sx');
-            $table->integer('trang_thai');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

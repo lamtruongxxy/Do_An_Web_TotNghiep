@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class HoaDon extends Model
 {
-    protected $table = "hoadon";
+    protected $table = "hoa_don";
 
     protected $fillable= [
-        // 'ma_hd',
         'ten_nguoi_mua',
         'ngay_lap',
         'ten_nguoi_nhan',

@@ -13,11 +13,11 @@ class CreateHinhAnhSPSTable extends Migration
      */
     public function up()
     {
-        Schema::create('HinhAnh', function (Blueprint $table) {
-            $table->increments('ma_hinh_anh');
-            $table->string('masp');
-            $table->string('url');
-            $table->integer('trang_thai');
+        Schema::create('hinh_anh_san_pham', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('san_pham_id');
+            $table->string('duong_dan');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

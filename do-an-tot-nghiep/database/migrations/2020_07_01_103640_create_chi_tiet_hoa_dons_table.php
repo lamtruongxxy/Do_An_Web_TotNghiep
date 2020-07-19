@@ -13,12 +13,13 @@ class CreateChiTietHoaDonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ChiTietHoaDon', function (Blueprint $table) {
-            $table->string('mahd');
-            $table->string('masp');
+        Schema::create('chi_tiet_hoa_don', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('hoa_don_id');
+            $table->integer('san_pham_id');
             $table->integer('so_luong');
             $table->integer('don_gia');
-            $table->integer('trang_thai');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

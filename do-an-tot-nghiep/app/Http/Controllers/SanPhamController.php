@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\SanPham;
-use App\HinhAnhSP;
 use Carbon\Carbon;
-use App\LoaiSP;
+use App\SanPham;
+use App\LoaiSanPham;
+use App\NhaSanXuat;
 class SanPhamController extends Controller
 {
     /**
@@ -17,10 +17,21 @@ class SanPhamController extends Controller
      */
     public function index()
     {
-        // Danh sach san pham
-        return view('SanPham/ds-sanpham');
-        // $dsSanPham = SanPham::all();
-        // return view('SanPham/ds-sanpham',compact('dsSanPham'));
+        $dsSanPham = SanPham::with('loaiSanPham')->get();
+        $dsLoaiSanPham = LoaiSanPham::all();
+        $dsNhaSanXuat = NhaSanXuat::all();
+        // dd($dsSanPham);
+        return view('SanPham.ds-sanpham', compact('dsLoaiSanPham', 'dsNhaSanXuat'));
+    }
+
+    public function getData()
+    {
+        $dsSanPham = SanPham::with('loaiSanPham')->get();
+        return Datatables()->of($dsSanPham)->addColumn('action', function($data) {
+            return view('SanPham.create-action', compact($data));
+        })
+        ->rawColumns(['action'])
+        ->make(true);
     }
 
     /**

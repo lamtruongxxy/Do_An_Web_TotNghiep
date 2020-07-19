@@ -13,11 +13,11 @@ class CreateThongSosTable extends Migration
      */
     public function up()
     {
-        Schema::create('TenThongSo', function (Blueprint $table) {
-            $table->string('id_thong_so');
+        Schema::create('thong_so', function (Blueprint $table) {
+            $table->string('id');
             $table->string('ten_thong_so');
             $table->string('don_vi');
-            $table->integer('trang_thai');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

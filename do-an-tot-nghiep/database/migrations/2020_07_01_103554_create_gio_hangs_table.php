@@ -13,12 +13,12 @@ class CreateGioHangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('GioHang', function (Blueprint $table) {
-            $table->increments('id_gio_hang');
+        Schema::create('gio_hang', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nguoi_mua');
-            $table->string('masp');
+            $table->string('san_pham_id');
             $table->integer('so_luong');
-            $table->integer('trang_thai');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

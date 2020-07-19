@@ -19,7 +19,16 @@ Route::prefix('admin')->group(function(){
     Route::name('admin-')->group(function(){
         //ADMIN
         Route::get('/','TaiKhoanController@admin_page')->name('page');
-    });	
+    });
+    Route::prefix('san-pham')->group(function(){
+		Route::name('san-pham.')->group(function(){
+            // Danh sach san pham
+            Route::get('/','SanPhamController@index')->name('danh-sach');
+            Route::get('/lay-san-pham','SanPhamController@getData')->name('lay-danh-sach');
+            Route::get('/create-san-pham','SanPhamController@create_page')->name('create');     
+            Route::post('/create-san-pham','SanPhamController@store')->name('store');     
+		});	
+});
 });
 
 Route::prefix('/')->group(function(){
@@ -43,15 +52,6 @@ Route::prefix('/')->group(function(){
 Route::get('/dashboard', function () {
     return view('master-page');
 })->name('dashboard');
-
-Route::prefix('san-pham')->group(function(){
-		Route::name('san-pham.')->group(function(){
-            // Danh sach san pham
-            Route::get('/danh-sach','SanPhamController@index')->name('danh-sach');
-            Route::get('/create-san-pham','SanPhamController@create_page')->name('create');     
-            Route::post('/create-san-pham','SanPhamController@store')->name('store');     
-		});	
-});
 
 Route::prefix('loai-san-pham')->group(function(){
     Route::name('loai-san-pham.')->group(function(){

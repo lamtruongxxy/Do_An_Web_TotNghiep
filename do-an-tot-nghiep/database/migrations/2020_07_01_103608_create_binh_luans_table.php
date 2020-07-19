@@ -13,12 +13,11 @@ class CreateBinhLuansTable extends Migration
      */
     public function up()
     {
-        Schema::create('BinhLuan', function (Blueprint $table) {
-            $table->increments('ma_binh_luan');
-            $table->string('masp');
+        Schema::create('binh_luan', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('san_pham_id');
             $table->string('nguoi_binh_luan');
-            $table->datetime('thoi_gian_bl');
-            $table->string('noi_dung_bl');
+            $table->text('noi_dung_bl');
             $table->string('sdt_nguoi_bl');
             $table->integer('trang_thai');
             $table->timestamps();
