@@ -6,7 +6,7 @@ use App\QuanTriVien;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\DangNhapRequest;
 class TaiKhoanController extends Controller
 {
     /**
@@ -100,7 +100,7 @@ class TaiKhoanController extends Controller
         //
     }
 
-    public function xyLyDangNhap(Request $request)
+    public function xyLyDangNhap(DangNhapRequest $request)
     {
         //Lay du lieu tu form dang nhap
         $thongTin = $request->only(['ten_tai_khoan', 'password']);
@@ -112,8 +112,7 @@ class TaiKhoanController extends Controller
         {
             return redirect()->route('admin-dashboard');
         }
-
-        return  'Đăng nhập thất bại';
+        return  redirect()->back()->withErrors('Sai mật khẩu');
     }
     public function dangXuat()
     {
