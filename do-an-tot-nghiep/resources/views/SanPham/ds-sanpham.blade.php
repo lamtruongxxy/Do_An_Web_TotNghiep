@@ -48,6 +48,21 @@
                     data: 'loai_san_pham.ten_loai_sp',
                     name: 'Loại sản phẩm'
                 }, {
+                    data: 'nha_san_xuat_id',
+                    name: 'Nhà sản xuất'
+                }, {
+                    data: 'so_luong_ton_kho',
+                    name: 'Số lượng tồn kho'
+                }, {
+                    data: 'gia_sp',
+                    name: 'Giá sản phẩm'
+                }, {
+                    data: 'trang_thai',
+                    name: 'Trạng thái'
+                }, {
+                    data: 'che_do_bao_hanh',
+                    name: 'Chế độ bảo hành'
+                }, {
                     data: 'action',
                     name: 'action'
                 }]
@@ -72,6 +87,11 @@
                                             <th>Tên sản phẩm</th>
                                             <th>Mô tả sản phẩm</th>
                                             <th>Loại sản phẩm</th>
+                                            <th>Nhà Sản Xuất</th>
+                                            <th>Số lượng tồn kho</th>
+                                            <th>Giá sản phẩm</th>
+                                            <th>Trạng thái</th>
+                                            <th>Chế độ bảo hành</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>                              
