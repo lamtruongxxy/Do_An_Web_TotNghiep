@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <title>Admin-TTmobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
@@ -23,22 +23,22 @@
 <body class="bg-dark">
     <div class="container">
         <div class="card card-login mx-auto mt-5">
-            <div class="card-header">Đăng nhập</div>
+            <div class="card-header">Admin-TTmobile</div>
             <div class="card-body">
-                <form>
+                @include('Request/errors')
+                <form action="{{ route('admin-xu-ly-dang-nhap') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <div class="form-label-group">
-                            <input type="text" id="input_tentk" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-                            <label for="input_tentk">Tên tài khoản</label>
+                            <input type="text" id="ten_tai_khoan" name="ten_tai_khoan" class="form-control" placeholder="Tên tài khoản" autofocus="autofocus">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                            <label for="inputPassword">Mật khẩu</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu">
                         </div>
                     </div>
-                    <a class="btn btn-primary btn-block" href="{{route('admin-page') }}">Đăng nhập</a>
+                    <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
                 </form>
                 <div class="text-center">
                     <!-- <a class="d-block small mt-3" href="register.html">Register an Account</a> -->
@@ -47,13 +47,11 @@
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset ('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset ('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{ asset ('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
 </body>
 
 </html>

@@ -120,10 +120,13 @@
 
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    @auth
                     <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
                     <span class="pro-user-name ml-1">
-                        Marcia J. <i class="mdi mdi-chevron-down"></i> 
+                        {{ Auth()->user()->ho_ten }}
+                        <i class="mdi mdi-chevron-down"></i>
                     </span>
+                    @endauth
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
@@ -154,16 +157,16 @@
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{ route('admin-dang-xuat') }}" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
-                        <span>Logout</span>
+                        <span>Đăng xuất</span>
                     </a>
                 </div>
             </li>
         </ul>
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="{{ route('dashboard') }}" class="logo text-center">
+            <a href="{{ route('admin-dashboard') }}" class="logo text-center">
                 <span class="logo-lg">
                     <img src="{{ asset('assets/images/logoadmin-dark.png') }}" alt="" height="60">
                     <!-- <span class="logo-lg-text-dark">Upvex</span> -->
@@ -180,7 +183,7 @@
             <li class="dropdown d-none d-lg-block">
                 <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     Reports
-                    <i class="mdi mdi-chevron-down"></i> 
+                    <i class="mdi mdi-chevron-down"></i>
                 </a>
                 <div class="dropdown-menu">
                     <!-- item-->
@@ -214,12 +217,12 @@
             <li class="dropdown dropdown-mega d-none d-lg-block">
                 <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     Mega Menu
-                    <i class="mdi mdi-chevron-down"></i> 
+                    <i class="mdi mdi-chevron-down"></i>
                 </a>
                 <div class="dropdown-menu dropdown-megamenu">
                     <div class="row">
                         <div class="col-sm-8">
-                
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <h5 class="text-dark mt-0">UI Components</h5>

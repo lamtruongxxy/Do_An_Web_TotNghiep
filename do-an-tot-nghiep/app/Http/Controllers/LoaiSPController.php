@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\LoaiSanPhamRequest;
+use App\LoaiSanPham;
+
 class LoaiSPController extends Controller
 {
     /**
@@ -33,9 +36,15 @@ class LoaiSPController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoaiSanPhamRequest $request)
     {
-        //
+        $loaiSp = new LoaiSanPham();
+        $loaiSp->ten_loai_sp = $request->ten_loai_sp;
+        $loaiSp->ghi_chu = $request->ghi_chu;
+        $loaiSp->trang_thai = 1;
+        $loaiSp->save();
+        return redirect()->route('loai-san-pham.create')
+        ->with('thong-bao','Thêm thành công');
     }
 
     /**
