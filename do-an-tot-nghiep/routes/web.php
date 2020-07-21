@@ -37,6 +37,15 @@ Route::middleware("auth")->group(function () {
                 Route::post('/create-san-pham', 'SanPhamController@store')->name('store');
             });
         });
+        Route::prefix('loai-san-pham')->group(function () {
+            Route::name('loai-san-pham.')->group(function () {
+                // Danh sach san pham
+                Route::get('/danh-sach', 'LoaiSPController@index')->name('danh-sach');
+
+                Route::get('/create', 'LoaiSPController@create_page')->name('create');
+                Route::post('/them-moi', 'LoaiSPController@store')->name('store');
+            });
+        });
     });
 });
 
@@ -62,13 +71,7 @@ Route::prefix('user')->group(function () {
 
 
 
-Route::prefix('loai-san-pham')->group(function () {
-    Route::name('loai-san-pham.')->group(function () {
-        // Danh sach san pham
-        Route::get('/danh-sach', 'LoaiSPController@index')->name('danh-sach');
-        Route::get('/create-loai-san-pham', 'LoaiSPController@create_page')->name('create');
-    });
-});
+
 
 Route::prefix('nha-san-xuat')->group(function () {
     Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route 
