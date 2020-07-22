@@ -44,9 +44,21 @@ Route::middleware("auth")->group(function () {
                 // Danh sach loai san pham
                 Route::get('/', 'LoaiSPController@index')->name('danh-sach');
                 Route::get('/lay-loai-san-pham', 'LoaiSPController@getData')->name('lay-danh-sach');
-                
+
                 Route::get('/create', 'LoaiSPController@create_page')->name('create');
                 Route::post('/them-moi', 'LoaiSPController@store')->name('store');
+
+                // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
+            });
+        });
+        Route::prefix('nha-san-xuat')->group(function () {
+            Route::name('nha-san-xuat.')->group(function () {
+
+                // Route::get('/', 'LoaiSPController@index')->name('danh-sach');
+                // Route::get('/lay-loai-san-pham', 'LoaiSPController@getData')->name('lay-danh-sach');
+
+                Route::get('/create', 'NhaSXController@create_page')->name('create');
+                // Route::post('/them-moi', 'LoaiSPController@store')->name('store');
 
                 // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
