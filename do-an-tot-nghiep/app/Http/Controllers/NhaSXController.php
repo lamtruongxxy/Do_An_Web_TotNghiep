@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Carbon\Carbon;
+use App\NhaSanXuat;
 class NhaSXController extends Controller
 {
     /**
@@ -14,9 +16,19 @@ class NhaSXController extends Controller
      */
     public function index()
     {
-        return view('NhaSanXuat/ds-nsx');
+        $dsNhaSanXuat = NhaSanXuat::all();
+        return view('NhaSanXuat/ds-nsx', compact('dsNhaSanXuat'));
     }
 
+    public function getData()
+    {
+        $dsNhaSanXuat = NhaSanXuat::all();
+        return Datatables()->of($dsNhaSanXuat)->addColumn('action', function($data) {
+            return view('NhaSanXuat.create-action', compact($data));
+        })
+        ->rawColumns(['action'])
+        ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *

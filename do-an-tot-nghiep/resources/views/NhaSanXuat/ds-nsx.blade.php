@@ -28,8 +28,33 @@
         <!-- third party js ends -->
         <!-- Datatables init -->
         <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>   
+        <!-- truy vấn database thông qua api database -->
+        <script>
+            $('#product-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('nha-san-xuat.lay-danh-sach') }}",
+                order: [],
+                columns: [{
+                    data: 'id',
+                    name:'ID Loại'
+                },{
+                    data: 'ten_nha_sx',
+                    name:'Tên nhà sản xuất'
+                }, {
+                    data: 'logo_nha_sx',
+                    name:'Logo nhà sản xuất'
+                }, {
+                    data: 'trang_thai',
+                    name:'Trạng thái'
+                }, {
+                    data: 'action',
+                    name: 'action'
+                }]
+            })
+        
+        </script>
 @endsection
-
 @section('main-content')
 <div class="row">
                     <div class="col-12">
@@ -38,17 +63,18 @@
                                 <h4>Loại sản phẩm</h4>
                                 <a href="{{ route('nha-san-xuat.create') }}" class="btn btn-primary waves-effect waves-light"><i class="fe-plus-circle"></i></a>
                                 <p></p>
-                                <table id="basic-datatable" class="table dt-responsive nowrap">
+                                <table id="product-table" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
                                             <th>Mã nhà sản xuất</th>
                                             <th>Tên nhà sản xuất</th>
                                             <th>Logo NSX</th>
                                             <th>Trạng thái</th>
+                                            <th>Hành động</th>
                                             <th></th>
                                         </tr>
                                     </thead>                              
-                                    <tbody>
+                                    {{-- <tbody>
                                         <tr>
                                             <td>Tiger Nixon</td>
                                             <td>Samsung</td>
@@ -59,7 +85,7 @@
                                             <button type="button" class="btn btn-primary waves-effect waves-light"><i class="far fa-trash-alt"></i></button>    
                                         </td>
                                         </tr>
-                                    </tbody>
+                                    </tbody> --}}
                                 </table>
                             </div> <!-- end card body-->
                         </div> <!-- end card -->

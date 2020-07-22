@@ -46,6 +46,15 @@ Route::middleware("auth")->group(function () {
                 Route::post('/them-moi', 'LoaiSPController@store')->name('store');
             });
         });
+        
+        Route::prefix('nha-san-xuat')->group(function () {
+        Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route 
+            // Danh sach nhà sản xuất
+                Route::get('/', 'NhaSXController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
+                Route::get('/lay-nha-san-xuat', 'NhaSXController@getData')->name('lay-danh-sach');
+                Route::get('/create-nha-san-xuat', 'NhaSXController@create_page')->name('create');
+    });
+});
     });
 });
 
@@ -73,13 +82,6 @@ Route::prefix('user')->group(function () {
 
 
 
-Route::prefix('nha-san-xuat')->group(function () {
-    Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route 
-        // Danh sach nhà sản xuất
-        Route::get('/danh-sach', 'NhaSXController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
-        Route::get('/create-nha-san-xuat', 'NhaSXController@create_page')->name('create');
-    });
-});
 
 Route::prefix('hinh-anh')->group(function () {
     Route::name('hinh-anh.')->group(function () { // đặt tên cho đường dẫn route 
