@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\LoaiSanPhamRequest;
+use Carbon\Carbon;
 use App\LoaiSanPham;
 
 class LoaiSPController extends Controller
@@ -17,9 +18,19 @@ class LoaiSPController extends Controller
      */
     public function index()
     {
-        return view('LoaiSanPham/ds-loaisp');
+        $dsLoaiSanPham = LoaiSanPham::all(); // truy cập model lấy data danh sách
+        //dd($dsLoaiSanPham);
+        return view('LoaiSanPham/ds-loaisp', compact('dsLoaiSanPham'));
     }
-
+    public function getData() // test load data
+    {
+        $dsLoaiSanPham = LoaiSanPham::all();  // truy cập model lấy data danh sách
+        return Datatables()->of($dsLoaiSanPham)->addColumn('action', function($data) {
+            return view('LoaiSanPham.create-action', compact($data));
+        })
+        ->rawColumns(['action'])
+        ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *

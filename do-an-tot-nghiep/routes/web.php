@@ -39,9 +39,9 @@ Route::middleware("auth")->group(function () {
         });
         Route::prefix('loai-san-pham')->group(function () {
             Route::name('loai-san-pham.')->group(function () {
-                // Danh sach san pham
-                Route::get('/danh-sach', 'LoaiSPController@index')->name('danh-sach');
-
+                // Danh sach loai san pham
+                Route::get('/', 'LoaiSPController@index')->name('danh-sach');
+                Route::get('/lay-loai-san-pham', 'LoaiSPController@getData')->name('lay-danh-sach');
                 Route::get('/create', 'LoaiSPController@create_page')->name('create');
                 Route::post('/them-moi', 'LoaiSPController@store')->name('store');
             });

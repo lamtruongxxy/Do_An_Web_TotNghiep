@@ -78,6 +78,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="has-submenu">
+                    <a href="#"> <i class="la la-align-left"></i>Nội Dung<div class="arrow-down"></div></a>
+                    <ul class="submenu">
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="#">Giới Thiệu</a>
+                                </li>
+                                <li>
+                                    <a href="#">Quảng cáo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Hỗ Trợ Trực Tuyến</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- End navigation menu -->
             <div class="clearfix"></div>
