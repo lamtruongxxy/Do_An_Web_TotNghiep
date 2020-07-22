@@ -16,6 +16,8 @@
 //     return view('master-page');
 // })->name('dashboard');
 
+use App\Http\Controllers\LoaiSPController;
+use App\LoaiSanPham;
 
 Route::get('admin', 'TaiKhoanController@admin_page')->name('admin-page')->middleware('guest');
 Route::post('admin/dang-nhap', 'TaiKhoanController@xyLyDangNhap')->name('admin-xu-ly-dang-nhap');
@@ -42,8 +44,11 @@ Route::middleware("auth")->group(function () {
                 // Danh sach loai san pham
                 Route::get('/', 'LoaiSPController@index')->name('danh-sach');
                 Route::get('/lay-loai-san-pham', 'LoaiSPController@getData')->name('lay-danh-sach');
+                
                 Route::get('/create', 'LoaiSPController@create_page')->name('create');
                 Route::post('/them-moi', 'LoaiSPController@store')->name('store');
+
+                // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
         });
     });

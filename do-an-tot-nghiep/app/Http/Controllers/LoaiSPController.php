@@ -25,11 +25,11 @@ class LoaiSPController extends Controller
     public function getData() // test load data
     {
         $dsLoaiSanPham = LoaiSanPham::all();  // truy cập model lấy data danh sách
-        return Datatables()->of($dsLoaiSanPham)->addColumn('action', function($data) {
+        return Datatables()->of($dsLoaiSanPham)->addColumn('action', function ($data) {
             return view('LoaiSanPham.create-action', compact($data));
         })
-        ->rawColumns(['action'])
-        ->make(true);
+            ->rawColumns(['action'])
+            ->make(true);
     }
     /**
      * Show the form for creating a new resource.
@@ -55,7 +55,7 @@ class LoaiSPController extends Controller
         $loaiSp->trang_thai = 1;
         $loaiSp->save();
         return redirect()->route('loai-san-pham.create')
-        ->with('thong-bao','Thêm thành công');
+            ->with('thong-bao', 'Thêm thành công');
     }
 
     /**
@@ -98,8 +98,14 @@ class LoaiSPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function on_off($id)
     {
-        //
+        $loaiSp = LoaiSanPham::find($id);
+        
+        if ($loaiSp->trang_thai == 1) {
+            $loaiSp->trang_thai = 0;
+        } else if ($loaiSp->trang_thai == 0)
+            $loaiSp->trang_thai = 1;
+        return redirect()->route('loai-san-pham.danh-sach');
     }
 }
