@@ -23,5 +23,7 @@ class SanPham extends Model
     public function loaiSanPham() {
         return $this->belongsTo('App\LoaiSanPham');
     }
-
+    public function nhaSanXuat() {
+        return $this->belongsTo('App\NhaSanXuat');
+    }
 }

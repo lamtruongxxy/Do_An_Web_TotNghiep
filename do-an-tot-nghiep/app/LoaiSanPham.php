@@ -11,6 +11,6 @@ class LoaiSanPham extends Model
     protected $fillable= [
         'ten_loai_sp',
         'ghi_chu',
-        'trang_thai',
+        'trang_thai'
     ];
 }

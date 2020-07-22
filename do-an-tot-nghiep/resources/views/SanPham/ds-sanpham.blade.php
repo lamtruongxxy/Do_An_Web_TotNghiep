@@ -48,7 +48,7 @@
             data: 'loai_san_pham.ten_loai_sp',
             name: 'Loại sản phẩm'
         }, {
-            data: 'nha_san_xuat_id',
+            data: 'nha_san_xuat.ten_nha_sx',
             name: 'Nhà sản xuất'
         }, {
             data: 'so_luong_ton_kho',

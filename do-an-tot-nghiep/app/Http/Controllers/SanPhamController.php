@@ -19,14 +19,16 @@ class SanPhamController extends Controller
     {
         $dsSanPham = SanPham::with('loaiSanPham')->get();
         $dsLoaiSanPham = LoaiSanPham::all();
+        $dsSanPham = SanPham::with('nhaSanXuat')->get();
         $dsNhaSanXuat = NhaSanXuat::all();
-        // dd($dsSanPham);
+        //($dsSanPham);
         return view('SanPham.ds-sanpham', compact('dsLoaiSanPham', 'dsNhaSanXuat'));
     }
 
     public function getData()
     {
-        $dsSanPham = SanPham::with('loaiSanPham')->get();
+        $dsSanPham = SanPham::with('loaiSanPham','nhaSanXuat')->get();
+        //$dsSanPham = SanPham::with('nhaSanXuat')->get();
         return Datatables()->of($dsSanPham)->addColumn('action', function($data) {
             return view('SanPham.create-action', compact($data));
         })
