@@ -68,7 +68,7 @@
         <div class="card">
             <div class="card-body">
                 <h4>Danh sách khách hàng</h4>
-                <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
+                <a href="{{ route('khach-hang.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>
                 <p></p>
