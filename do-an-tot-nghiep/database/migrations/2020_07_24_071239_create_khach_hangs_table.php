@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChiTietHoaDonsTable extends Migration
+class CreateKhachHangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateChiTietHoaDonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chi_tiet_hoa_don', function (Blueprint $table) {
+        Schema::create('khach_hang', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('hoa_don_id');
-            $table->integer('san_pham_id');
-            $table->integer('so_luong');
-            $table->integer('don_gia');
+            $table->string('ten_khach_hang');
+            $table->string('dia_chi');
+            $table->string('sdt');
+            $table->string('email');
             $table->boolean('trang_thai');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateChiTietHoaDonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ChiTietHoaDon');
+        Schema::dropIfExists('KhachHang');
     }
 }

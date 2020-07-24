@@ -11,6 +11,6 @@ class NhaSanXuatSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\NhaSanXuat::class, 100)->create();
+        factory(App\NhaSanXuat::class, 50)->create();
     }
 }

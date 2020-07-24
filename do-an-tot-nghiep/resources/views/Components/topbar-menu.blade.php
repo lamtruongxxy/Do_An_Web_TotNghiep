@@ -59,7 +59,7 @@
                             <a href="#">Thêm Khách Hàng</a>
                         </li>
                         <li>
-                            <a href="#">Danh Sách Khách Hàng</a>
+                            <a href="{{ route('khach-hang.danh-sach') }}">Danh Sách Khách Hàng</a>
                         </li>
                     </ul>
                 </li>

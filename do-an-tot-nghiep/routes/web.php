@@ -70,8 +70,22 @@ Route::middleware("auth")->group(function () {
                 Route::get('/', 'NhaSXController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
                 Route::get('/lay-nha-san-xuat', 'NhaSXController@getData')->name('lay-danh-sach');
                 Route::get('/create-nha-san-xuat', 'NhaSXController@create_page')->name('create');
-    });
-});
+            });
+        });
+
+        Route::prefix('khach-hang')->group(function () {
+            Route::name('khach-hang.')->group(function () {
+                // Danh sach loai san pham
+                Route::get('/', 'KhachHangController@index')->name('danh-sach');
+                Route::get('/lay-khach-hang', 'KhachHangController@getData')->name('lay-danh-sach');
+
+                Route::get('/create', 'KhachHangController@create_page')->name('create');
+                Route::post('/them-moi', 'KhachHangController@store')->name('store');
+
+                // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
+            });
+        });
+
     });
 });
 

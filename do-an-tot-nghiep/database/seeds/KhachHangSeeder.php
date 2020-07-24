@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class LoaiSanPhamSeeder extends Seeder
+class KhachHangSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class LoaiSanPhamSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\LoaiSanPham::class, 50)->create();
+        factory(App\KhachHang::class, 500)->create();
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTrangThaiColumnTaiKhoan extends Migration
+class CreateChiTietDonHangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddTrangThaiColumnTaiKhoan extends Migration
      */
     public function up()
     {
-        Schema::table('tai_khoan', function (Blueprint $table) {
+        Schema::create('chi_tiet_don_hang', function (Blueprint $table) {
+            $table->integer('don_hang_id');
+            $table->integer('san_pham_id');
+            $table->integer('so_luong');
+            $table->integer('don_gia');
             $table->boolean('trang_thai');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AddTrangThaiColumnTaiKhoan extends Migration
      */
     public function down()
     {
-        Schema::table('tai_khoan', function (Blueprint $table) {
-            $table->dropColumn('trang_thai');
-        });
+        Schema::dropIfExists('ChiTietDonHang');
     }
 }

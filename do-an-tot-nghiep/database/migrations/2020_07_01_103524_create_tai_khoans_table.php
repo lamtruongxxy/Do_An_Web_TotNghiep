@@ -22,6 +22,7 @@ class CreateTaiKhoansTable extends Migration
             $table->string('dia_chi');
             $table->string('ho_ten');
             $table->string('anh_dai_dien');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }
