@@ -63,10 +63,10 @@ Route::middleware("auth")->group(function () {
                 // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
         });
-        
+
         Route::prefix('nha-san-xuat')->group(function () {
-        Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route 
-            // Danh sach nhà sản xuất
+            Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route 
+                // Danh sach nhà sản xuất
                 Route::get('/', 'NhaSXController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
                 Route::get('/lay-nha-san-xuat', 'NhaSXController@getData')->name('lay-danh-sach');
                 Route::get('/create-nha-san-xuat', 'NhaSXController@create_page')->name('create');
@@ -85,7 +85,6 @@ Route::middleware("auth")->group(function () {
                 // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
         });
-
     });
 });
 

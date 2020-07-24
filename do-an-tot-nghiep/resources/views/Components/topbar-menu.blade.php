@@ -56,7 +56,7 @@
                     <a href="#"> <i class="la la-user"></i>Khách Hàng <div class="arrow-down"></div></a>
                     <ul class="submenu">
                         <li>
-                            <a href="#">Thêm Khách Hàng</a>
+                            <a href="{{ route('khach-hang.create') }}">Thêm Khách Hàng</a>
                         </li>
                         <li>
                             <a href="{{ route('khach-hang.danh-sach') }}">Danh Sách Khách Hàng</a>
