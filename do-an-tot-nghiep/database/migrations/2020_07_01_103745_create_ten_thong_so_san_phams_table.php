@@ -17,7 +17,7 @@ class CreateTenThongSoSanPhamsTable extends Migration
             $table->increments('id');
             $table->integer('san_pham_id');
             $table->integer('thong_so_id');
-            $table->integer('gia_tri');
+            $table->string('gia_tri');
             $table->integer('trang_thai');
             $table->timestamps();
         });
