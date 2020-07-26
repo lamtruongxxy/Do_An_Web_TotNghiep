@@ -59,7 +59,7 @@
                     <div class="custom-control custom-checkbox">
                     <input type="checkbox" value='{{ $loaiSP->trang_thai }}' class="custom-control-input" name="trang_thai"  id="customCheck1" @if ($loaiSP->trang_thai
                         === 1) {{ 'checked'}}@endif>
-                        <label class="custom-control-label" for="customCheck1">Trạng Thái</label>
+                        <label class="custom-control-label" for="customCheck1">Hiện</label>
                     </div><br />
                     <button type="sumit" class="btn btn-success waves-effect waves-light">
                         <span class="btn-label"><i class="mdi mdi-pen-minus"></i></span>Cập nhật

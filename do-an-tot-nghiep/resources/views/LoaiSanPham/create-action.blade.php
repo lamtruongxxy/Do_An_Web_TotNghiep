@@ -4,5 +4,6 @@
     <input type="hidden" name="id" value="{{ $data->id }}">
     <a href="{{ route('loai-san-pham.edit', ['id' => $data->id]) }}" class="btn btn-info waves-effect waves-light"><i
             class="far fa-edit"></i></a>
-    <button type="submit" class="btn btn-danger waves-effect waves-light delete-loai-sp"><i class="far fa-trash-alt"></i></a>
+    <button type="submit" class="btn btn-danger waves-effect waves-light delete-loai-sp" @if ($data->trang_thai
+        === 1) {{ 'disabled'}}@endif><i class="far fa-trash-alt"></i></a>
 </form>
