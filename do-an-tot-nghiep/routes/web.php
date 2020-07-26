@@ -47,7 +47,9 @@ Route::middleware("auth")->group(function () {
 
                 Route::get('/create', 'LoaiSPController@create_page')->name('create');
                 Route::post('/them-moi', 'LoaiSPController@store')->name('store');
-
+                Route::get('/edit/{id}', 'LoaiSPController@edit')->name('edit');
+                Route::put('/update/{id}', 'LoaiSPController@update')->name('update');
+                Route::delete('/delete', 'LoaiSPController@delete')->name('delete');
                 // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
         });

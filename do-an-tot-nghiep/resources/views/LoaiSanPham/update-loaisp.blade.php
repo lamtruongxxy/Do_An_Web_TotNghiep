@@ -11,7 +11,7 @@
 @endsection
 
 @section('js')
- <!-- third party js -->
+<!-- third party js -->
 <script src="{{ asset ('assets/libs/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.bootstrap4.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.responsive.min.js') }}"></script>
@@ -28,68 +28,43 @@
 <!-- third party js ends -->
 <!-- Datatables init -->
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
-<!-- truy van database -->
-<script>
-    $(document).ready(function() {
-        $('#product-table').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: "{{ route('loai-san-pham.lay-danh-sach') }}",
-            order: [],
-            columns: [{
-                data: 'id',
-                name:'ID Loại'
-            },{
-                data: 'ten_loai_sp',
-                name:'Tên loại sản phẩm'
-            }, {
-                data: 'ghi_chu',
-                name:'Ghi Chú'
-            }, {
-                data: 'trang_thai',
-                name:'Trạng thái'
-            }, {
-                data: 'action',
-                name: 'action'
-            }],
-            drawCallback: function() {
-                $(document).on('click', '.delete-loai-sp', function(e) {
-                    const confirm = window.confirm("Bạn có chắc muốn xóa ?");
-                    e.preventDefault();
-                    const th = $(this);
-                    if (confirm) {
-                        th.parent().submit();
-                    }
-                })
-            }
-        })
-    })
 
-</script>
 @endsection
 
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Components.errors');
         <div class="card">
             <div class="card-body">
-                <h4>Danh sách loại sản phẩm</h4>
-                <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
-                    <span class="btn-label"><i class="fe-plus-circle"></i>
-                    </span>Thêm mới</a>
-                <p></p>
-                <table id="product-table" class="table dt-responsive nowrap">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Loại sản phẩm</th>
-                            <th>Thông tin ghi chú</th>
-                            <th>Trạng thái</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </thead>
-                </table>
+                <h4>Cập Nhật Loại Sản Phẩm</h4>
+                <form action="{{ route('loai-san-pham.update', ['id' => $loaiSP->id]) }}" method="POST">
+                    @csrf
+                    @method("PUT")
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" class="form-control" disabled id="id" name="id" value="{{ $loaiSP->id }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="ten_loai_sp">Loại Sản Phẩm</label>
+                        <input type="text" class="form-control" id="ten_loai_sp" name="ten_loai_sp"
+                            value="{{$loaiSP->ten_loai_sp}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ghi_chu">Ghi Chú </label>
+                        <input type="text" class="form-control" id="ghi_chu" name="ghi_chu"
+                            value="{{$loaiSP->ghi_chu}}">
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" value='{{ $loaiSP->trang_thai }}' class="custom-control-input" name="trang_thai"  id="customCheck1" @if ($loaiSP->trang_thai
+                        === 1) {{ 'checked'}}@endif>
+                        <label class="custom-control-label" for="customCheck1">Trạng Thái</label>
+                    </div><br />
+                    <button type="sumit" class="btn btn-success waves-effect waves-light">
+                        <span class="btn-label"><i class="mdi mdi-pen-minus"></i></span>Cập nhật
+                    </button>
+                </form>
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->

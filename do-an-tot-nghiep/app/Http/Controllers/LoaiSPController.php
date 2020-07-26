@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoaiSanPhamRequest;
 use Carbon\Carbon;
 use App\LoaiSanPham;
+use App\SanPham;
 
 class LoaiSPController extends Controller
 {
@@ -19,16 +20,21 @@ class LoaiSPController extends Controller
     public function index()
     {
         $dsLoaiSanPham = LoaiSanPham::all(); // truy cập model lấy data danh sách
-        //dd($dsLoaiSanPham);
+        // dd($dsLoaiSanPham[1]->trang_thai_format);
         return view('LoaiSanPham/ds-loaisp', compact('dsLoaiSanPham'));
     }
     public function getData() // test load data
     {
         $dsLoaiSanPham = LoaiSanPham::all();  // truy cập model lấy data danh sách
-        return Datatables()->of($dsLoaiSanPham)->addColumn('action', function ($data) {
-            return view('LoaiSanPham.create-action', compact($data));
+        
+        return Datatables()->of($dsLoaiSanPham)
+            ->addColumn('action', function ($data) {
+            return view('LoaiSanPham.create-action', compact('data'));
         })
-            ->rawColumns(['action'])
+            ->addColumn('trang_thai', function ($data) {
+                return view("LoaiSanPham.trang-thai", compact('data'));
+            })
+            ->rawColumns(['action, trang_thai'])
             ->make(true);
     }
     /**
@@ -75,9 +81,10 @@ class LoaiSPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function aedit($id)
+    public function edit($id)
     {
-        //
+        $loaiSP = LoaiSanPham::findOrFail($id);
+        return view('LoaiSanPham/update-loaisp', compact('loaiSP'));
     }
 
     /**
@@ -89,7 +96,30 @@ class LoaiSPController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $exist = array_key_exists('trang_thai', $request->all());//kiem tra trang thai
+        $data = [
+            'ten_loai_sp' => $request->ten_loai_sp,
+            'ghi_chu'   => $request->ghi_chu,
+            'trang_thai'    => $exist
+        ];
+        $ketQua = LoaiSanPham::find($id)->update($data);
+        if ($ketQua) {
+            return redirect()->route('loai-san-pham.danh-sach')->with('msg', 'Cập nhật loại sản phẩm thành công');
+        }
+        return back()->withErrors('Cập nhật câu hỏi thất bại')->withInput();
+        // $trang_thai = $exist
+        // dd($data);
+    }
+    public function delete (Request $request)
+    {
+        $id = $request->id;
+        // dd($id);
+        $ketQua = LoaiSanPham::find($id)->delete();
+        $ketQuaXoaSanPham = SanPham::where('loai_san_pham_id', $id)->delete();
+        if ($ketQua) {
+            return redirect()->route('loai-san-pham.danh-sach')->with('msg', 'Xóa loại sản phẩm thành công');
+        }
+        return back()->withErrors('Cập nhật câu hỏi thất bại')->withInput();
     }
 
     /**

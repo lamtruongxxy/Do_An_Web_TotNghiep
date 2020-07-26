@@ -13,4 +13,8 @@ class LoaiSanPham extends Model
         'ghi_chu',
         'trang_thai'
     ];
+
+    public function getTrangThaiFormatAttribute() {
+        return $this->trang_thai ? "Hiện" : "Ẩn";
+    }
 }
