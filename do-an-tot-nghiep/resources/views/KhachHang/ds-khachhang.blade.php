@@ -11,7 +11,7 @@
 @endsection
 
 @section('js')
- <!-- third party js -->
+<!-- third party js -->
 <script src="{{ asset ('assets/libs/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.bootstrap4.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.responsive.min.js') }}"></script>
@@ -37,28 +37,24 @@
         order: [],
         columns: [{
             data: 'id',
-            name:'ID khách hàng'
-        },{
+            name: 'ID khách hàng'
+        }, {
             data: 'ten_khach_hang',
-            name:'Tên khách hàng'
+            name: 'Tên khách hàng'
         }, {
             data: 'dia_chi',
-            name:'Địa chỉ'
+            name: 'Địa chỉ'
         }, {
             data: 'sdt',
-            name:'SDT'
-        },  {
-            data: 'email',
-            name:'Email'
+            name: 'SDT'
         }, {
-            data: 'trang_thai',
-            name:'Trạng Thái'
+            data: 'email',
+            name: 'Email'
         }, {
             data: 'action',
             name: 'action'
         }]
     })
-
 </script>
 @endsection
 
@@ -67,6 +63,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
+            @include('Request.complete')
+            @include('Request.errors')
                 <h4>Danh sách khách hàng</h4>
                 <a href="{{ route('khach-hang.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
@@ -80,7 +78,6 @@
                             <th>Địa Chỉ</th>
                             <th>Số Điện Thoại</th>
                             <th>Email</th>
-                            <th>Trạng Thái</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
