@@ -16,11 +16,11 @@ class CreateDonHangsTable extends Migration
         Schema::create('don_hang', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('khach_hang_id');
-            $table->string('ten_nguoi_nhan');
-            $table->string('dia_chi_nguoi_nhan');
-            $table->string('sdt_nguoi_nhan');
+            // $table->string('ten_nguoi_nhan');
+            // $table->string('dia_chi_nguoi_nhan');
+            // $table->string('sdt_nguoi_nhan');
             $table->integer('tong_tien');
-            $table->boolean('trang_thai');
+            $table->integer('trang_thai');
             $table->timestamps();
         });
     }
