@@ -47,7 +47,7 @@
                             <a href="#">Thêm Đơn Hàng</a>
                         </li>
                         <li>
-                            <a href="#">Danh Sách Đơn Hàng</a>
+                            <a href="{{ route('don-hang.danh-sach') }}">Danh Sách Đơn Hàng</a>
                         </li>
                     </ul>
                 </li>

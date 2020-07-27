@@ -26,11 +26,11 @@ class LoaiSPController extends Controller
     public function getData() // test load data
     {
         $dsLoaiSanPham = LoaiSanPham::all();  // truy cập model lấy data danh sách
-        
+
         return Datatables()->of($dsLoaiSanPham)
             ->addColumn('action', function ($data) {
-            return view('LoaiSanPham.create-action', compact('data'));
-        })
+                return view('LoaiSanPham.create-action', compact('data'));
+            })
             ->addColumn('trang_thai', function ($data) {
                 return view("LoaiSanPham.trang-thai", compact('data'));
             })
@@ -96,7 +96,7 @@ class LoaiSPController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $exist = array_key_exists('trang_thai', $request->all());//kiem tra trang thai
+        $exist = array_key_exists('trang_thai', $request->all()); //kiem tra trang thai
         $data = [
             'ten_loai_sp' => $request->ten_loai_sp,
             'ghi_chu'   => $request->ghi_chu,
@@ -110,7 +110,7 @@ class LoaiSPController extends Controller
         // $trang_thai = $exist
         // dd($data);
     }
-    public function delete (Request $request)
+    public function delete(Request $request)
     {
         $id = $request->id;
         // dd($id);
@@ -131,7 +131,7 @@ class LoaiSPController extends Controller
     public function on_off($id)
     {
         $loaiSp = LoaiSanPham::find($id);
-        
+
         if ($loaiSp->trang_thai == 1) {
             $loaiSp->trang_thai = 0;
         } else if ($loaiSp->trang_thai == 0)

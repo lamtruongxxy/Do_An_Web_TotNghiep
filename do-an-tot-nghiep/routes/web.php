@@ -87,6 +87,14 @@ Route::middleware("auth")->group(function () {
                 // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
         });
+
+        Route::prefix('don-hang')->group(function () {
+            Route::name('don-hang.')->group(function () {
+                // Danh sach loai san pham
+                Route::get('/', 'DonHangController@index')->name('danh-sach');
+                Route::get('/lay-don-hang', 'DonHangController@getData')->name('lay-danh-sach');
+            });
+        });
     });
 });
 

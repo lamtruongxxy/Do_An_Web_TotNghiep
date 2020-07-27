@@ -13,4 +13,8 @@ class DonHang extends Model
         'tong_tien',
         'trang_thai'
     ];
+
+    public function khachHang() {
+        return $this->belongsTo('App\KhachHang');
+    }
 }
