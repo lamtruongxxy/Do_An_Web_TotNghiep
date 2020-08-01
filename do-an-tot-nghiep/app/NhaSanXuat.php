@@ -13,4 +13,7 @@ class NhaSanXuat extends Model
         'logo_nha_sx',
         'trang_thai'
     ];
+    public function getTrangThaiFormatAttribute() {
+        return $this->trang_thai ? "Hiện" : "Ẩn";
+    }
 }

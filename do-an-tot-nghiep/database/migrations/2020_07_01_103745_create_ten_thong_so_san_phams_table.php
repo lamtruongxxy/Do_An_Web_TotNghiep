@@ -29,6 +29,6 @@ class CreateTenThongSoSanPhamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ThongSoSP');
+        Schema::dropIfExists('chi_tiet_thong_so');
     }
 }

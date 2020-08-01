@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Carbon\Carbon;
 use App\NhaSanXuat;
+use App\SanPham;
 class NhaSXController extends Controller
 {
     /**
@@ -17,16 +18,21 @@ class NhaSXController extends Controller
     public function index()
     {
         $dsNhaSanXuat = NhaSanXuat::all();
+       // dd($dsNhaSanXuat[1]->trang_thai_format);
         return view('NhaSanXuat/ds-nsx', compact('dsNhaSanXuat'));
     }
 
     public function getData()
     {
         $dsNhaSanXuat = NhaSanXuat::all();
-        return Datatables()->of($dsNhaSanXuat)->addColumn('action', function($data) {
-            return view('NhaSanXuat.create-action', compact($data));
+        return Datatables()->of($dsNhaSanXuat)
+        ->addColumn('action', function($data){
+            return view('NhaSanXuat.create-action', compact('data'));
         })
-        ->rawColumns(['action'])
+        ->addColumn('trang_thai', function ($data) {
+            return view("NhaSanXuat.trang-thai", compact('data'));
+        })
+        ->rawColumns(['action, trang_thai'])
         ->make(true);
     }
     /**
@@ -69,7 +75,8 @@ class NhaSXController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nhaSanXuat = NhaSanXuat::findOrFail($id);
+        return view('NhaSanxuat/update-nsx', compact('nhaSanXuat'));
     }
 
     /**
@@ -81,9 +88,31 @@ class NhaSXController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $exist = array_key_exists('trang_thai', $request->all()); //kiem tra trang thai
+        $data = [
+            'ten_nha_sx' => $request->ten_nha_sx,
+            'logo_nha_sx'   => $request->logo_nha_sx,
+            'trang_thai'    => $exist
+        ];
+        $ketQua = NhaSanXuat::find($id)->update($data);
+        if ($ketQua) {
+            return redirect()->route('nha-san-xuat.danh-sach')->with('msg', 'Cập nhật nhà sản xuất thành công');
+        }
+        return back()->withErrors('Cập nhật nhà sản xuất thất bại')->withInput();
+        // $trang_thai = $exist
+        // dd($data);
     }
-
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        // dd($id);
+        $ketQua = NhaSanXuat::find($id)->delete();
+        $ketQuaXoaSanPham = SanPham::where('nha_san_xuat_id', $id)->delete();
+        if ($ketQua) {
+            return redirect()->route('nha-san-xuat.danh-sach')->with('msg', 'Xóa nhà sản xuất thành công');
+        }
+        return back()->withErrors('Cập nhật nhà sản xuất thất bại')->withInput();
+    }
     /**
      * Remove the specified resource from storage.
      *

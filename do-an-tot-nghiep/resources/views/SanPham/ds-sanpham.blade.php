@@ -74,6 +74,7 @@
 @section('main-content')
 <div class="row">
     <div class="col-12">
+        @include('Components.errors')
         <div class="card">
             <div class="card-body">
                 <h4>Danh sách sản phẩm</h4>

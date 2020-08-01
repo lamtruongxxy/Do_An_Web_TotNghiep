@@ -106,7 +106,7 @@ class LoaiSPController extends Controller
         if ($ketQua) {
             return redirect()->route('loai-san-pham.danh-sach')->with('msg', 'Cập nhật loại sản phẩm thành công');
         }
-        return back()->withErrors('Cập nhật câu hỏi thất bại')->withInput();
+        return back()->withErrors('Cập nhật loại sản phẩm thất bại')->withInput();
         // $trang_thai = $exist
         // dd($data);
     }
@@ -119,7 +119,7 @@ class LoaiSPController extends Controller
         if ($ketQua) {
             return redirect()->route('loai-san-pham.danh-sach')->with('msg', 'Xóa loại sản phẩm thành công');
         }
-        return back()->withErrors('Cập nhật câu hỏi thất bại')->withInput();
+        return back()->withErrors('Cập nhật loại sản phẩm thất bại')->withInput();
     }
 
     /**

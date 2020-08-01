@@ -29,6 +29,6 @@ class CreateThongSosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('TenThongSo');
+        Schema::dropIfExists('thong_so');
     }
 }
