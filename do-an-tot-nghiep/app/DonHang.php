@@ -11,6 +11,8 @@ class DonHang extends Model
     protected $fillable= [
         'khach_hang_id',
         'tong_tien',
+        'ghi_chu',
+        'hinh_thuc_thanh_toan',
         'trang_thai'
     ];
 

@@ -19,6 +19,7 @@ class CreateSanPhamsTable extends Migration
             $table->string('ten_sp');
             $table->text('mo_ta_sp');
             $table->integer('gia_sp');
+            $table->integer('gia_khuyen_mai');
             $table->integer('so_luong_ton_kho');
             $table->integer('loai_san_pham_id');
             $table->string('che_do_bao_hanh');

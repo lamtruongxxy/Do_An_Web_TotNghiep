@@ -20,6 +20,8 @@ class CreateDonHangsTable extends Migration
             // $table->string('dia_chi_nguoi_nhan');
             // $table->string('sdt_nguoi_nhan');
             $table->integer('tong_tien');
+            $table->string('ghi_chu');
+            $table->integer('hinh_thuc_thanh_toan');
             $table->integer('trang_thai');
             $table->timestamps();
         });

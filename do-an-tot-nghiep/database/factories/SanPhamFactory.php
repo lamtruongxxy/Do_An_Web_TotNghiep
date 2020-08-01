@@ -11,6 +11,7 @@ $factory->define(SanPham::class, function (Faker $faker) {
         'ten_sp'    => $faker->name,
         'mo_ta_sp'  => $faker->sentence,
         'gia_sp'    => rand(500, 10000),
+        'gia_khuyen_mai' =>rand(499, 9999),
         'so_luong_ton_kho'  => rand(10, 100),
         'loai_san_pham_id'  => App\LoaiSanPham::pluck('id')->random(),
         'che_do_bao_hanh'   => $faker->name,

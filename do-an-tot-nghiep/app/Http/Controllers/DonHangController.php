@@ -32,7 +32,10 @@ class DonHangController extends Controller
             ->addColumn('trang_thai', function ($data) {
                 return view("DonHang.trang-thai", compact('data'));
             })
-            ->rawColumns(['action, trang_thai'])
+            ->addColumn('hinh_thuc_thanh_toan', function ($data) {
+                return view("DonHang.hinh-thuc-thanh-toan", compact('data'));
+            })
+            ->rawColumns(['action, trang_thai','hinh_thuc_thanh_toan'])
             ->make(true);
     }
     /**

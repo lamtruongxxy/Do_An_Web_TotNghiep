@@ -38,19 +38,25 @@
             order: [],
             columns: [{
                 data: 'id',
-                name:'ID Loại'
-            },{
-                data: 'created_at',
-                name:'Ngày đặt'
+                name: 'ID Loại'
             }, {
-                data: 'khach_hang.ten_khach_hang', 
-                name:'Khách hàng'
+                data: 'created_at',
+                name: 'Ngày đặt'
+            }, {
+                data: 'khach_hang.ten_khach_hang',
+                name: 'Khách hàng'
             }, {
                 data: 'tong_tien',
-                name:'Tổng tiền'
+                name: 'Tổng tiền'
+            }, {
+                data: 'hinh_thuc_thanh_toan',
+                name: 'Hình thức thanh toán'
+            }, {
+                data: 'ghi_chu',
+                name: 'Ghi chú'
             }, {
                 data: 'trang_thai',
-                name:'Trạng thái'
+                name: 'Trạng thái'
             }, {
                 data: 'action',
                 name: 'action'
@@ -67,7 +73,6 @@
             // }
         })
     })
-
 </script>
 @endsection
 
@@ -89,6 +94,8 @@
                             <th>Ngày đặt</th>
                             <th>Khách hàng</th>
                             <th>Tổng tiền</th>
+                            <th>Thanh toán</th>
+                            <th>Ghi chú</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
@@ -99,6 +106,8 @@
                             <th>Ngày đặt</th>
                             <th>Khách hàng</th>
                             <th>Tổng tiền</th>
+                            <th>Thanh toán</th>
+                            <th>Ghi chú</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
