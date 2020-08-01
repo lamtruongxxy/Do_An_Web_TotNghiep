@@ -11,7 +11,7 @@
 @endsection
 
 @section('js')
- <!-- third party js -->
+<!-- third party js -->
 <script src="{{ asset ('assets/libs/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.bootstrap4.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.responsive.min.js') }}"></script>
@@ -30,7 +30,7 @@
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
 <!-- truy van database -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#product-table').DataTable({
             processing: true,
             serverSide: true,
@@ -38,22 +38,22 @@
             order: [],
             columns: [{
                 data: 'id',
-                name:'ID Loại'
-            },{
+                name: 'ID Loại'
+            }, {
                 data: 'ten_loai_sp',
-                name:'Tên loại sản phẩm'
+                name: 'Tên loại sản phẩm'
             }, {
                 data: 'ghi_chu',
-                name:'Ghi Chú'
+                name: 'Ghi Chú'
             }, {
                 data: 'trang_thai',
-                name:'Trạng thái'
+                name: 'Trạng thái'
             }, {
                 data: 'action',
                 name: 'action'
             }],
-            drawCallback: function() {
-                $(document).on('click', '.delete-loai-sp', function(e) {
+            drawCallback: function () {
+                $(document).on('click', '.delete-loai-sp', function (e) {
                     const confirm = window.confirm("Bạn có chắc muốn xóa?");
                     e.preventDefault();
                     const th = $(this);
@@ -89,6 +89,15 @@
                             <th>Hành động</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Loại sản phẩm</th>
+                            <th>Thông tin ghi chú</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div> <!-- end card body-->
         </div> <!-- end card -->
