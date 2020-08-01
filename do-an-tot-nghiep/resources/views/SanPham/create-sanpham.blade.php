@@ -20,18 +20,16 @@
             elImg: 1
         },
         methods: {
-            addElImgs: function () {
+            addElImgs: function() {
                 this.elImg += 1;
             }
         }
     });
-
 </script>
 @endsection
 @section('main-content')
 <div class="row">
     <div class="col-lg-12">
-
         <form action="{{ route('san-pham.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-row">
@@ -62,26 +60,22 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <!-- <label for="inputPassword4" class="col-form-label">Giá sản phẩm</label> -->
-                                        <input type="number" class="form-control" name="giasp"
-                                            placeholder="Giá sản phẩm">
+                                        <input type="number" class="form-control" name="giasp" placeholder="Giá sản phẩm">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <!-- <label for="inputPassword4" class="col-form-label">Giá khuyến mãi</label> -->
-                                        <input type="number" class="form-control" name="giasp"
-                                            placeholder="Giá Khuyến Mãi">
+                                        <input type="number" class="form-control" name="giasp" placeholder="Giá Khuyến Mãi">
                                     </div>
                                     <!-- </div>
                                                             <div class="form-row"> -->
                                     <div class="form-group col-md-12">
                                         <!-- <label for="inputEmail4" class="col-form-label">Số lượng</label> -->
-                                        <input type="number" class="form-control" name="soluongtonkho"
-                                            placeholder="Số lượng">
+                                        <input type="number" class="form-control" name="soluongtonkho" placeholder="Số lượng">
                                     </div>
-                                   
+
                                     <div class="form-group col-md-12">
                                         <!-- <label for="inputEmail4" class="col-form-label">Chế độ bảo hành</label> -->
-                                        <input type="text" class="form-control" name="chedobaohanh"
-                                            placeholder="Chế độ bảo hành">
+                                        <input type="text" class="form-control" name="chedobaohanh" placeholder="Chế độ bảo hành">
                                     </div>
                                 </div>
                             </div>
@@ -95,13 +89,10 @@
                                             <h4 class="mb-3 header-title">Thông số sản phẩm</h4>
                                             <div class="form-group col-md-12">
                                                 <!-- <label for="inputPassword4" class="col-form-label">Tên sản phẩm</label> -->
-                                                <input type="text" class="form-control" name="tensp"
-                                                    placeholder="Tên sản phẩm">
+                                                <input type="text" class="form-control" name="tensp" placeholder="Tên sản phẩm">
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <button type="button" v-on:click="addElImgs"
-                                                    class="btn btn-primary waves-effect waves-light"><i
-                                                        class="fe-check-square"></i> Thêm
+                                                <button type="button" v-on:click="addElImgs" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i> Thêm
                                                     thông số</button>
                                             </div>
                                         </div>
@@ -115,8 +106,7 @@
                                                 <!-- <label for="inputEmail4" class="col-form-label">Số lượng</label> -->
                                                 <div class="input-group">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input"
-                                                            id="inputGroupFile04" name="sp_hinh_anh[]">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile04" name="sp_hinh_anh[]">
                                                         <label class="custom-file-label" for="inputGroupFile04">Choose
                                                             file</label>
                                                     </div>
@@ -124,9 +114,7 @@
                                                 {{-- <input type="file" class="custom-file-input" name="sp_hinh_anh[]"> --}}
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <button type="button" v-on:click="addElImgs"
-                                                    class="btn btn-primary waves-effect waves-light"><i
-                                                        class="fe-check-square"></i> Thêm
+                                                <button type="button" v-on:click="addElImgs" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i> Thêm
                                                     hình ảnh</button>
                                             </div>
                                         </div>
@@ -157,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </form>
 
     </div> <!-- end card-->
@@ -227,8 +215,7 @@
     </div>
 </div>
 <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i> Thêm</button>
-<button type="button" v-on:click="addElImgs" class="btn btn-primary waves-effect waves-light"><i
-        class="fe-check-square"></i> Thêm
+<button type="button" v-on:click="addElImgs" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i> Thêm
     hình ảnh</button>
 </form>
 </div>

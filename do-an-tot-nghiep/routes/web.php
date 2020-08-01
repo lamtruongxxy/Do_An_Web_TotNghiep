@@ -88,7 +88,7 @@ Route::middleware("auth")->group(function () {
                 // Danh sach loai san pham
                 Route::get('/', 'DonHangController@index')->name('danh-sach');
                 Route::get('/lay-don-hang', 'DonHangController@getData')->name('lay-danh-sach');
-
+                Route::get('/chi-tiet/{id}', 'DonHangController@chiTietDonHang')->name('chi-tiet');
               
             });
         });
