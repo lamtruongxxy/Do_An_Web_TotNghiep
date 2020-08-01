@@ -81,6 +81,16 @@
                             <th>Hành động</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Địa Chỉ</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Email</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div> <!-- end card body-->
         </div> <!-- end card -->

@@ -29,7 +29,7 @@
                         <li>
                             <ul>
                                 <li>
-                                    <a href="#">Thêm Nhà Sản Xuất</a>
+                                    <a href="nha-san-xuat.create">Thêm Nhà Sản Xuất</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('nha-san-xuat.danh-sach') }}">Danh Sách Nhà Sản Xuất</a>

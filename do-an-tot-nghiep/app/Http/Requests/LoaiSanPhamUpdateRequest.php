@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoaiSanPhamRequest extends FormRequest
+class LoaiSanPhamUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,7 +33,8 @@ class LoaiSanPhamRequest extends FormRequest
         [
             'ten_loai_sp.required' => 'Tên loại sản phẩm bị trống',
             'ten_loai_sp.max' => 'Tên loại sản phẩm không được quá 50 ký tự',
-            'ten_loai_sp.unique' => 'Tên loại sản phẩm đã tồn tại', 
+            'ten_loai_sp.unique' => 'Tên loại sản phẩm đã tồn tại',
+            
         ];
     }
 }

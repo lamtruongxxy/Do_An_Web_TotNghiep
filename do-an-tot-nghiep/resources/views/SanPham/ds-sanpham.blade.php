@@ -97,6 +97,20 @@
                             <th>Hành động</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Mô tả sản phẩm</th>
+                            <th>Loại sản phẩm</th>
+                            <th>Nhà Sản Xuất</th>
+                            <th>Số lượng tồn kho</th>
+                            <th>Giá sản phẩm</th>
+                            <th>Trạng thái</th>
+                            <th>Chế độ bảo hành</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div> <!-- end card body-->
         </div> <!-- end card -->

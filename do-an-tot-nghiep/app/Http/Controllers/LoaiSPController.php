@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\LoaiSanPhamUpdateRequest;
 use App\Http\Requests\LoaiSanPhamRequest;
 use Carbon\Carbon;
 use App\LoaiSanPham;
@@ -94,7 +94,7 @@ class LoaiSPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LoaiSanPhamUpdateRequest $request, $id)
     {
         $exist = array_key_exists('trang_thai', $request->all()); //kiem tra trang thai
         $data = [
