@@ -84,7 +84,19 @@ Route::middleware("auth")->group(function () {
                 Route::get('/create', 'KhachHangController@create_page')->name('create');
                 Route::post('/them-moi', 'KhachHangController@store')->name('store');
 
-                // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
+                Route::get('/edit/{id}', 'KhachHangController@edit')->name('edit');
+                Route::put('/update/{id}', 'KhachHangController@update')->name('update');
+                // Route::delete('/delete', 'LoaiSPController@delete')->name('delete');
+            });
+        });
+
+        Route::prefix('don-hang')->group(function () {
+            Route::name('don-hang.')->group(function () {
+                // Danh sach loai san pham
+                Route::get('/', 'DonHangController@index')->name('danh-sach');
+                Route::get('/lay-don-hang', 'DonHangController@getData')->name('lay-danh-sach');
+
+              
             });
         });
     });

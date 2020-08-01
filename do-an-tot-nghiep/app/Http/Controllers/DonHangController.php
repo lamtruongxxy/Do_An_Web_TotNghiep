@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\DonHang;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\KhachHang;
 
-class HoaDonController extends Controller
+class DonHangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +16,25 @@ class HoaDonController extends Controller
      */
     public function index()
     {
-        //
+        $dsDonHang = DonHang::with('khachHang')->get();
+        $dsKhachHang = KhachHang::all();
+        return view('DonHang.ds-donhang', compact('dsKhachHang'));
     }
 
+    public function getData()
+    {
+        $dsDonHang = DonHang::with('khachHang')->get();
+
+        return Datatables()->of($dsDonHang)
+            ->addColumn('action', function ($data) {
+                return view('DonHang.create-action', compact('data'));
+            })
+            ->addColumn('trang_thai', function ($data) {
+                return view("DonHang.trang-thai", compact('data'));
+            })
+            ->rawColumns(['action, trang_thai'])
+            ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *

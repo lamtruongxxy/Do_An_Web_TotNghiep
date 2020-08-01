@@ -30,57 +30,79 @@
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
 <!-- truy van database -->
 <script>
-    $('#customers-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('khach-hang.lay-danh-sach') }}",
-        order: [],
-        columns: [{
-            data: 'id',
-            name: 'ID khách hàng'
-        }, {
-            data: 'ten_khach_hang',
-            name: 'Tên khách hàng'
-        }, {
-            data: 'dia_chi',
-            name: 'Địa chỉ'
-        }, {
-            data: 'sdt',
-            name: 'SDT'
-        }, {
-            data: 'email',
-            name: 'Email'
-        }, {
-            data: 'action',
-            name: 'action'
-        }]
+    $(document).ready(function() {
+        $('#product-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('don-hang.lay-danh-sach') }}",
+            order: [],
+            columns: [{
+                data: 'id',
+                name:'ID Loại'
+            },{
+                data: 'created_at',
+                name:'Ngày đặt'
+            }, {
+                data: 'khach_hang.ten_khach_hang', 
+                name:'Khách hàng'
+            }, {
+                data: 'tong_tien',
+                name:'Tổng tiền'
+            }, {
+                data: 'trang_thai',
+                name:'Trạng thái'
+            }, {
+                data: 'action',
+                name: 'action'
+            }],
+            // drawCallback: function() {
+            //     $(document).on('click', '.delete-loai-sp', function(e) {
+            //         const confirm = window.confirm("Bạn có chắc muốn xóa?");
+            //         e.preventDefault();
+            //         const th = $(this);
+            //         if (confirm) {
+            //             th.parent().submit();
+            //         }
+            //     })
+            // }
+        })
     })
+
 </script>
 @endsection
 
 @section('main-content')
 <div class="row">
     <div class="col-12">
+        @include('Components.errors')
         <div class="card">
             <div class="card-body">
-            @include('Request.complete')
-            @include('Request.errors')
-                <h4>Danh sách khách hàng</h4>
-                <a href="{{ route('khach-hang.create') }}" class="btn btn-primary waves-effect waves-light">
+                <h4>Danh sách đơn hàng</h4>
+                <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>
                 <p></p>
-                <table id="customers-table" class="table dt-responsive nowrap">
+                <table id="product-table" class="table dt-responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Tên Khách Hàng</th>
-                            <th>Địa Chỉ</th>
-                            <th>Số Điện Thoại</th>
-                            <th>Email</th>
+                            <th>Ngày đặt</th>
+                            <th>Khách hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ngày đặt</th>
+                            <th>Khách hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div> <!-- end card body-->
         </div> <!-- end card -->

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class KhachHangRequest extends FormRequest
+class KhachHangUpDateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,7 +27,7 @@ class KhachHangRequest extends FormRequest
             'ten_khach_hang' => 'required|string',
             'dia_chi' => 'required',
             'sdt' => 'required|numeric',
-            'email' => 'required|email|unique:khach_hang,email',
+            'email' => 'required|email',
         ];
     }
     public function messages()
@@ -44,7 +44,6 @@ class KhachHangRequest extends FormRequest
 
             'email.required' => 'Email bị bỏ trống',
             'email.email' => 'Email không hợp lệ',
-            'email.unique' => 'Email đã tồn tại',
         ];
     }
 }

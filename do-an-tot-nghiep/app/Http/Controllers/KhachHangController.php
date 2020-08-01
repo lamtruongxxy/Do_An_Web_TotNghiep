@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\KhachHangRequest;
+use App\Http\Requests\KhachHangUpDateRequest;
 use Carbon\Carbon;
 use App\KhachHang;
 class KhachHangController extends Controller
@@ -24,7 +25,7 @@ class KhachHangController extends Controller
     {
         $dsKhachHang = KhachHang::all();
         return Datatables()->of($dsKhachHang)->addColumn('action', function($data) {
-            return view('KhachHang.create-action', compact($data));
+            return view('KhachHang.create-action', compact('data'));
         })
         ->rawColumns(['action'])
         ->make(true);
@@ -74,7 +75,8 @@ class KhachHangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $khachHang = KhachHang::findOrFail($id);
+        return view('KhachHang/update-khachhang', compact('khachHang'));
     }
 
     /**
@@ -84,9 +86,19 @@ class KhachHangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(KhachHangUpDateRequest $request, $id)
+    {  
+        $data = [
+            'ten_khach_hang' => $request->ten_khach_hang,
+            'dia_chi'   => $request->dia_chi,
+            'sdt' => $request->sdt,
+            'email'   => $request->email,
+        ];
+        $ketQua = KhachHang::find($id)->update($data);
+        if ($ketQua) {
+            return redirect()->route('khach-hang.danh-sach')->with('thong-bao', 'Cập nhật thông tin khách hàng thành công');
+        }
+        return back()->withErrors('Cập nhật thất bại');
     }
 
     /**
