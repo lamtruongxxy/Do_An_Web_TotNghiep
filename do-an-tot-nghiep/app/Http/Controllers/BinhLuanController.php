@@ -101,6 +101,16 @@ class BinhLuanController extends Controller
         return back()->withErrors('Cập nhật bình luận thất bại')->withInput();
     }
 
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        //dd($id);
+        $ketQua = BinhLuan::find($id)->delete();
+        if ($ketQua) {
+            return redirect()->route('binh-luan.danh-sach')->with('msg', 'Xóa bình luận thành công');
+        }
+        return back()->withErrors('Cập nhật bình luận thất bại')->withInput();
+    }
     /**
      * Remove the specified resource from storage.
      *

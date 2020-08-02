@@ -90,6 +90,7 @@ Route::middleware("auth")->group(function () {
 
                 Route::get('/edit/{id}', 'BinhLuanController@edit')->name('edit');
                 Route::put('/update/{id}', 'BinhLuanController@update')->name('update');
+                Route::delete('/delete', 'BinhLuanController@delete')->name('delete');
             });
         });
 
