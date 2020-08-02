@@ -37,6 +37,8 @@ Route::middleware("auth")->group(function () {
                 Route::get('/lay-san-pham', 'SanPhamController@getData')->name('lay-danh-sach');
                 Route::get('/create-san-pham', 'SanPhamController@create_page')->name('create');
                 Route::post('/create-san-pham', 'SanPhamController@store')->name('store');
+
+                Route::get('/lay-thong-so', 'SanPhamController@getThongSo')->name('get-thong-so');
             });
         });
         Route::prefix('loai-san-pham')->group(function () {
@@ -50,12 +52,13 @@ Route::middleware("auth")->group(function () {
                 Route::get('/edit/{id}', 'LoaiSPController@edit')->name('edit');
                 Route::put('/update/{id}', 'LoaiSPController@update')->name('update');
                 Route::delete('/delete', 'LoaiSPController@delete')->name('delete');
+
                 // Route::post('/trang-thai/{id}','LoaiSPController@on_off')->name('on-off');
             });
         });
 
         Route::prefix('nha-san-xuat')->group(function () {
-            Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route 
+            Route::name('nha-san-xuat.')->group(function () { // đặt tên cho đường dẫn route
                 // Danh sach nhà sản xuất
                 Route::get('/', 'NhaSXController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
                 Route::get('/lay-nha-san-xuat', 'NhaSXController@getData')->name('lay-danh-sach');
@@ -100,7 +103,7 @@ Route::middleware("auth")->group(function () {
                 Route::get('/', 'DonHangController@index')->name('danh-sach');
                 Route::get('/lay-don-hang', 'DonHangController@getData')->name('lay-danh-sach');
                 Route::get('/chi-tiet/{id}', 'DonHangController@chiTietDonHang')->name('chi-tiet');
-              
+
 
                 Route::delete('/delete', 'DonHangController@delete')->name('delete');
             });
@@ -134,7 +137,7 @@ Route::prefix('user')->group(function () {
 
 
 Route::prefix('hinh-anh')->group(function () {
-    Route::name('hinh-anh.')->group(function () { // đặt tên cho đường dẫn route 
+    Route::name('hinh-anh.')->group(function () { // đặt tên cho đường dẫn route
         // Danh sach nhà sản xuất
         Route::get('/danh-sach', 'HinhAnhController@index')->name('danh-sach'); //name dùng để đặt tên và gọi cho cái đường link controller vd:nha-san-xuat.danhsach
         Route::get('/create-hinh-anh', 'HinhAnhController@create_page')->name('create');

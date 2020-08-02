@@ -14,7 +14,7 @@ class CreateThongSosTable extends Migration
     public function up()
     {
         Schema::create('thong_so', function (Blueprint $table) {
-            $table->string('id');
+            $table->increments('id');
             $table->string('ten_thong_so');
             $table->string('don_vi');
             $table->boolean('trang_thai');
