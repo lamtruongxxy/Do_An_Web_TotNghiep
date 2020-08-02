@@ -82,7 +82,7 @@
         @include('Components.errors')
         <div class="card">
             <div class="card-body">
-                <h4>Danh sách đơn hàng</h4>
+                <h4>Danh Sách Đơn Hàng</h4>
                 <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>

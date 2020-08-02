@@ -65,7 +65,7 @@
             <div class="card-body">
             @include('Request.complete')
             @include('Request.errors')
-                <h4>Danh sách khách hàng</h4>
+                <h4>Danh Sách Khách Hàng</h4>
                 <a href="{{ route('khach-hang.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>

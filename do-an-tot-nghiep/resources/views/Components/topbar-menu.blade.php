@@ -30,7 +30,7 @@
                         <li>
                             <ul>
                                 <li>
-                                    <a href="nha-san-xuat.create">Thêm Nhà Sản Xuất</a>
+                                    <a href="{{ route('nha-san-xuat.create') }}">Thêm Nhà Sản Xuất</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('nha-san-xuat.danh-sach') }}">Danh Sách Nhà Sản Xuất</a>
@@ -66,7 +66,7 @@
 
 
                 <li class="has-submenu">
-                    <a href="#"> <i class="la la-comments"></i>Quản Lý Bình Luận</a>
+                    <a href="{{ route('binh-luan.danh-sach') }}"> <i class="la la-comments"></i>Quản Lý Bình Luận</a>
                     {{-- <ul class="submenu">
                         <li>
                             <ul>

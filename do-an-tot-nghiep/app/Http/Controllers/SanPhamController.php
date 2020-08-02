@@ -30,7 +30,7 @@ class SanPhamController extends Controller
         $dsSanPham = SanPham::with('loaiSanPham','nhaSanXuat')->get();
         //$dsSanPham = SanPham::with('nhaSanXuat')->get();
         return Datatables()->of($dsSanPham)->addColumn('action', function($data) {
-            return view('SanPham.create-action', compact($data));
+            return view('SanPham.create-action', compact('data'));
         })
         ->rawColumns(['action'])
         ->make(true);

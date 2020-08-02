@@ -30,70 +30,73 @@
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
 <!-- truy van database -->
 <script>
-    $(document).ready(function () {
-        $('#product-table').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: "{{ route('loai-san-pham.lay-danh-sach') }}",
-            order: [],
-            columns: [{
-                data: 'id',
-                name: 'ID Loại'
-            }, {
-                data: 'ten_loai_sp',
-                name: 'Tên loại sản phẩm'
-            }, {
-                data: 'ghi_chu',
-                name: 'Ghi Chú'
-            }, {
-                data: 'trang_thai',
-                name: 'Trạng thái'
-            }, {
-                data: 'action',
-                name: 'action'
-            }],
-            drawCallback: function () {
-                $(document).on('click', '.delete-loai-sp', function (e) {
-                    const confirm = window.confirm("Bạn có chắc muốn xóa?");
-                    e.preventDefault();
-                    const th = $(this);
-                    if (confirm) {
-                        th.parent().submit();
-                    }
-                })
-            }
-        })
+    $('#comment-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('binh-luan.lay-danh-sach') }}",
+        order: [],
+        columns: [{
+            data: 'id',
+            name: 'ID Bình Luận'
+        }, {
+            data: 'san_pham_id',
+            name: 'Sản Phẩm ID'
+        }, {
+            data: 'san_pham.ten_sp',
+            name: 'Tên Sản Phẩm'
+        },  {
+            data: 'nguoi_binh_luan',
+            name: 'Người Bình Luận'
+        }, {
+            data: 'noi_dung_bl',
+            name: 'Nội Dung'
+        }, {
+            data: 'sdt_nguoi_bl',
+            name: 'SDT Người Bình Luận'
+        }, {
+            data: 'created_at',
+            name: 'Ngày Bình Luận'
+        }, {
+            data: 'trang_thai',
+            name: 'Trạng Thái'
+        }, {
+            data: 'action',
+            name: 'action'
+        }]
     })
-
 </script>
 @endsection
 
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
         <div class="card">
             <div class="card-body">
-                <h4>Danh Sách Loại Sản Phẩm</h4>
-                <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
-                    <span class="btn-label"><i class="fe-plus-circle"></i>
-                    </span>Thêm mới</a>
+            @include('Request.complete')
+            @include('Request.errors')
+                <h4>Danh Sách Bình Luận</h4>
                 <p></p>
-                <table id="product-table" class="table dt-responsive nowrap">
+                <table id="comment-table" class="table dt-responsive nowrap">
                     <thead>
-                        <tr>
                             <th>ID</th>
-                            <th>Loại sản phẩm</th>
-                            <th>Thông tin ghi chú</th>
+                            <th>Sản Phẩm ID</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Người Bình Luận</th>
+                            <th>Nội Dung Bình Luận</th>
+                            <th>SDT</th>
+                            <th>Ngày Bình Luận</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
-                        </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Loại sản phẩm</th>
-                            <th>Thông tin ghi chú</th>
+                            <th>Sản Phẩm ID</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Người Bình Luận</th>
+                            <th>Nội Dung Bình Luận</th>
+                            <th>SDT</th>
+                            <th>Ngày Bình Luận</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>

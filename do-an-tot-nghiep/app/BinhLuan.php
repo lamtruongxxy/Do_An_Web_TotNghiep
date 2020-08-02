@@ -19,4 +19,7 @@ class BinhLuan extends Model
     public function sanPham() {
         return $this->belongsTo('App\SanPham');
     }
+    public function getTrangThaiFormatAttribute() {
+        return $this->trang_thai ? "Hiện" : "Ẩn";
+    }
 }

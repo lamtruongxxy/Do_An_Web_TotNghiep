@@ -70,7 +70,7 @@ Route::middleware("auth")->group(function () {
 
         Route::prefix('khach-hang')->group(function () {
             Route::name('khach-hang.')->group(function () {
-                // Danh sach loai san pham
+                // Danh sach khachhang
                 Route::get('/', 'KhachHangController@index')->name('danh-sach');
                 Route::get('/lay-khach-hang', 'KhachHangController@getData')->name('lay-danh-sach');
 
@@ -80,6 +80,16 @@ Route::middleware("auth")->group(function () {
                 Route::get('/edit/{id}', 'KhachHangController@edit')->name('edit');
                 Route::put('/update/{id}', 'KhachHangController@update')->name('update');
                 // Route::delete('/delete', 'LoaiSPController@delete')->name('delete');
+            });
+        });
+        Route::prefix('binh-luan')->group(function () {
+            Route::name('binh-luan.')->group(function () {
+                // Danh sach binh luan
+                Route::get('/', 'BinhLuanController@index')->name('danh-sach');
+                Route::get('/lay-binh-luan', 'BinhLuanController@getData')->name('lay-danh-sach');
+
+                Route::get('/edit/{id}', 'BinhLuanController@edit')->name('edit');
+                Route::put('/update/{id}', 'BinhLuanController@update')->name('update');
             });
         });
 

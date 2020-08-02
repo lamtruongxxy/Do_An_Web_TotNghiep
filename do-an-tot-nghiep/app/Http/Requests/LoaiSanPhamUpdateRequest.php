@@ -24,7 +24,7 @@ class LoaiSanPhamUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_loai_sp' => 'required|max:50|unique:loai_san_pham,ten_loai_sp',
+            'ten_loai_sp' => 'required|max:50',
         ];
     }
     public function messages()
@@ -33,8 +33,6 @@ class LoaiSanPhamUpdateRequest extends FormRequest
         [
             'ten_loai_sp.required' => 'Tên loại sản phẩm bị trống',
             'ten_loai_sp.max' => 'Tên loại sản phẩm không được quá 50 ký tự',
-            'ten_loai_sp.unique' => 'Tên loại sản phẩm đã tồn tại',
-            
         ];
     }
 }

@@ -77,7 +77,7 @@
         @include('Components.errors')
         <div class="card">
             <div class="card-body">
-                <h4>Danh sách sản phẩm</h4>
+                <h4>Danh Sách Sản phẩm</h4>
                 <a href="{{ route('san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>
