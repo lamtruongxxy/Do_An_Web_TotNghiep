@@ -8,7 +8,7 @@
                         <i class="la la-dashboard"></i>Dashboard</a>
                 </li>
                 <li class="has-submenu">
-                    <a href="#">
+                    <a href="{{ route('san-pham.danh-sach') }}">
                         <!-- <i class="la la-dashboard"></i>San pham <div class="arrow-down"></div></a> -->
                         <i class="la la-list-ul"></i>Sản Phẩm <div class="arrow-down"></div></a>
                     <ul class="submenu">
@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="#"> <i class="la la-briefcase"></i>Nhà Sản Xuất<div class="arrow-down"></div></a>
+                    <a href="{{ route('nha-san-xuat.danh-sach') }}"> <i class="la la-briefcase"></i>Nhà Sản Xuất<div class="arrow-down"></div></a>
                     <ul class="submenu">
                         <li>
                             <ul>
@@ -40,7 +40,7 @@
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="#">
+                    <a href="{{ route('don-hang.danh-sach') }}">
                         <i class="la la-cube"></i>Đơn Hàng<div class="arrow-down"></div></a>
                     <ul class="submenu">
                         <li>
@@ -52,7 +52,7 @@
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="#"> <i class="la la-user"></i>Khách Hàng <div class="arrow-down"></div></a>
+                    <a href="{{ route('khach-hang.danh-sach') }}"> <i class="la la-user"></i>Khách Hàng <div class="arrow-down"></div></a>
                     <ul class="submenu">
                         <li>
                             <a href="{{ route('khach-hang.create') }}">Thêm Khách Hàng</a>
@@ -67,37 +67,8 @@
 
                 <li class="has-submenu">
                     <a href="{{ route('binh-luan.danh-sach') }}"> <i class="la la-comments"></i>Quản Lý Bình Luận</a>
-                    {{-- <ul class="submenu">
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="#">Quản Lý Bình Luận</a>
-                                </li>
-                                <li>
-                                    <a href="#">Danh Sách Đánh Giá</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul> --}}
                 </li>
-                {{-- <li class="has-submenu">
-                    <a href="#"> <i class="la la-align-left"></i>Nội Dung<div class="arrow-down"></div></a>
-                    <ul class="submenu">
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="#">Giới Thiệu</a>
-                                </li>
-                                <li>
-                                    <a href="#">Quảng cáo</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hỗ Trợ Trực Tuyến</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> --}}
+               
             </ul>
             <!-- End navigation menu -->
             <div class="clearfix"></div>

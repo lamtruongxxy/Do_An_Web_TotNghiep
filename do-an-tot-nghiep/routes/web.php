@@ -101,6 +101,8 @@ Route::middleware("auth")->group(function () {
                 Route::get('/lay-don-hang', 'DonHangController@getData')->name('lay-danh-sach');
                 Route::get('/chi-tiet/{id}', 'DonHangController@chiTietDonHang')->name('chi-tiet');
               
+
+                Route::delete('/delete', 'DonHangController@delete')->name('delete');
             });
         });
     });

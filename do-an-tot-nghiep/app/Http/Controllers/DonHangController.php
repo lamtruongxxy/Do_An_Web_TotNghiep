@@ -6,7 +6,7 @@ use App\DonHang;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\KhachHang;
-
+use App\ChiTietDonHang;
 class DonHangController extends Controller
 {
     /**
@@ -97,7 +97,17 @@ class DonHangController extends Controller
     {
         //
     }
-
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        // dd($id);
+        $ketQua = DonHang::find($id)->delete();
+        $ketQuaXoaCTDH = ChiTietDonHang::where('don_hang_id', $id)->delete();
+        if ($ketQua) {
+            return redirect()->route('don-hang.danh-sach')->with('msg', 'Xóa đơn hàng thành công');
+        }
+        return back()->withErrors('Xóa đơn hàng thất bại')->withInput();
+    }
     /**
      * Remove the specified resource from storage.
      *

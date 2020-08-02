@@ -61,16 +61,16 @@
                 data: 'action',
                 name: 'action'
             }],
-            // drawCallback: function() {
-            //     $(document).on('click', '.delete-loai-sp', function(e) {
-            //         const confirm = window.confirm("Bạn có chắc muốn xóa?");
-            //         e.preventDefault();
-            //         const th = $(this);
-            //         if (confirm) {
-            //             th.parent().submit();
-            //         }
-            //     })
-            // }
+            drawCallback: function() {
+                $(document).on('click', '.delete-don-hang', function(e) {
+                    const confirm = window.confirm("Bạn có chắc muốn xóa?");
+                    e.preventDefault();
+                    const th = $(this);
+                    if (confirm) {
+                        th.parent().submit();
+                    }
+                })
+            }
         })
     })
 </script>
