@@ -139,7 +139,6 @@
 </div>
 <div class="row">
     <div class="col-xl-12">
-
         <div class="card-box">
             <h4 class="header-title mb-3">Lịch sử đơn hàng hôm nay</h4>
             <div class="table-responsive">
@@ -178,6 +177,36 @@
 
                         </tr>
                         @endforeach
+                    </tbody>
+                </table>
+            </div> <!-- end table-responsive -->
+        </div> <!-- end card-box-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card-box">
+            <h4 class="header-title mb-3">Bình luận mới trong ngày</h4>
+            <div class="table-responsive">
+                <table class="table table-centered table-borderless table-hover table-nowrap mb-0" id="ls-mua-credit">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="border-top-0">ID</th>
+                            <th class="border-top-0">Sản phẩm</th>
+                            <th class="border-top-0">Người bình luận</th>
+                            <th class="border-top-0">Nội dung</th>
+                            <th class="border-top-0">Sđt</th>
+                            <th class="border-top-0">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div> <!-- end table-responsive -->
