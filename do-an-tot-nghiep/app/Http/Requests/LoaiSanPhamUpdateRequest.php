@@ -25,6 +25,7 @@ class LoaiSanPhamUpdateRequest extends FormRequest
     {
         return [
             'ten_loai_sp' => 'required|max:50',
+            'ghi_chu' =>'required'
         ];
     }
     public function messages()
@@ -33,6 +34,7 @@ class LoaiSanPhamUpdateRequest extends FormRequest
         [
             'ten_loai_sp.required' => 'Tên loại sản phẩm bị trống',
             'ten_loai_sp.max' => 'Tên loại sản phẩm không được quá 50 ký tự',
+            'ghi_chu.required' =>'Ghi chú bị trống'
         ];
     }
 }
