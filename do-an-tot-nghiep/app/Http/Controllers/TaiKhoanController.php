@@ -14,10 +14,7 @@ class TaiKhoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard()
-    {
-        return view('master-page');
-    }
+    
 
     public function admin_page()
     {

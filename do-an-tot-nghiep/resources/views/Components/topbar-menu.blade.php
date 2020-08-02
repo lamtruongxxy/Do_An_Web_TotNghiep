@@ -4,6 +4,11 @@
             <!-- Navigation Menu-->
             <ul class="navigation-menu">
                 <li class="has-submenu">
+                    <a href="{{ route('admin-dashboard') }}">
+                        <i class="la la-dashboard"></i>Dashboard<div class="arrow-down"></div>
+                    </a>
+                </li>
+                <li class="has-submenu">
                     <a href="#">
                         <!-- <i class="la la-dashboard"></i>San pham <div class="arrow-down"></div></a> -->
                         <i class="la la-list-ul"></i>Sản Phẩm <div class="arrow-down"></div></a>
@@ -17,12 +22,9 @@
                         <li>
                             <a href="{{ route('hinh-anh.danh-sach') }}">Hình ảnh</a>
                         </li>
-                        {{-- <li>
-                            <a href="{{ route('nha-san-xuat.danh-sach') }}">Nhà sản xuất</a>
-                        </li> --}}
+                        <!-- {{-- <li><a href="{{ route('nha-san-xuat.danh-sach') }}">Nhà sản xuất</a></li> --}} -->
                     </ul>
                 </li>
-
                 <li class="has-submenu">
                     <a href="#"> <i class="la la-briefcase"></i>Nhà Sản Xuất<div class="arrow-down"></div></a>
                     <ul class="submenu">
@@ -38,7 +40,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="has-submenu">
                     <a href="#">
                         <i class="la la-cube"></i>Đơn Hàng<div class="arrow-down"></div></a>
@@ -51,7 +52,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="has-submenu">
                     <a href="#"> <i class="la la-user"></i>Khách Hàng <div class="arrow-down"></div></a>
                     <ul class="submenu">
@@ -64,7 +64,7 @@
                     </ul>
                 </li>
 
-               
+
 
                 <li class="has-submenu">
                     <a href="#"> <i class="la la-comments"></i>Bình Luận | Đánh Giá<div class="arrow-down"></div></a>
