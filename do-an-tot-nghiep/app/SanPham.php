@@ -14,6 +14,7 @@ class SanPham extends Model
         'ten_sp',
         'mo_ta_sp',
         'gia_sp',
+        'gia_khuyen_mai',
         'so_luong_ton_kho',
         'loai_san_pham_id',
         'che_do_bao_hanh',

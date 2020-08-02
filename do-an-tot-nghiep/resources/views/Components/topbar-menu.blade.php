@@ -5,8 +5,7 @@
             <ul class="navigation-menu">
                 <li class="has-submenu">
                     <a href="{{ route('admin-dashboard') }}">
-                        <i class="la la-dashboard"></i>Dashboard<div class="arrow-down"></div>
-                    </a>
+                        <i class="la la-dashboard"></i>Dashboard</a>
                 </li>
                 <li class="has-submenu">
                     <a href="#">
@@ -67,8 +66,8 @@
 
 
                 <li class="has-submenu">
-                    <a href="#"> <i class="la la-comments"></i>Bình Luận | Đánh Giá<div class="arrow-down"></div></a>
-                    <ul class="submenu">
+                    <a href="#"> <i class="la la-comments"></i>Quản Lý Bình Luận</a>
+                    {{-- <ul class="submenu">
                         <li>
                             <ul>
                                 <li>
@@ -79,9 +78,9 @@
                                 </li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </li>
-                <li class="has-submenu">
+                {{-- <li class="has-submenu">
                     <a href="#"> <i class="la la-align-left"></i>Nội Dung<div class="arrow-down"></div></a>
                     <ul class="submenu">
                         <li>
@@ -98,7 +97,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
             <!-- End navigation menu -->
             <div class="clearfix"></div>

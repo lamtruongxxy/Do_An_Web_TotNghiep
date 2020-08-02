@@ -74,8 +74,8 @@
         <div class="card">
             <div class="card-body">
                 <h4>Nhà Sản Xuất</h4>
-                <a href="{{ route('nha-san-xuat.create') }}" class="btn btn-primary waves-effect waves-light"><i
-                        class="fe-plus-circle"></i>
+                <a href="{{ route('nha-san-xuat.create') }}" class="btn btn-primary waves-effect waves-light">
+                    <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>
                 <p></p>
                 <table id="product-table" class="table dt-responsive nowrap">

@@ -16,4 +16,7 @@ class BinhLuan extends Model
         'sdt_nguoi_bl',
         'trang_thai'
     ];
+    public function sanPham() {
+        return $this->belongsTo('App\SanPham');
+    }
 }
