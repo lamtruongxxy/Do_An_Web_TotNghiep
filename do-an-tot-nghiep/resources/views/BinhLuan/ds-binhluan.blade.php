@@ -40,9 +40,6 @@
                 data: 'id',
                 name: 'ID Bình Luận'
             }, {
-                data: 'san_pham_id',
-                name: 'Sản Phẩm ID'
-            }, {
                 data: 'san_pham.ten_sp',
                 name: 'Tên Sản Phẩm'
             }, {
@@ -90,8 +87,7 @@
                 <p></p>
                 <table id="comment-table" class="table dt-responsive nowrap">
                     <thead>
-                        <th>ID</th>
-                        <th>Sản Phẩm ID</th>
+                        <th>ID</th>      
                         <th>Tên Sản Phẩm</th>
                         <th>Người Bình Luận</th>
                         <th>Nội Dung Bình Luận</th>
@@ -103,7 +99,6 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Sản Phẩm ID</th>
                             <th>Tên Sản Phẩm</th>
                             <th>Người Bình Luận</th>
                             <th>Nội Dung Bình Luận</th>
