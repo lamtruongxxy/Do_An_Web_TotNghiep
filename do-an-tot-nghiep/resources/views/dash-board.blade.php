@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-6">
+    <div class="col-xl-5">
         <div class="card-box">
             <div class="row">
                 <div class="col-2">
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-6">
+    <div class="col-xl-7">
         <div class="card-box">
             <div class="row">
                 <div class="col-2">
