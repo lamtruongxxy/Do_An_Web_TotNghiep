@@ -76,11 +76,11 @@
                 </div>
                 <div class="col-9">
                     <div class="text-right">
-                        <h3 class="text-dark my-0"><span data-plugin="counterup">3000000</span></h3>
-                        <p class="text-muted mb-0 text-truncate">Bình luận</p>
+                        <h3 class="text-dark my-0"><span data-plugin="counterup">{{ $tongBinhLuan }}</span></h3>
+                        <p class="text-muted mb-0 text-truncate">Tổng bình luận</p>
                     </div>
                     <div class="text-right">
-                        <h3 class="text-dark my-0"><span data-plugin="counterup">499</span></h3>
+                        <h3 class="text-dark my-0"><span data-plugin="counterup">{{ $binhLuanBiAn }}</span></h3>
                         <p class="text-muted mb-0 text-truncate">Bình luận đã ẩn</p>
                     </div>
                 </div>
@@ -193,21 +193,24 @@
                         <tr>
                             <th class="border-top-0">ID</th>
                             <th class="border-top-0">Sản phẩm</th>
-                            <th class="border-top-0">Người bình luận</th>
                             <th class="border-top-0">Nội dung</th>
-                            <th class="border-top-0">Sđt</th>
                             <th class="border-top-0">Trạng thái</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($binhLuan as $bl)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $bl->id }}</td>
+                            <td>{{ $bl->sanPham->ten_sp }}</td>
+                            <td>{{ $bl->noi_dung_bl }}</td>
+                            @if ($bl->trang_thai === 0)
+                            <td><span class="badge badge-danger">Ẩn</span></td>
+                            @else
+                            <td><span class="badge badge-success">Hiện</span></td>
+                            @endif
                         </tr>
                     </tbody>
+                    @endforeach
                 </table>
             </div> <!-- end table-responsive -->
         </div> <!-- end card-box-->

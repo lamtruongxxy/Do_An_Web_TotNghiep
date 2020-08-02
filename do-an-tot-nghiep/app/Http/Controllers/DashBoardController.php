@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BinhLuan;
 use App\ChiTietDonHang;
 use App\DonHang;
 use App\KhachHang;
@@ -35,17 +36,14 @@ class DashBoardController extends Controller
         $tongKho = SanPham::sum('so_luong_ton_kho');
         // $tiLeSPDaBan = round( ( $tongSPDaBan / $tongKho *100) ,2 );
         // $tiLeSPConTrongKho = round((($tongKho - $tongSPDaBan) / $tongKho)*100,2);
-        $dsDonHang = DonHang::whereDate('created_at',Carbon::today())->get();
-        return view('dash-board',compact('tongKhachHang','doanhThu','donHangThanhCong','tiLeDonHangThanhCong',
-        'TongDonDang','tiLeDonChoXacNhan','tiLeDonDaXacNhan','tiLeDonDaDaHuy','tongSPDaBan','tongKho','tongSPDaBan','dsDonHang'));
 
-        // $tongLuotChoi = LuotChoi::whereDate('created_at', Carbon::today())->count();
-        // $doanhThu = LichSuMuaCredit::join('goi_credit', 'lich_su_mua_credit.goi_credit_id', '=', 'goi_credit.id')
-        //                 ->whereDate('lich_su_mua_credit.created_at', Carbon::today())
-        //                 ->sum('goi_credit.so_tien');
-        // $doanhThu = FormatPrice::VND($doanhThu);
-        // $lsMuaCredit = LichSuMuaCredit::whereDate('created_at', Carbon::today())->orderBy('created_at', 'desc')->get();
-        // $lsLuotChoi = LuotChoi::whereDate('created_at', Carbon::today())->get();
-        // return view('index', compact('tongNguoiChoi', 'tongLuotChoi', 'doanhThu', 'lsMuaCredit', 'lsLuotChoi'));
+        $dsDonHang = DonHang::whereDate('created_at',Carbon::today())->get();
+        $binhLuan = BinhLuan::whereDate('created_at',Carbon::today())->get();
+        $tongBinhLuan = BinhLuan::count();
+        $binhLuanBiAn = BinhLuan::where('trang_thai',0)->count();
+
+        return view('dash-board',compact('tongKhachHang','doanhThu','donHangThanhCong','tiLeDonHangThanhCong',
+        'TongDonDang','tiLeDonChoXacNhan','tiLeDonDaXacNhan','tiLeDonDaDaHuy','tongSPDaBan','tongKho','tongSPDaBan','dsDonHang',
+        'binhLuan','tongBinhLuan','binhLuanBiAn'));
     }
 }
