@@ -50,13 +50,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card col-md-3">
-                                <div class="card-body">
-                                    <div class="form-group col-md-12">
-                                        <a href="{{ route('don-hang.danh-sach') }}" class="btn btn-primary waves-effect waves-light"><i class="fas fa-fast-backward"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-md-5">
                             <div class="form-row">
