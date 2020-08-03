@@ -19,4 +19,9 @@ class DonHang extends Model
     public function khachHang() {
         return $this->belongsTo('App\KhachHang');
     }
+
+    public function chiTietDonHang()
+    {
+        return $this->belongsTo('App\ChiTietDonHang','id');
+    }
 }

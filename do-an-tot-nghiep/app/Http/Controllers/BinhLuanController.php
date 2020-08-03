@@ -77,7 +77,7 @@ class BinhLuanController extends Controller
     {
         $dsbinhLuan = BinhLuan::findOrFail($id);
         //$dsbinhLuan = BinhLuan::findOrFail($id);
-        //dd($dsbinhLuan);
+        // dd($dsbinhLuan);
         return view('BinhLuan/view-detail-binhluan', compact('dsbinhLuan'));
     }
 

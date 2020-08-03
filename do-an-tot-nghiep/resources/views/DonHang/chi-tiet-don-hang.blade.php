@@ -12,10 +12,14 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="mb-1 header-title">Chi tiết hóa đơn</h4>
-                                    <div class="form-group col-md-12">
-                                        <!-- <label for="inputEmail4" class="col-form-label">Tên khách hàng</label> -->
-                                        <!-- <input type="text" class="form-control" name="chedobaohanh" placeholder="Chế độ bảo hành"> -->
+                                    <h4 class="mb-2 header-title">Chi tiết hóa đơn</h4>
+                                    
+                                    <div class="form-row col-md-12">
+                                        <p><strong>Sẩn phẩm :</strong>&nbsp;I PHONE 5</p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p><strong>Số lượng :</strong>&nbsp;x3</p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p><strong>Đơn giá :</strong>&nbsp;{{ $chiTietDonHang }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -23,7 +27,21 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-group col-md-12">
-                                            <label for="inputEmail4" class="col-form-label">Ghi chú đơn hàng </label>
+                                            <p><strong>Tổng tiền :</strong>&nbsp;<span class="btn btn-danger btn-rounded waves-effect waves-light" data-plugin="counterup">{{ $chiTiet->tong_tien }}</span>&nbsp;<strong>VNĐ</strong></p>
+                                            @if ($chiTiet->trang_thai === 0)
+                                            <strong>Phương thức thanh toán:</strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
+                                            @else
+                                            <strong>Phương thức thanh toán:</strong>&nbsp;<span class="badge badge-success">Tại cửa hàng</span></p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="form-group col-md-12">
+                                            <h4 class="mb-1 header-title">Ghi chú</h4>
                                             <input type="text" class="form-control" disabled id="ghi_chu" name="ghi_chu" value="{{ $chiTiet->ghi_chu }}">
                                         </div>
                                         <div class="form-group col-md-12">
@@ -73,20 +91,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="form-group col-md-12">
-                                                <p><strong>Tổng tiền :</strong>&nbsp;<span class="btn btn-danger btn-rounded waves-effect waves-light" data-plugin="counterup">{{ $chiTiet->tong_tien }}</span>&nbsp;<strong>VNĐ</strong></p>
-                                                @if ($chiTiet->trang_thai === 0)
-                                                <strong>Phương thức thanh toán:</strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
-                                                @else
-                                                <strong>Phương thức thanh toán:</strong>&nbsp;<span class="badge badge-success">Tại cửa hàng</span></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

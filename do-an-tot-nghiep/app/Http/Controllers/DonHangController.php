@@ -41,7 +41,10 @@ class DonHangController extends Controller
     public function chiTietDonHang($id)
     {
         $chiTiet = DonHang::findOrFail($id);
-        return view('DonHang.chi-tiet-don-hang', compact('chiTiet'));
+        $chiTietDonHang = ChiTietDonHang::with('sanPham')->where('don_hang_id',$id)->get();
+        // $chiTietDonHang = ChiTietDonHang::join('don_hang','chi_tiet_don_hang.don_hang_id' , '=', 'don_hang.id')
+        // ->where('chi_tiet_don_hang.don_hang_id',$id)->get();
+        return view('DonHang.chi-tiet-don-hang', compact('chiTiet','chiTietDonHang'));
     }
     /**
      * Show the form for creating a new resource.

@@ -15,4 +15,8 @@ class ChiTietDonHang extends Model
         'don_gia',
         'trang_thai'
     ];
+    public function sanPham()
+    {
+        return $this->belongsTo('App\SanPham');
+    }
 }

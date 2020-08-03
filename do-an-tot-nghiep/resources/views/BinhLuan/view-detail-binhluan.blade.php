@@ -60,4 +60,5 @@
 </div>
 <!-- end col -->
 </div>
+{{ $dsbinhLuan}}
 @endsection
