@@ -8,6 +8,9 @@ use Carbon\Carbon;
 use App\SanPham;
 use App\LoaiSanPham;
 use App\NhaSanXuat;
+use App\ThongSo;
+use App\HinhAnhSanPham;
+use App\ChiTietThongSo;
 class SanPhamController extends Controller
 {
     /**
@@ -36,14 +39,17 @@ class SanPhamController extends Controller
         ->make(true);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create_page()
     {
-        return view('SanPham/create-sanpham');
+        $dsNhaSanXuat = NhaSanXuat::all();
+        $dsLoaiSanPham = LoaiSanPham::all();
+        return view('SanPham/create-sanpham', compact('dsNhaSanXuat', 'dsLoaiSanPham'));
+    }
+
+    public function getThongSo()
+    {
+        $dsThongSo = ThongSo::all();
+        return response()->json($dsThongSo);
     }
 
     /**
@@ -54,25 +60,44 @@ class SanPhamController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->file('sp_hinh_anh'));
         $dsHinhAnh = $this->uploadHinh($request->file('sp_hinh_anh'));
         $sanPham = [
-            'ma_nha_sx' => $request->nha_sx,
+            'nha_san_xuat_id' => (int)$request->nha_san_xuat_id,
             'ten_sp' => $request->ten_sp,
-            'gia_sp'  => $request->gia_sp,
-            'so_luong_ton_kho' => $request->so_luong,
-            'loai_sp'   => $request->loai_sp,
-            'che_do_bao_hanh' => $request->che_do_bh,
+            'gia_sp'  => (int)$request->gia_sp,
+            'so_luong_ton_kho' => (int)$request->so_luong_ton_kho,
+            'loai_san_pham_id'   => (int)$request->loai_san_pham_id,
+            'che_do_bao_hanh' => $request->che_do_bao_hanh,
             'mo_ta_sp' => 'abc',
-            'trang_thai'    => 1
+            'trang_thai'    => 1,
+            'gia_khuyen_mai'    => (int)$request->gia_khuyen_mai
         ];
-        // $idSanPham = SanPham::create($sanPham);
-        // foreach($dsHinhAnh as $hinhAnh) {
-        //     HinhAnhSP::create([
-        //         'mahinhanh' => 
-        //     ]);
-        // }
-        
+        $sanPhamThem = SanPham::create($sanPham);
+        foreach($dsHinhAnh as $hinhAnh) {
+            HinhAnhSanPham::create([
+                'san_pham_id' => $sanPhamThem->id,
+                'duong_dan' => $hinhAnh,
+                'trang_thai'    => 1
+            ]);
+        }
+        if ($request->thong_so_values && sizeof($request->thong_so_values) > 0) {
+            $thongSoValues = array_values($request->thong_so_values);
+            $thongSoIds = array_values($request->thong_so_ids);
+            $dsThongSo = array_combine($thongSoIds, $thongSoValues);
+            foreach($dsThongSo as $idThongSo => $value) {
+                ChiTietThongSo::create([
+                    'san_pham_id'   => $sanPhamThem->id,
+                    'thong_so_id'   => $idThongSo,
+                    'gia_tri'       => $value,
+                    'trang_thai'    => 1
+                ]);
+            }
+        }
+        if ($sanPhamThem) {
+            return redirect()->route('san-pham.danh-sach')
+            ->with('msg', 'Thêm thành công');
+        }
+
     }
 
     public function uploadHinh(array $dsHinhAnh) : array
