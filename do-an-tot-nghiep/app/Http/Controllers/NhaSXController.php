@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\NhaSanXuatRequest;
+use App\Http\Requests\NhaSanXuatUpdateRequest;
 use Carbon\Carbon;
 use App\NhaSanXuat;
 use App\SanPham;
@@ -52,7 +53,7 @@ class NhaSXController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NhaSanXuatRequest $request)
     {
         $dataNhaSanXuat = [
             "ten_nha_sx" => $request->ten_nha_sx,
@@ -97,17 +98,17 @@ class NhaSXController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NhaSanXuatUpdateRequest $request, $id)
     {
         $exist = array_key_exists('trang_thai', $request->all()); //kiem tra trang thai
         $data = [
             'ten_nha_sx' => $request->ten_nha_sx,
-            'ghi_chu'   => $request->logo_nha_sx,
+            'ghi_chu'   => $request->ghi_chu,
             'trang_thai'    => $exist
         ];
         $ketQua = NhaSanXuat::find($id)->update($data);
         if ($ketQua) {
-            return redirect()->route('nha-san-xuat.danh-sach')->with('msg', 'Cập nhật nhà sản xuất thành công');
+            return redirect()->route('nha-san-xuat.danh-sach')->with('thong-bao', 'Cập nhật nhà sản xuất thành công');
         }
         return back()->withErrors('Cập nhật nhà sản xuất thất bại')->withInput();
         // $trang_thai = $exist

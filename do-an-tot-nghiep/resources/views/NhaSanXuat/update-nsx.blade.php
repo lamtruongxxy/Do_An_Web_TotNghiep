@@ -4,7 +4,7 @@
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Request.errors')
         <div class="card">
             <div class="card-body">
                 <h4>Cập Nhật Nhà Sản Xuất</h4>
@@ -23,7 +23,7 @@
 
                     <div class="form-group">
                         <label for="ghi_chu">Thông Tin Ghi Chú</label>
-                        <input type="text" class="form-control" id="ghi_chu" name="logo_nha_sx"
+                        <input type="text" class="form-control" id="ghi_chu" name="ghi_chu"
                             value="{{$nhaSanXuat->ghi_chu}}">
                     </div>
                     <div class="custom-control custom-checkbox">
