@@ -10,7 +10,7 @@ class NhaSanXuat extends Model
     
     protected $fillable = [
         'ten_nha_sx',
-        'logo_nha_sx',
+        'ghi_chu',
         'trang_thai'
     ];
     public function getTrangThaiFormatAttribute() {

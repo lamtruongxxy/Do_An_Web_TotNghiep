@@ -43,7 +43,7 @@
                 data: 'ten_nha_sx',
                 name: 'Tên nhà sản xuất'
             }, {
-                data: 'logo_nha_sx',
+                data: 'ghi_chu',
                 name: 'Logo nhà sản xuất'
             }, {
                 data: 'trang_thai',
@@ -83,7 +83,7 @@
                         <tr>
                             <th>Mã nhà sản xuất</th>
                             <th>Tên nhà sản xuất</th>
-                            <th>Logo NSX</th>
+                            <th>Thông Tin Ghi Chú</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
@@ -92,7 +92,7 @@
                         <tr>
                             <th>Mã nhà sản xuất</th>
                             <th>Tên nhà sản xuất</th>
-                            <th>Logo NSX</th>
+                            <th>Thông Tin Ghi Chú</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>

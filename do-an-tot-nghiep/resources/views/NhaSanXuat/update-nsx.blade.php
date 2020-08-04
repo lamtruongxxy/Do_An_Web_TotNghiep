@@ -22,9 +22,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="logo_nha_sx">Logo Nhà Sản Xuất</label>
-                        <input type="text" class="form-control" id="logo_nha_sx" name="logo_nha_sx"
-                            value="{{$nhaSanXuat->logo_nha_sx}}">
+                        <label for="ghi_chu">Thông Tin Ghi Chú</label>
+                        <input type="text" class="form-control" id="ghi_chu" name="logo_nha_sx"
+                            value="{{$nhaSanXuat->ghi_chu}}">
                     </div>
                     <div class="custom-control custom-checkbox">
                     <input type="checkbox" value='{{ $nhaSanXuat->trang_thai }}' class="custom-control-input" name="trang_thai"  id="customCheck1" @if ($nhaSanXuat->trang_thai

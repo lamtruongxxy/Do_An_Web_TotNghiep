@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(NhaSanXuat::class, function (Faker $faker) {
     return [
         'ten_nha_sx'    => $faker->name,
-        'logo_nha_sx'   => "http://lorempixel.com/200/200/",
+        'ghi_chu'   => "đay là thông tin ghi chú",
         'trang_thai'    => rand(0, 1)
     ];
 });

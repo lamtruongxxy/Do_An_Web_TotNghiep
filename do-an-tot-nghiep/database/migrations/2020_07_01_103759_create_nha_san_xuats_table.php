@@ -16,7 +16,7 @@ class CreateNhaSanXuatsTable extends Migration
         Schema::create('nha_san_xuat', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_nha_sx');
-            $table->string('logo_nha_sx');
+            $table->string('ghi_chu');
             $table->boolean('trang_thai');
             $table->timestamps();
         });

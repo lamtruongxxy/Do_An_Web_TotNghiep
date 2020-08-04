@@ -91,7 +91,7 @@ class NhaSXController extends Controller
         $exist = array_key_exists('trang_thai', $request->all()); //kiem tra trang thai
         $data = [
             'ten_nha_sx' => $request->ten_nha_sx,
-            'logo_nha_sx'   => $request->logo_nha_sx,
+            'ghi_chu'   => $request->logo_nha_sx,
             'trang_thai'    => $exist
         ];
         $ketQua = NhaSanXuat::find($id)->update($data);
