@@ -30,7 +30,7 @@
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
 <!-- truy van database -->
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#comment-table').DataTable({
             processing: true,
             serverSide: true,
@@ -61,8 +61,8 @@
                 data: 'action',
                 name: 'action'
             }],
-            drawCallback: function () {
-                $(document).on('click', '.delete-binhluan', function (e) {
+            drawCallback: function() {
+                $(document).on('click', '.delete-binhluan', function(e) {
                     const confirm = window.confirm("Bạn có chắc muốn xóa?");
                     e.preventDefault();
                     const th = $(this);
@@ -73,21 +73,21 @@
             }
         })
     })
-
 </script>
 @endsection
 
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Request.errors')
+        @include('Request.complete')
         <div class="card">
             <div class="card-body">
                 <h4>Danh Sách Bình Luận</h4>
                 <p></p>
                 <table id="comment-table" class="table dt-responsive nowrap">
                     <thead>
-                        <th>ID</th>      
+                        <th>ID</th>
                         <th>Tên Sản Phẩm</th>
                         <th>Người Bình Luận</th>
                         <th>Nội Dung Bình Luận</th>

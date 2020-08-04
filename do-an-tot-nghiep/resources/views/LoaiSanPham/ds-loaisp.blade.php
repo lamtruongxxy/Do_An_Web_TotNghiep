@@ -30,7 +30,7 @@
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
 <!-- truy van database -->
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#product-table').DataTable({
             processing: true,
             serverSide: true,
@@ -52,8 +52,8 @@
                 data: 'action',
                 name: 'action'
             }],
-            drawCallback: function () {
-                $(document).on('click', '.delete-loai-sp', function (e) {
+            drawCallback: function() {
+                $(document).on('click', '.delete-loai-sp', function(e) {
                     const confirm = window.confirm("Bạn có chắc muốn xóa?");
                     e.preventDefault();
                     const th = $(this);
@@ -64,14 +64,14 @@
             }
         })
     })
-
 </script>
 @endsection
 
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Request.errors')
+        @include('Request.complete')
         <div class="card">
             <div class="card-body">
                 <h4>Danh Sách Loại Sản Phẩm</h4>
