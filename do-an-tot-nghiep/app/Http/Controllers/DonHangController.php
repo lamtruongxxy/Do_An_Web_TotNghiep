@@ -53,7 +53,7 @@ class DonHangController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

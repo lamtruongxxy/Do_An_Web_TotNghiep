@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\ChiTietThongSo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ThongSoRequest;
+use App\Http\Requests\ThongSoUpdateRequest;
+use App\ThongSo;
 
 class ThongSoController extends Controller
 {
@@ -14,17 +18,27 @@ class ThongSoController extends Controller
      */
     public function index()
     {
-        //
+        return view('ThongSo.ds-thongso');
     }
 
+    public function getData() // test load data
+    {
+        $dsThongSo = ThongSo::all();  // truy cập model lấy data danh sách
+        return Datatables()->of($dsThongSo)
+            ->addColumn('action', function ($data) {
+                return view('ThongSo.create-action', compact('data'));
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_page()
     {
-        //
+        return view('ThongSo.create-thongso');
     }
 
     /**
@@ -33,9 +47,15 @@ class ThongSoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThongSoRequest $request)
     {
-        //
+        $loaiSp = new ThongSo();
+        $loaiSp->ten_thong_so = $request->ten_thong_so;
+        $loaiSp->don_vi = $request->don_vi;
+        $loaiSp->trang_thai = 1;
+        $loaiSp->save();
+        return redirect()->route('thong-so.create')
+            ->with('thong-bao', 'Thêm thông số thành công');
     }
 
     /**
@@ -48,7 +68,17 @@ class ThongSoController extends Controller
     {
         //
     }
-
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        // dd($id);
+        $ketQua = ThongSo::find($id)->delete();
+        $ketQuaChiTietThongSo = ChiTietThongSo::where('thong_so_id', $id)->delete();
+        if ($ketQua) {
+            return redirect()->route('thong-so.danh-sach')->with('thong-bao', 'Xóa thông số thành công');
+        }
+        return back()->withErrors('Cập nhật thông số thất bại')->withInput();
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -57,7 +87,8 @@ class ThongSoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $thongSo = ThongSo::findOrFail($id);
+        return view('ThongSo/update-thongso', compact('thongSo'));
     }
 
     /**
@@ -67,9 +98,19 @@ class ThongSoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ThongSoUpdateRequest $request, $id)
     {
-        //
+        $data = [
+            'ten_thong_so' => $request->ten_thong_so,
+            'don_vi'   => $request->don_vi,
+        ];
+        $ketQua = ThongSo::find($id)->update($data);
+        if ($ketQua) {
+            return redirect()->route('thong-so.danh-sach')->with('thong-bao', 'Cập nhật thông số thành công');
+        }
+        return back()->withErrors('Cập nhật thông số thất bại')->withInput();
+        // $trang_thai = $exist
+        // dd($data);
     }
 
     /**

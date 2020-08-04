@@ -107,6 +107,20 @@ Route::middleware("auth")->group(function () {
 
                 Route::delete('/delete', 'DonHangController@delete')->name('delete');
             });
+            Route::prefix('thong-so')->group(function () {
+                Route::name('thong-so.')->group(function () {
+                    // Danh sach thong so
+                    Route::get('/', 'ThongSoController@index')->name('danh-sach');
+                    Route::get('/lay-thong-so', 'ThongSoController@getData')->name('lay-danh-sach');
+                    Route::get('/create', 'ThongSoController@create_page')->name('create');
+                    Route::post('/them-moi', 'ThongSoController@store')->name('store');
+    
+                    Route::get('/edit/{id}', 'ThongSoController@edit')->name('edit');
+                    Route::put('/update/{id}', 'ThongSoController@update')->name('update');
+                    // Route::get('/chi-tiet/{id}', 'DonHangController@chiTietDonHang')->name('chi-tiet');
+                    Route::delete('/delete', 'ThongSoController@delete')->name('delete');
+                });
+            });
         });
     });
 });
