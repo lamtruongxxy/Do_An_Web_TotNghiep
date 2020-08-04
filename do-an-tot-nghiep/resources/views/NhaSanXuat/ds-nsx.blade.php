@@ -81,18 +81,18 @@
                 <table id="product-table" class="table dt-responsive nowrap">
                     <thead>
                         <tr>
-                            <th>Mã nhà sản xuất</th>
+                            <th>ID</th>
                             <th>Tên nhà sản xuất</th>
-                            <th>Thông Tin Ghi Chú</th>
+                            <th>Ghi Chú</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Mã nhà sản xuất</th>
+                            <th>ID</th>
                             <th>Tên nhà sản xuất</th>
-                            <th>Thông Tin Ghi Chú</th>
+                            <th>Ghi Chú</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>

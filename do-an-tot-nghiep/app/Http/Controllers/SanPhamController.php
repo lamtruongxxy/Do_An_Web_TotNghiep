@@ -95,7 +95,7 @@ class SanPhamController extends Controller
         }
         if ($sanPhamThem) {
             return redirect()->route('san-pham.danh-sach')
-            ->with('msg', 'Thêm thành công');
+            ->with('msg', 'Thêm sản phẩm thành công');
         }
 
     }

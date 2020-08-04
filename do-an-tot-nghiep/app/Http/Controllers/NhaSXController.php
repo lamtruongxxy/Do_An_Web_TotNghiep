@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\NhaSanXuat;
 use App\SanPham;
+
 class NhaSXController extends Controller
 {
     /**
@@ -18,7 +19,7 @@ class NhaSXController extends Controller
     public function index()
     {
         $dsNhaSanXuat = NhaSanXuat::all();
-       // dd($dsNhaSanXuat[1]->trang_thai_format);
+        // dd($dsNhaSanXuat[1]->trang_thai_format);
         return view('NhaSanXuat/ds-nsx', compact('dsNhaSanXuat'));
     }
 
@@ -26,14 +27,14 @@ class NhaSXController extends Controller
     {
         $dsNhaSanXuat = NhaSanXuat::all();
         return Datatables()->of($dsNhaSanXuat)
-        ->addColumn('action', function($data){
-            return view('NhaSanXuat.create-action', compact('data'));
-        })
-        ->addColumn('trang_thai', function ($data) {
-            return view("NhaSanXuat.trang-thai", compact('data'));
-        })
-        ->rawColumns(['action, trang_thai'])
-        ->make(true);
+            ->addColumn('action', function ($data) {
+                return view('NhaSanXuat.create-action', compact('data'));
+            })
+            ->addColumn('trang_thai', function ($data) {
+                return view("NhaSanXuat.trang-thai", compact('data'));
+            })
+            ->rawColumns(['action, trang_thai'])
+            ->make(true);
     }
     /**
      * Show the form for creating a new resource.
@@ -53,7 +54,17 @@ class NhaSXController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataNhaSanXuat = [
+            "ten_nha_sx" => $request->ten_nha_sx,
+            "ghi_chu" => $request->ghi_chu,
+            "trang_thai" => 1
+        ];
+        $nhaSanXuat = NhaSanXuat::create($dataNhaSanXuat);
+
+        if ($nhaSanXuat) {
+            return redirect()->route('nha-san-xuat.create')
+                ->with('thong-bao', 'Thêm thông số thành công');
+        }
     }
 
     /**
