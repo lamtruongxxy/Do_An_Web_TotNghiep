@@ -19,6 +19,9 @@
                             <a href="{{ route('loai-san-pham.danh-sach') }}">Loại sản phẩm</a>
                         </li>
                         <li>
+                            <a href="#">Thông số</a>
+                        </li>
+                        <li>
                             <a href="{{ route('hinh-anh.danh-sach') }}">Hình ảnh</a>
                         </li>
                         <!-- {{-- <li><a href="{{ route('nha-san-xuat.danh-sach') }}">Nhà sản xuất</a></li> --}} -->
@@ -68,7 +71,7 @@
                 <li class="has-submenu">
                     <a href="{{ route('binh-luan.danh-sach') }}"> <i class="la la-comments"></i>Quản Lý Bình Luận</a>
                 </li>
-               
+
             </ul>
             <!-- End navigation menu -->
             <div class="clearfix"></div>
