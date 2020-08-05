@@ -13,4 +13,9 @@ class HinhAnhSanPham extends Model
         'duong_dan',
         'trang_thai'
     ];
+    
+    public function sanPham()
+    {
+        return $this->belongsTo('App\SanPham');
+    }
 }

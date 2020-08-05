@@ -19,7 +19,7 @@
                             <a href="{{ route('loai-san-pham.danh-sach') }}">Loại sản phẩm</a>
                         </li>
                         <li>
-                            <a href="#">Thông số</a>
+                            <a href="{{ route('thong-so.danh-sach') }}">Thông số</a>
                         </li>
                         <li>
                             <a href="{{ route('hinh-anh.danh-sach') }}">Hình ảnh</a>

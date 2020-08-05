@@ -39,6 +39,9 @@ Route::middleware("auth")->group(function () {
                 Route::post('/create-san-pham', 'SanPhamController@store')->name('store');
 
                 Route::get('/lay-thong-so', 'SanPhamController@getThongSo')->name('get-thong-so');
+
+                Route::get('/chi-tiet-thong-so/{id}','SanPhamController@chiTietThongSo')->name('chi-tiet-thong-so');
+                Route::get('/test/{id}','SanPhamController@test')->name('test');
             });
         });
         Route::prefix('loai-san-pham')->group(function () {

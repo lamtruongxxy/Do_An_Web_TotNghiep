@@ -36,7 +36,7 @@ class DonHangController extends Controller
                 return view("DonHang.hinh-thuc-thanh-toan", compact('data'));
             })
             ->rawColumns(['action, trang_thai, hinh_thuc_thanh_toan'])
-            ->make(true);
+        ->make(true);
     }
     public function chiTietDonHang($id)
     {
