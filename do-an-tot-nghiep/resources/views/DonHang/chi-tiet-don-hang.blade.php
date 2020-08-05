@@ -41,9 +41,9 @@
                                         @if ($chiTiet->trang_thai === 0)
                                         <span class="badge badge-danger">Đã hủy / Tạm xóa</span>
                                         @elseif ($chiTiet->trang_thai === 1)
-                                        <span class="badge badge-primary">Chờ xác nhận</span>
+                                        <span class="badge badge-info">Chờ xác nhận</span>
                                         @elseif ($chiTiet->trang_thai === 2)
-                                        <span class="badge badge-info">Đã xác nhận</span>
+                                        <span class="badge badge-primary">Đã xác nhận</span>
                                         @else
                                         <span class="badge badge-success">Hoàn thành</span>
                                         @endif
