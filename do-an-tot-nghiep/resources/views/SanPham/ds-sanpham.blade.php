@@ -11,7 +11,7 @@
 @endsection
 
 @section('js')
- <!-- third party js -->
+<!-- third party js -->
 <script src="{{ asset ('assets/libs/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.bootstrap4.js') }}"></script>
 <script src="{{ asset ('assets/libs/datatables/dataTables.responsive.min.js') }}"></script>
@@ -37,10 +37,10 @@
         order: [],
         columns: [{
             data: 'id',
-            name:'ID Sản phẩm'
-        },{
+            name: 'ID Sản phẩm'
+        }, {
             data: 'ten_sp',
-            name:'Tên sản phẩm'
+            name: 'Tên sản phẩm'
         }, {
             data: 'loai_san_pham.ten_loai_sp',
             name: 'Loại sản phẩm'
@@ -54,6 +54,9 @@
             data: 'gia_sp',
             name: 'Giá sản phẩm'
         }, {
+            data: 'gia_khuyen_mai',
+            name: 'Giá khuyến mãi'
+        }, {
             data: 'trang_thai',
             name: 'Trạng thái'
         }, {
@@ -64,7 +67,6 @@
             name: 'action'
         }]
     })
-
 </script>
 @endsection
 
@@ -86,8 +88,9 @@
                             <th>Tên sản phẩm</th>
                             <th>Loại sản phẩm</th>
                             <th>Nhà Sản Xuất</th>
-                            <th>Số lượng tồn kho</th>
+                            <th>Số lượng</th>
                             <th>Giá sản phẩm</th>
+                            <th>Giá khuyến mãi</th>
                             <th>Trạng thái</th>
                             <th>Chế độ bảo hành</th>
                             <th>Hành động</th>
@@ -99,7 +102,8 @@
                             <th>Tên sản phẩm</th>
                             <th>Loại sản phẩm</th>
                             <th>Nhà Sản Xuất</th>
-                            <th>Số lượng tồn kho</th>
+                            <th>Giá khuyến mãi</th>
+                            <th>Số lượng</th>
                             <th>Giá sản phẩm</th>
                             <th>Trạng thái</th>
                             <th>Chế độ bảo hành</th>
