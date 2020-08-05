@@ -44,9 +44,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="mb-2 header-title">Hình ảnh sản phẩm</h4>
+                                    @foreach( $hinhAnh as $ha)
                                     <div class="form-group col-md-12">
-                                        <img src="{{asset('storage/app/public/san-pham/0508201002171431784792-san-pham.jpg') }}" width="200" height="250">
+                                        <!-- <img src="{{ asset('storage') }}/san-pham/{{ $ha->duong_dan }}" width="45" /> -->
+                                        {{ $ha->duong_dan }}
                                     </div>
+                                    @endforeach
                                 </div>
                             </div>
 
@@ -67,7 +70,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="form-group col-md-12">
-                                                <p><strong>Mô tả:</strong>&nbsp;{{ $thongTinSP->mo_ta_sp }}</p>
+                                                <p><strong>Mô tả sản phẩm:</strong>&nbsp;{{ $thongTinSP->mo_ta_sp }}</p>
                                             </div>
                                         </div>
                                     </div>

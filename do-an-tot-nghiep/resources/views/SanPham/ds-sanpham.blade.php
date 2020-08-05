@@ -42,9 +42,6 @@
             data: 'ten_sp',
             name:'Tên sản phẩm'
         }, {
-            data: 'mo_ta_sp',
-            name:'Mô tả sản phẩm'
-        }, {
             data: 'loai_san_pham.ten_loai_sp',
             name: 'Loại sản phẩm'
         }, {
@@ -87,7 +84,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên sản phẩm</th>
-                            <th>Mô tả sản phẩm</th>
                             <th>Loại sản phẩm</th>
                             <th>Nhà Sản Xuất</th>
                             <th>Số lượng tồn kho</th>
@@ -101,7 +97,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên sản phẩm</th>
-                            <th>Mô tả sản phẩm</th>
                             <th>Loại sản phẩm</th>
                             <th>Nhà Sản Xuất</th>
                             <th>Số lượng tồn kho</th>
