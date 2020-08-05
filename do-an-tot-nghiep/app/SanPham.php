@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 class SanPham extends Model
 {
     protected $table ='san_pham';
@@ -27,5 +26,12 @@ class SanPham extends Model
     public function nhaSanXuat() {
         return $this->belongsTo('App\NhaSanXuat');
     }
+    public function chiTietThongSo() {
+        return $this->belongsTo('App\ChiTietThongSo');
+    }
+    // public function hinhAnhSP()
+    // {
+    //     return $this->belongsTo('App\HinhAnhSanPham');
+    // }
     
 }

@@ -14,4 +14,9 @@ class ChiTietThongSo extends Model
         'gia_tri',
         'trang_thai'
     ];
+
+   public function thongSo()
+   {
+       return $this->belongsTo('App\ThongSo');
+   }
 }

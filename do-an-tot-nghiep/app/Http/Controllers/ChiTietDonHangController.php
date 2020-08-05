@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ChiTietHoaDonController extends Controller
+class ChiTietDonHangController extends Controller
 {
     /**
      * Display a listing of the resource.

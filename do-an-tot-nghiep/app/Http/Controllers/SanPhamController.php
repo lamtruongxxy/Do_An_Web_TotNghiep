@@ -11,6 +11,7 @@ use App\NhaSanXuat;
 use App\ThongSo;
 use App\HinhAnhSanPham;
 use App\ChiTietThongSo;
+
 class SanPhamController extends Controller
 {
     /**
@@ -30,13 +31,17 @@ class SanPhamController extends Controller
 
     public function getData()
     {
-        $dsSanPham = SanPham::with('loaiSanPham','nhaSanXuat')->get();
+        $dsSanPham = SanPham::with('loaiSanPham', 'nhaSanXuat')->get();
         //$dsSanPham = SanPham::with('nhaSanXuat')->get();
-        return Datatables()->of($dsSanPham)->addColumn('action', function($data) {
-            return view('SanPham.create-action', compact('data'));
-        })
-        ->rawColumns(['action'])
-        ->make(true);
+        return Datatables()->of($dsSanPham)
+            ->addColumn('action', function ($data) {
+                return view('SanPham.create-action', compact('data'));
+            })
+            ->addColumn('trang_thai', function ($data) {
+                return view("SanPham.trang-thai", compact('data'));
+            })
+            ->rawColumns(['action, trang_thai'])
+            ->make(true);
     }
 
     public function create_page()
@@ -73,7 +78,7 @@ class SanPhamController extends Controller
             'gia_khuyen_mai'    => (int)$request->gia_khuyen_mai
         ];
         $sanPhamThem = SanPham::create($sanPham);
-        foreach($dsHinhAnh as $hinhAnh) {
+        foreach ($dsHinhAnh as $hinhAnh) {
             HinhAnhSanPham::create([
                 'san_pham_id' => $sanPhamThem->id,
                 'duong_dan' => $hinhAnh,
@@ -84,7 +89,7 @@ class SanPhamController extends Controller
             $thongSoValues = array_values($request->thong_so_values);
             $thongSoIds = array_values($request->thong_so_ids);
             $dsThongSo = array_combine($thongSoIds, $thongSoValues);
-            foreach($dsThongSo as $idThongSo => $value) {
+            foreach ($dsThongSo as $idThongSo => $value) {
                 ChiTietThongSo::create([
                     'san_pham_id'   => $sanPhamThem->id,
                     'thong_so_id'   => $idThongSo,
@@ -95,18 +100,17 @@ class SanPhamController extends Controller
         }
         if ($sanPhamThem) {
             return redirect()->route('san-pham.danh-sach')
-            ->with('msg', 'Thêm sản phẩm thành công');
+                ->with('msg', 'Thêm sản phẩm thành công');
         }
-
     }
 
-    public function uploadHinh(array $dsHinhAnh) : array
+    public function uploadHinh(array $dsHinhAnh): array
     {
         $newPathImg = [];
-        foreach($dsHinhAnh as $img) {
+        foreach ($dsHinhAnh as $img) {
             $type_img = $img->getClientOriginalExtension();
             $date = Carbon::now('Asia/Ho_Chi_Minh')->format('dmyHis');
-            $new_img = $date. rand() .'-san-pham.' .$type_img;
+            $new_img = $date . rand() . '-san-pham.' . $type_img;
             $img->storeAs('public/san-pham', $new_img);
             $newPathImg[] = $new_img;
         }
@@ -119,6 +123,7 @@ class SanPhamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -156,5 +161,24 @@ class SanPhamController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function chiTietThongSo($id)
+    {
+        $thongTinSP = SanPham::findOrFail($id);
+        $tenThongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id',$id)->get();
+        $hinhAnh = HinhAnhSanPham::where('san_pham_id',$id)->get();
+        return view('SanPham.chi-tiet-thong-so-sp', compact('thongTinSP','tenThongSo','hinhAnh'));
+
+        // $chiTiet = DonHang::findOrFail($id);
+        // $chiTietDonHang = ChiTietDonHang::with('sanPham')->where('don_hang_id',$id)->get();
+
+        // return view('DonHang.chi-tiet-don-hang', compact('chiTiet','chiTietDonHang'));
+    }
+    public function test($id)
+    {   
+        $hinhAnh = HinhAnhSanPham::where('san_pham_id',$id)->get();
+        $thongTinSP = SanPham::findOrFail($id);
+        $chiTietThongSo = chiTietThongSo::with('thongSo')->where('san_pham_id',$id)->get();
+        return response()->json($hinhAnh);
     }
 }

@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\NhaSanXuat;
+use App\SanPham;
 
-class TenThongSoSpController extends Controller
+class ChiTietThongSoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+   
 
     /**
      * Show the form for creating a new resource.

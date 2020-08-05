@@ -26,7 +26,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group col-md-12">
@@ -47,6 +46,13 @@
                                         @else
                                         <span class="badge badge-success">Hoàn thành</span>
                                         @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-group col-md-12">
+                                        <a href="{{ route('don-hang.danh-sach') }}" class="btn btn-primary waves-effect waves-light"><i class="la la-list-ul"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +87,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
