@@ -47,7 +47,6 @@
                 })
         }
     })
-
 </script>
 @endsection
 @section('main-content')
@@ -66,7 +65,7 @@
                                         <!-- <label for="inputEmail4" class="col-form-label">Phân loại</label> -->
                                         <select class="form-control" name="nha_san_xuat_id" placeholder="Nhà sản xuất">
                                             @foreach ($dsNhaSanXuat as $nhasx)
-                                                <option value="{{ $nhasx->id }}">{{ $nhasx->ten_nha_sx}}</option>
+                                            <option value="{{ $nhasx->id }}">{{ $nhasx->ten_nha_sx}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -74,7 +73,7 @@
                                         <!-- <label for="inputEmail4" class="col-form-label">Phân loại</label> -->
                                         <select class="form-control" name="loai_san_pham_id" placeholder="Loại sản phẩm">
                                             @foreach ($dsLoaiSanPham as $loaisp)
-                                        <option value="{{ $loaisp->id }}">{{ $loaisp->ten_loai_sp }}</option>
+                                            <option value="{{ $loaisp->id }}">{{ $loaisp->ten_loai_sp }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -82,21 +81,17 @@
                                         <input type="text" class="form-control" name="ten_sp" placeholder="Tên sản phẩm">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <input type="number" class="form-control" name="gia_sp"
-                                            placeholder="Giá sản phẩm">
+                                        <input type="number" class="form-control" name="gia_sp" placeholder="Giá sản phẩm">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <input type="number" class="form-control" name="so_luong_ton_kho"
-                                            placeholder="Số lượng">
+                                        <input type="number" class="form-control" name="so_luong_ton_kho" placeholder="Số lượng">
                                     </div>
 
                                     <div class="form-group col-md-12">
-                                        <input type="text" class="form-control" name="che_do_bao_hanh"
-                                            placeholder="Chế độ bảo hành">
+                                        <input type="text" class="form-control" name="che_do_bao_hanh" placeholder="Chế độ bảo hành">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <input type="text" class="form-control" name="gia_khuyen_mai"
-                                            placeholder="Giá khuyến mãi">
+                                        <input type="text" class="form-control" name="gia_khuyen_mai" placeholder="Giá khuyến mãi">
                                     </div>
                                 </div>
                             </div>
@@ -108,24 +103,14 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="mb-3 header-title">Thông số sản phẩm</h4>
-
                                             <div class="form-group col-md-12" v-for="thongSo in dsThongSoAdded">
-                                                <input type="text" class="form-control" name="thong_so_values[]"
-                                                    :placeholder="thongSo.ten_thong_so">
+                                                <input type="text" class="form-control" name="thong_so_values[]" :placeholder="thongSo.ten_thong_so">
                                                 <input type="hidden" :value="thongSo.id" class="form-control" name="thong_so_ids[]">
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <button type="button"
-                                                    class="btn btn-primary waves-effect waves-light dropdown-toggle"
-                                                    data-toggle="dropdown" aria-expanded="false"> Thêm thông số<i
-                                                        class="mdi mdi-chevron-down"></i> </button>
-                                                <div class="dropdown-menu" x-placement="bottom-start"
-                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 106px, 0px);">
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        v-for="thongSo in dsThongSo"
-                                                        v-on:click="addThongSo(thongSo)">
+                                                <button type="button" class="btn btn-primary waves-effect waves-light dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Thêm thông số<i class="mdi mdi-chevron-down"></i> </button>
+                                                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 106px, 0px);">
+                                                    <a class="dropdown-item" href="#" v-for="thongSo in dsThongSo" v-on:click="addThongSo(thongSo)">
                                                         @{{ thongSo.ten_thong_so }}
                                                     </a>
                                                 </div>
@@ -141,18 +126,14 @@
                                                 <!-- <label for="inputEmail4" class="col-form-label">Số lượng</label> -->
                                                 <div class="input-group">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input"
-                                                            id="inputGroupFile04" name="sp_hinh_anh[]">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile04" name="sp_hinh_anh[]">
                                                         <label class="custom-file-label" for="inputGroupFile04">Hình ảnh</label>
                                                     </div>
                                                 </div>
                                                 {{-- <input type="file" class="custom-file-input" name="sp_hinh_anh[]"> --}}
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary waves-effect waves-light"
-                                                    v-on:click="addImgEl">
+                                                <button type="button" class="btn btn-primary waves-effect waves-light" v-on:click="addImgEl">
                                                     <i class="fe-check-square"></i> Thêm hình ảnh
                                                 </button>
                                             </div>
@@ -169,26 +150,26 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="mb-3 header-title">Mô tả sản phẩm</h4>
-                            <div id="summernote-editor"></div>
+                            <textarea class="form-control" id="mo_ta_sp" name="mo_ta_sp" rows="4"></textarea>
                         </div>
                     </div>
-
                 </div>
-                <div class="form-group col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary waves-effect waves-light"><i
-                                    class="fe-check-square"></i>
-                                Thêm</button>
 
-                        </div>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i>
+                            Thêm</button>
+
                     </div>
                 </div>
             </div>
+    </div>
 
-        </form>
+    </form>
 
-    </div> <!-- end card-->
+</div> <!-- end card-->
 </div>
 <!-- end col -->
 </div>
@@ -255,8 +236,7 @@
     </div>
 </div>
 <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i> Thêm</button>
-<button type="button" v-on:click="addElImgs" class="btn btn-primary waves-effect waves-light"><i
-        class="fe-check-square"></i> Thêm
+<button type="button" v-on:click="addElImgs" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i> Thêm
     hình ảnh</button>
 </form>
 </div>

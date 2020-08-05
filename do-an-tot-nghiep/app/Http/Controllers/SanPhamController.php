@@ -73,7 +73,7 @@ class SanPhamController extends Controller
             'so_luong_ton_kho' => (int)$request->so_luong_ton_kho,
             'loai_san_pham_id'   => (int)$request->loai_san_pham_id,
             'che_do_bao_hanh' => $request->che_do_bao_hanh,
-            'mo_ta_sp' => 'abc',
+            'mo_ta_sp' => $request->mo_ta_sp,
             'trang_thai'    => 1,
             'gia_khuyen_mai'    => (int)$request->gia_khuyen_mai
         ];
@@ -165,9 +165,9 @@ class SanPhamController extends Controller
     public function chiTietThongSo($id)
     {
         $thongTinSP = SanPham::findOrFail($id);
-        $tenThongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id',$id)->get();
-        $hinhAnh = HinhAnhSanPham::where('san_pham_id',$id)->get();
-        return view('SanPham.chi-tiet-thong-so-sp', compact('thongTinSP','tenThongSo','hinhAnh'));
+        $tenThongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
+        $hinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->get();
+        return view('SanPham.chi-tiet-thong-so-sp', compact('thongTinSP', 'tenThongSo', 'hinhAnh'));
 
         // $chiTiet = DonHang::findOrFail($id);
         // $chiTietDonHang = ChiTietDonHang::with('sanPham')->where('don_hang_id',$id)->get();
@@ -175,10 +175,10 @@ class SanPhamController extends Controller
         // return view('DonHang.chi-tiet-don-hang', compact('chiTiet','chiTietDonHang'));
     }
     public function test($id)
-    {   
-        $hinhAnh = HinhAnhSanPham::where('san_pham_id',$id)->get();
+    {
+        $hinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->get();
         $thongTinSP = SanPham::findOrFail($id);
-        $chiTietThongSo = chiTietThongSo::with('thongSo')->where('san_pham_id',$id)->get();
+        $chiTietThongSo = chiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
         return response()->json($hinhAnh);
     }
 }
