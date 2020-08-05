@@ -31,10 +31,11 @@
                                     <div class="form-group col-md-12">
                                         <h5><strong>Tổng tiền :&nbsp;<span class="text-danger my-4 text-center" data-plugin="counterup">{{ $chiTiet->tong_tien }}</span>&nbsp;VNĐ</strong></h5>
                                         </br>
+                                        <p><strong>Ngày lập: &nbsp;</strong>{{ $chiTiet->created_at }}</p>    
                                         @if ($chiTiet->trang_thai === 0)
-                                        <strong>Phương thức thanh toán:</strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
+                                        <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
                                         @else
-                                        <strong>Phương thức thanh toán:</strong>&nbsp;<span class="badge badge-success">Tại cửa hàng</span></p>
+                                        <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-success">Tại cửa hàng</span></p>
                                         @endif
                                         <strong>Trạng thái: </strong>&nbsp;
                                         @if ($chiTiet->trang_thai === 0)
