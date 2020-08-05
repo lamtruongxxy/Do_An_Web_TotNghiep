@@ -138,6 +138,14 @@ Route::prefix('user')->group(function () {
     });
 });
 
+Route::prefix('index')->group(function () {
+    Route::name('index-')->group(function () {
+        //ADMIN
+        Route::get('/', 'NguoiDungController@index')->name('index');
+        Route::get('/register', 'TaiKhoanController@user_register')->name('register');
+    });
+});
+
 
 
 // //ADMIN
