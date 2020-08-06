@@ -45,14 +45,10 @@
                                 <div class="card-body">
                                     <h4 class="mb-2 header-title">Hình ảnh sản phẩm</h4>
                                     @foreach( $hinhAnh as $ha)
-                                    <div class="form-group col-md-12">
-                                        <!-- <img src="{{ asset('storage') }}/san-pham/{{ $ha->duong_dan }}" width="45" /> -->
-                                        {{ $ha->duong_dan }}
-                                    </div>
+                                        <img src="{{ asset('storage') }}/san-pham/{{ $ha->duong_dan }}" height="220px" width="220px" />
                                     @endforeach
                                 </div>
                             </div>
-
                         </div>
                         <div class="col-md-4">
                             <div class="form-row">
