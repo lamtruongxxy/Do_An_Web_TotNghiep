@@ -28,8 +28,9 @@ class TTMoblieController extends Controller
      */
     public function test()
     {
-        $sanPhamSale = HinhAnhSanPham::join('san_pham', 'hinh_anh_san_pham.san_pham_id', '=', 'san_pham.id')
-            ->where('san_pham.trang_thai', 1)->where('san_pham.gia_khuyen_mai','<>',0)->first();
+        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->get();
+        // $sanPhamSale = HinhAnhSanPham::join('san_pham', 'hinh_anh_san_pham.san_pham_id', '=', 'san_pham.id')
+        //     ->where('san_pham.trang_thai', 1)->where('san_pham.gia_khuyen_mai','<>',0)->first();
             
         return view('TTMobile/test',compact('sanPhamSale'));
     }

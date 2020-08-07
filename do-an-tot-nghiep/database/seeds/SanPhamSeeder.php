@@ -11,6 +11,7 @@ class SanPhamSeeder extends Seeder
      */
     public function run()
     {
+        // factory(App\SanPham::class, 1000)->create();
         factory(App\SanPham::class, 1000)->create();
     }
 }

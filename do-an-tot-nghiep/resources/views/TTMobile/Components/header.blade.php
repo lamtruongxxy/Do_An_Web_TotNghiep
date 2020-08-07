@@ -34,7 +34,6 @@
                             <a href="product.html" class="nav-link" title="San Pham">Sản Phẩm <i class="fa fa-angle-down" data-toggle="dropdown"></i></a>
                             <ul class="dropdown-menu">
                                 <li class="level1 item">
-                                    <h5> <a class="hmega" href="#" title="Điện thoại">Điện thoại</a></h5>
                                     <ul class="level1">
                                         <li class="level2">
                                             <a href="#" title="Samsung">Samsung</a>

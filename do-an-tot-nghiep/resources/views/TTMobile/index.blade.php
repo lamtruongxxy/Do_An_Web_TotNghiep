@@ -13,13 +13,15 @@
                             <div class="news-item-products">
                                 <a href="detail.html" title="{{ $sale->ten_sp }}"></a>
                                 <div class="relative fix-images">
-                                    <img data-src="{{ asset('storage/san-pham/060820085112512703792-san-pham.png') }}" alt="{{ $sale->ten_sp }}" class="img-responsive center-block" />
-                                    <label class="per">Siêu giảm giá</label>
+                                    <img data-src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }}" 
+                                    alt="{{ $sale->ten_sp }}" class="img-responsive center-block" />
+                                    
+                                    <label class="per">Tiết kiệm {{ $sale->gia_khuyen_mai }}₫</label>
                                 </div>
                                 <h3>{{ $sale->ten_sp }}</h3>
                                 <div class="price">
                                     <strong>{{ $sale->gia_sp }}₫</strong>
-                                    <span>{{ $sale->gia_khuyen_mai }}0₫</span>
+                                    <span>{{ $sale->gia_khuyen_mai }}₫</span>
                                 </div>
                             </div>
                         </div>
