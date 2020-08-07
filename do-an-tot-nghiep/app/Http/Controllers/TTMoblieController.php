@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\HinhAnhSanPham;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\SanPham;
 
 class TTMoblieController extends Controller
 {
@@ -14,7 +16,9 @@ class TTMoblieController extends Controller
      */
     public function index()
     {
-        return view('TTMobile/index');
+        // $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->get();
+        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai',0)->get();
+        return view('TTMobile/index',compact('sanPhamSale'));
     }
 
     /**
@@ -22,9 +26,12 @@ class TTMoblieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function test()
     {
-        //
+        $sanPhamSale = HinhAnhSanPham::join('san_pham', 'hinh_anh_san_pham.san_pham_id', '=', 'san_pham.id')
+            ->where('san_pham.trang_thai', 1)->where('san_pham.gia_khuyen_mai','<>',0)->first();
+            
+        return view('TTMobile/test',compact('sanPhamSale'));
     }
 
     /**

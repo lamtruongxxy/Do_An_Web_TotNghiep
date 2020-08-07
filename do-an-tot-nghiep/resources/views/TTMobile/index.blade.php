@@ -1,6 +1,6 @@
 @extends("TTMobile.master-page")
 
-@section('sp-sale')
+@section('main-content')
 <section class="awe-section-2">
     <div class="container">
         <div class="row">
@@ -8,126 +8,29 @@
                 <div class="promo-title">
                     <a class="promo-title-a" href="#" title="Sản Phẩm Mới">Sản Phẩm đang sale</a>
                     <div id="owl-promo" class="section-tour-owl2 owl-carousel not-dqowl">
+                        @foreach($sanPhamSale as $sale)
                         <div class="item">
                             <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
+                                <a href="detail.html" title="{{ $sale->ten_sp }}"></a>
                                 <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
+                                    <img data-src="{{ asset('storage/san-pham/060820085112512703792-san-pham.png') }}" alt="{{ $sale->ten_sp }}" class="img-responsive center-block" />
+                                    <label class="per">Siêu giảm giá</label>
                                 </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
+                                <h3>{{ $sale->ten_sp }}</h3>
                                 <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
+                                    <strong>{{ $sale->gia_sp }}₫</strong>
+                                    <span>{{ $sale->gia_khuyen_mai }}0₫</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="Samsung Galaxy S10+ (8 + 128GB)"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636863659522918468-ss-galaxy-s10-plus-xanh-1.png?v=1552139238637" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy S10+ (8 + 128GB)" class="img-responsive center-block" />
-                                    <label class="per">Giảm 2% </label>
-                                </div>
-                                <h3>Samsung Galaxy S10+ (8 + 128GB)</h3>
-                                <div class="price">
-                                    <strong>22.990.000₫</strong>
-                                    <span>23.500.000₫</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-@endsection
-@section('sp-ban-chay')
+
 <section class="awe-section-4">
     <div class="container">
         <div class="row">

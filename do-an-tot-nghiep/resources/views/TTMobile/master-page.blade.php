@@ -21,11 +21,10 @@
     @include("TTMobile.Components.header")
     <!-- end-header -->
 
-    <!-- san pham dang sale -->
-    @yield('sp-sale')
+    <!-- MAIN CONTENT -->
+    @yield('main-content')
 
-    <!-- san-pham-ban-chay -->
-    @yield('sp-ban-chay')
+   
 
     <!-- footer -->
     @include("TTMobile.Components.footer")

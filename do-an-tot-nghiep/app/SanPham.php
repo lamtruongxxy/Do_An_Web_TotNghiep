@@ -29,9 +29,9 @@ class SanPham extends Model
     public function chiTietThongSo() {
         return $this->belongsTo('App\ChiTietThongSo');
     }
-    // public function hinhAnhSP()
-    // {
-    //     return $this->belongsTo('App\HinhAnhSanPham');
-    // }
+    public function hinhAnhSP()
+    {
+        return $this->hasMany('App\HinhAnhSanPham');
+    }
     
 }
