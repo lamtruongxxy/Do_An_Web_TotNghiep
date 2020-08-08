@@ -17,8 +17,9 @@ class TTMoblieController extends Controller
     public function index()
     {
         // $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->get();
-        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai',0)->get();
-        return view('TTMobile/index',compact('sanPhamSale'));
+        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->get();
+        $sanPham = SanPham::with('hinhAnhSP')->where('trang_thai',1)->get();
+        return view('TTMobile/index',compact('sanPhamSale','sanPham'));
     }
 
     /**
