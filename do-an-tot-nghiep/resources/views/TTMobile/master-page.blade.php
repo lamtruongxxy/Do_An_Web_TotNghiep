@@ -14,6 +14,7 @@
     <link href="{{ asset('ttmobile/css/plugin.scss.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('ttmobile/css/base.scss.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('ttmobile/css/ant-mobile.scss.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('ttmobile/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

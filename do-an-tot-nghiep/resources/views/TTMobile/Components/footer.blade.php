@@ -66,7 +66,7 @@
                      </div>
                   </div>
                </div>
-               <div class="back-to-top"><i class="fa fa-arrow-circle-up">&#94;</i></div>
+               <div class="back-to-top"><i class="fa fa-arrow-circle-up"></i></div>
             </div>
          </div>
       </footer>
