@@ -13,15 +13,13 @@
                             <div class="news-item-products">
                                 <a href="detail.html" title="{{ $sale->ten_sp }}"></a>
                                 <div class="relative fix-images">
-                                    <img data-src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }}" 
-                                    alt="{{ $sale->ten_sp }}" class="img-responsive center-block" />
-                                    
-                                    <label class="per">Tiết kiệm {{ $sale->gia_khuyen_mai }}₫</label>
+                                    <img data-src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }}" alt="{{ $sale->ten_sp }}" class="img-responsive center-block" />
+                                    <label class="per">Sale off</label>
                                 </div>
                                 <h3>{{ $sale->ten_sp }}</h3>
                                 <div class="price">
-                                    <strong>{{ $sale->gia_sp }}₫</strong>
-                                    <span>{{ $sale->gia_khuyen_mai }}₫</span>
+                                    <strong>{{ $sale->gia_khuyen_mai }}</strong>
+                                    <span>{{ $sale->gia_sp }}₫</span>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +37,7 @@
             <div class="col-md- ">
                 <div class="section_product clearfix">
                     <div class="section-head clearfix">
-                        <h2 class="title_blog">Điện Thoại bán chạy</h2>
+                        <h2 class="title_blog">Điện Thoại phổ thông</h2>
                         <div class="viewallcat hidden-xs">
                             <a href="/dien-thoai" title="Điện thoại">Điện thoại</a>
                             <a href="/tablet" title="Tablet">Tablet</a>
@@ -50,30 +48,28 @@
                         </div>
                     </div>
                     <div class="product-blocks clearfix">
+                        @foreach($sanPham as $sp)
                         <div class="item-border col-md-15 col-sm-4 col-xs-6 no-padding">
                             <div class="news-item-products">
-                                <a href="/oppo-a3s-16gb" title="Oppo A3s 16GB"></a>
+                                <a href="/oppo-a3s-16gb" title="{{ $sp->ten_sp }}"></a>
                                 <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636688079458645221-oppoa3s-tim-1.jpg?v=1551252470783" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Oppo A3s 16GB" class="img-responsive center-block" />
+                                    <img data-src="{{ asset('storage') }}/san-pham/{{ $sp->hinhAnhSP[1]->duong_dan }}" alt="{{ $sp->ten_sp }}" class="img-responsive center-block" />
+                                    @if ( $sp->gia_khuyen_mai != 0 )
+                                    <label class="per">Sale off</label>
+                                    @endif
                                 </div>
-                                <h3>Oppo A3s 16GB</h3>
+                                <h3>{{ $sp->ten_sp }}</h3>
                                 <div class="price">
-                                    <strong>3.290.000₫</strong>
+                                    @if ( $sp->gia_khuyen_mai == 0 )
+                                    <strong>{{ $sp->gia_sp }}₫</strong>
+                                    @else
+                                    <strong>{{ $sp->gia_khuyen_mai }}</strong>
+                                    <span>{{ $sp->gia_sp }}₫</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
-                        <div class="item-border col-md-15 col-sm-4 col-xs-6 no-padding">
-                            <div class="news-item-products">
-                                <a href="/samsung-galaxy-j8" title="Samsung Galaxy J8"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="https://bizweb.dktcdn.net/thumb/medium/100/348/133/products/636668977169527052-samsung-j8-tim-1.jpg?v=1551252361210" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Samsung Galaxy J8" class="img-responsive center-block" />
-                                </div>
-                                <h3>Samsung Galaxy J8</h3>
-                                <div class="price">
-                                    <strong>4.970.000₫</strong>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
