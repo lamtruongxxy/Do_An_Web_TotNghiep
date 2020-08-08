@@ -1,79 +1,218 @@
 @extends("TTMobile.master-page")
 
 @section('main-content')
-<section class="awe-section-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="promo-title">
-                    <a class="promo-title-a" href="#" title="Sản Phẩm Mới">Sản Phẩm đang sale</a>
-                    <div id="owl-promo" class="section-tour-owl2 owl-carousel not-dqowl">
-                        @foreach($sanPhamSale as $sale)
-                        <div class="item">
-                            <div class="news-item-products">
-                                <a href="detail.html" title="{{ $sale->ten_sp }}"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }}" alt="{{ $sale->ten_sp }}" class="img-responsive center-block" />
-                                    <label class="per">Sale off</label>
-                                </div>
-                                <h3>{{ $sale->ten_sp }}</h3>
-                                <div class="price">
-                                    <strong>{{ $sale->gia_khuyen_mai }}</strong>
-                                    <span>{{ $sale->gia_sp }}₫</span>
-                                </div>
-                            </div>
+<div class="container">
+    <div id="content" class="space-top-none">
+        <div class="main-content">
+            <div class="space60">&nbsp;</div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="beta-products-list">
+                        <h4>Điện Thoại Mới</h4>
+                        <div class="beta-products-details">
+                            <p class="pull-left">438 Sản Phẩm</p>
+                            <div class="clearfix"></div>
                         </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                        <div class="row">
+                            {{-- load sản phẩm --}}
+                            @foreach($sanPhamSale as $sale)
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 
-<section class="awe-section-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md- ">
-                <div class="section_product clearfix">
-                    <div class="section-head clearfix">
-                        <h2 class="title_blog">Điện Thoại phổ thông</h2>
-                        <div class="viewallcat hidden-xs">
-                            <a href="/dien-thoai" title="Điện thoại">Điện thoại</a>
-                            <a href="/tablet" title="Tablet">Tablet</a>
-                            <a href="/laptop" title="Laptop">Laptop</a>
-                            <a href="/phu-kien" title="Phụ kiện">Phụ kiện</a>
-                            <a href="/dong-ho" title="Đồng hồ">Đồng hồ</a>
-                            <a href="/may-cu" title="Máy cũ">Máy cũ</a>
-                        </div>
-                    </div>
-                    <div class="product-blocks clearfix">
-                        @foreach($sanPham as $sp)
-                        <div class="item-border col-md-15 col-sm-4 col-xs-6 no-padding">
-                            <div class="news-item-products">
-                                <a href="/oppo-a3s-16gb" title="{{ $sp->ten_sp }}"></a>
-                                <div class="relative fix-images">
-                                    <img data-src="{{ asset('storage') }}/san-pham/{{ $sp->hinhAnhSP[1]->duong_dan }}" alt="{{ $sp->ten_sp }}" class="img-responsive center-block" />
-                                    @if ( $sp->gia_khuyen_mai != 0 )
-                                    <label class="per">Sale off</label>
-                                    @endif
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img  style="width: 230px;height: 250px;"src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} " alt="{{ $sale->ten_sp }}"></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">{{ $sale->ten_sp }}</p>
+                                        <p class="single-item-price">
+                                            <span class="flash-sale">{{ $sale->gia_sp }}</span>
+                                            <span class="flash-del">{{ $sale->gia_khuyen_mai }}</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
-                                <h3>{{ $sp->ten_sp }}</h3>
-                                <div class="price">
-                                    @if ( $sp->gia_khuyen_mai == 0 )
-                                    <strong>{{ $sp->gia_sp }}₫</strong>
-                                    @else
-                                    <strong>{{ $sp->gia_khuyen_mai }}</strong>
-                                    <span>{{ $sp->gia_sp }}₫</span>
-                                    @endif
+                            </div>
+                            @endforeach
+                           
+                           {{-- end --}}
+                        </div>
+                        
+                    </div> <!-- .beta-products-list -->
+
+                    <div class="space50">&nbsp;</div>
+
+                    <div class="beta-products-list">
+                        <h4>Top Điện Thoại</h4>
+                        <div class="beta-products-details">
+                            <p class="pull-left">438 styles found</p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/1.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span>$34.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/2.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span class="flash-del">$34.55</span>
+                                            <span class="flash-sale">$33.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/3.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span>$34.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/3.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span>$34.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-                    </div>
+                        <div class="space40">&nbsp;</div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/1.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span>$34.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/2.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span class="flash-del">$34.55</span>
+                                            <span class="flash-sale">$33.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/3.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span>$34.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="{{ asset('ttmobile/images/products/3.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-price">
+                                            <span>$34.55</span>
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .beta-products-list -->
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </div> <!-- end section with sidebar and main content -->
+
+
+        </div> <!-- .main-content -->
+    </div> <!-- #content -->
+</div> <!-- .container -->
 @endsection

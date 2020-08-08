@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>TTmobile</title>
-    <script src="{{ asset('ttmobile/js/defer_plus.js') }}" type="text/javascript"></script>
-    <script>
-        deferscript( "{{ asset('ttmobile/js/polyfill.js') }}", 'polyfill-js', 1)
-    </script>
-    <link rel="icon" href="" type="image/x-icon" />
-    <link href="{{ asset('ttmobile/css/bootstrap.scss.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('ttmobile/css/plugin.scss.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('ttmobile/css/base.scss.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('ttmobile/css/ant-mobile.scss.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('ttmobile/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TTmobile</title>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ asset('ttmobile/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{ asset('ttmobile/vendors/colorbox/example3/colorbox.css')}}">
+	<link rel="stylesheet" href="{{ asset('ttmobile/rs-plugin/css/settings.css')}}">
+	<link rel="stylesheet" href="{{ asset('ttmobile/rs-plugin/css/responsive.css')}}">
+	<link rel="stylesheet" title="style" href="{{ asset('ttmobile/css/style.css')}}">
+	<link rel="stylesheet" href="{{ asset('ttmobile/css/animate.css')}}">
+	<link rel="icon" href="{{ asset('ttmobile/images/icon-shop.ico')}}" type="image/x-icon" >
+	<link rel="stylesheet" title="style" href="{{ asset('ttmobile/css/huong-style.css')}}">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     <!-- footer -->
     @include("TTMobile.Components.footer")
     <!-- end-footer -->
-
+{{-- 
     <script src="{{ asset('ttmobile/js/jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('ttmobile/js/option-selectors.js') }}" type="text/javascript"></script>
     <script src="{{ asset('ttmobile/js/api.jquery.js?4') }}" type="text/javascript"></script>
@@ -38,7 +38,33 @@
 
     <script src="{{ asset('ttmobile/js/appear.js') }}" type="text/javascript"></script>
     <script src="{{ asset('ttmobile/js/cs.script.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('ttmobile/js/main.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('ttmobile/js/main.js') }}" type="text/javascript"></script> --}}
+    <!-- include js files -->
+	<script src="{{ asset('ttmobile/js/jquery.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js') }} "type="text/javascript"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/vendors/bxslider/jquery.bxslider.min.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/vendors/colorbox/jquery.colorbox-min.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/vendors/animo/Animo.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/vendors/dug/dug.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/js/scripts.min.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/rs-plugin/js/jquery.themepunch.tools.min.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/rs-plugin/js/jquery.themepunch.revolution.min.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/js/waypoints.min.js') }} "type="text/javascript"></script>
+	<script src="{{ asset('ttmobile/js/wow.min.js') }} "type="text/javascript"></script>
+	<!--customjs-->
+	<script src="{{ asset('ttmobile/js/custom2.js') }} "type="text/javascript"></script>
+	<script>
+	$(document).ready(function($) {    
+		$(window).scroll(function(){
+			if($(this).scrollTop()>150){
+			$(".header-bottom").addClass('fixNav')
+			}else{
+				$(".header-bottom").removeClass('fixNav')
+			}}
+		)
+	})
+	</script>
 </body>
 
 </html>
