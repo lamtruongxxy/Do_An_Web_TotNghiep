@@ -20,7 +20,7 @@ class ThongSoSeeder extends Seeder
             ],
             [
                 'ten_thong_so' => "Màn hình",
-                'don_vi'=> 'cái',
+                'don_vi'=> 'Inch',
                 'trang_thai'=> 1
             ],
             [
