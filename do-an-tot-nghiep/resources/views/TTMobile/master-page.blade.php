@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="{{ asset('ttmobile/rs-plugin/css/responsive.css')}}">
 	<link rel="stylesheet" title="style" href="{{ asset('ttmobile/css/style.css')}}">
 	<link rel="stylesheet" href="{{ asset('ttmobile/css/animate.css')}}">
-	<link rel="icon" href="{{ asset('ttmobile/images/icon-shop.ico')}}" type="image/x-icon" >
+	<link rel="icon" href="{{ asset('ttmobile/images/logo-ico.png')}}" type="image/x-icon" >
 	<link rel="stylesheet" title="style" href="{{ asset('ttmobile/css/huong-style.css')}}">
 </head>
 
