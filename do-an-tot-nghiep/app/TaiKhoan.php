@@ -16,7 +16,6 @@ class TaiKhoan extends Authenticatable
         'email',
         'dia_chi',
         'ho_ten',
-        'anh_dai_dien',
         'trang_thai'
     ];
     protected $hidden = [

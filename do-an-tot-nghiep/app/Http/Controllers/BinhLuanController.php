@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\BinhLuan;
 use App\SanPham;
+
 class BinhLuanController extends Controller
 {
     /**
@@ -18,22 +19,23 @@ class BinhLuanController extends Controller
     {
         $dsBinhLuan = BinhLuan::with('sanPham')->get();
         $dsSanPham = SanPham::all();
-       //dd($dsBinhLuan);
-        return view('BinhLuan/ds-binhluan',compact('dsBinhLuan'));
+        //dd($dsBinhLuan);
+        return view('BinhLuan/ds-binhluan', compact('dsBinhLuan'));
     }
 
     public function getData()
     {
         $dsBinhLuan = BinhLuan::with('sanPham')->get();
         //$dsSanPham = SanPham::with('nhaSanXuat')->get();
-        return Datatables()->of($dsBinhLuan)->addColumn('action', function($data) {
-            return view('BinhLuan.create-action', compact('data'));
-        })
-        ->addColumn('trang_thai', function ($data) {
-            return view("BinhLuan.trang-thai", compact('data'));
-        })
-        ->rawColumns(['action', 'trang_thai'])
-        ->make(true);
+        return Datatables()->of($dsBinhLuan)
+            ->addColumn('action', function ($data) {
+                return view('BinhLuan.create-action', compact('data'));
+            })
+            ->addColumn('trang_thai', function ($data) {
+                return view("BinhLuan.trang-thai", compact('data'));
+            })
+            ->rawColumns(['action', 'trang_thai'])
+            ->make(true);
     }
     /**
      * Show the form for creating a new resource.

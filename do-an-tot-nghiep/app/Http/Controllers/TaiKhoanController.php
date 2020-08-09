@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DangNhapRequest;
+use App\TaiKhoan;
+
 class TaiKhoanController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class TaiKhoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function admin_page()
     {
         return view('Admin/admin-login');
@@ -33,6 +35,19 @@ class TaiKhoanController extends Controller
     public function index()
     {
         return view('Admin.ds-admin');
+    }
+    public function getData()
+    {
+        $dsTaiKhoan = TaiKhoan::all();
+        return Datatables()->of($dsTaiKhoan)
+            ->addColumn('action', function ($data) {
+                return view('Admin.create-action', compact('data'));
+            })
+            ->addColumn('trang_thai', function ($data) {
+                return view("Admin.trang-thai", compact('data'));
+            })
+            ->rawColumns(['action,trang_thai'])
+            ->make(true);
     }
 
     /**
@@ -109,8 +124,7 @@ class TaiKhoanController extends Controller
         //     'ten_tai_khoan' => $thongTin['ten_tai_khoan'],
         //     'password' => $thongTin['password']
         // ])) 
-        if (Auth::attempt($thongTin))
-        {
+        if (Auth::attempt($thongTin)) {
             return redirect()->route('admin-dashboard');
         }
         return  redirect()->back()->withErrors('Sai mật khẩu');
