@@ -15,7 +15,6 @@ class TaiKhoanController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-
     public function admin_page()
     {
         return view('Admin/admin-login');
@@ -29,6 +28,11 @@ class TaiKhoanController extends Controller
     public function user_register()
     {
         return view('User/user-register');
+    }
+
+    public function index()
+    {
+        return view('Admin.ds-admin');
     }
 
     /**

@@ -35,6 +35,7 @@ Route::middleware("auth")->group(function () {
         Route::name('admin-')->group(function () {
             //ADMIN
             Route::get('/dashboard', 'DashBoardController@index')->name('dashboard');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z','TaiKhoanController@index')->name('danh-sach');
         });
 
         Route::prefix('san-pham')->group(function () {
