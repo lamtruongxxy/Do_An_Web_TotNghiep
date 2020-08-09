@@ -32,7 +32,7 @@
                                     <div class="media-body">
                                         <span class="cart-item-title">{{$product['item']['ten_sp']}}</span>
                                         <span
-                                            class="cart-item-amount">{{$product['qty']}}*<span>{{number_format($product['item']['gia_sp'])}}</span></span>
+                                            class="cart-item-amount">{{$product['qty']}}*<span>@if($product['item']['gia_khuyen_mai']==0){{number_format($product['item']['gia_sp'])}}@else{{number_format($product['item']['gia_khuyen_mai'])}}@endif</span></span>
                                     </div>
                                 </div>
                             </div>

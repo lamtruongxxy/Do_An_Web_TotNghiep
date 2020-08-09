@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\SanPham;
 class Cart
 {
 	public $items = null;
@@ -17,19 +17,24 @@ class Cart
 	}
 
 	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->gia_sp, 'item' => $item];
+		$giohang = ['qty'=>0, 'price' => $item->gia_sp_or_gia_khuyen_mai, 'gia_sp' => $item->gia_sp, 'gia_khuyen_mai' => $item->gia_khuyen_mai, 'item' => $item];
 		if($this->items){
-			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
-			}
+		 if(array_key_exists($id, $this->items)){
+		  $giohang = $this->items[$id];
+		 }
 		}
 		$giohang['qty']++;
-		$giohang['price'] = $item->gia_sp * $giohang['qty'];
+		if($item->gia_khuyen_mai == 0) {
+		 $item->gia_sp_or_gia_khuyen_mai = $item->gia_sp;
+		} else {
+		 $item->gia_sp_or_gia_khuyen_mai = $item->gia_khuyen_mai;
+		}
+		$giohang['price'] = $item->gia_sp_or_gia_khuyen_mai * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
-		$this->totalPrice += $item->gia_sp;
-	}
-	//xóa 1 la xoa di 1 san pham cos 2 so luong
+		$this->totalPrice += $item->gia_sp_or_gia_khuyen_mai;
+	   }
+	//xóa 1
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;
 		$this->items[$id]['price'] -= $this->items[$id]['item']['price'];
@@ -39,7 +44,7 @@ class Cart
 			unset($this->items[$id]);
 		}
 	}
-	//xóa nhiều la xoa het khi click 
+	//xóa nhiều
 	public function removeItem($id){
 		$this->totalQty -= $this->items[$id]['qty'];
 		$this->totalPrice -= $this->items[$id]['price'];
