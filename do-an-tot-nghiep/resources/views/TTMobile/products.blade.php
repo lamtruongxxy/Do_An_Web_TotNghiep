@@ -45,7 +45,12 @@
                             <div class="col-sm-4">
                                 <div class="single-item">
                                     <div class="ribbon-wrapper">
+                                        @if( $dsSanPham->gia_khuyen_mai !=0 )
+                                    <div class="ribbon-wrapper">
                                         <div class="ribbon sale">Sale</div>
+                                    </div>
+                                    @else
+                                    @endif
                                     </div>
                                     <div class="single-item-header">
                                         <a href="{{ route('products-detail',$dsSanPham->id) }}"><img style="width: 230px;height: 250px;" src="  {{ asset('storage') }}/san-pham/{{ $dsSanPham->hinhAnhSP[1]->duong_dan }} " alt="{{ $dsSanPham->ten_sp }}"

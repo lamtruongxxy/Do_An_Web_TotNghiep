@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Thông tin sản phẩm</span>
+            <a href="{{route('index')}}">Home</a> / <span>Thông tin sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -29,16 +29,21 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="single-item-body">
-                            <p class="single-item-title">{{ $thongTinSP->ten_sp }}</p>
+                            <p class="single-item-title" style="font-size: 20px">{{ $thongTinSP->ten_sp }}</p>
                             <p class="single-item-price">
-                                <span>$34.55</span>
+                                @if( $thongTinSP->gia_khuyen_mai==0 )
+                                <span class="flash-sale">{{ number_format($thongTinSP->gia_sp,0) }} đ</span>
+                                @else
+                                <span class="flash-sale">{{ number_format($thongTinSP->gia_khuyen_mai,0) }}đ</span>
+                                <span class="flash-del">{{ number_format($thongTinSP->gia_sp,0) }} đ</span>
+                                @endif
                             </p>
                         </div>
                         <div class="space30">&nbsp;</div>
-                        <p class="single-item-title">Nhà sản xuất: {{ $thongTinSP->nhaSanXuat->ten_nha_sx}}</p>
-                        <p class="single-item-title">Loại: {{ $thongTinSP->loaiSanPham->ten_loai_sp }}</p>
-                        <p class="single-item-title">Chế độ bảo hành: {{ $thongTinSP->che_do_bao_hanh }}</p>
-                        <p class="single-item-title">Ngày ra mắt: {{ $thongTinSP->created_at }}</p>
+                        <p class="single-item-title">Nhà sản xuất: {{ $thongTinSP->nhaSanXuat->ten_nha_sx}}</p><br />
+                        <p class="single-item-title">Loại: {{ $thongTinSP->loaiSanPham->ten_loai_sp }}</p><br />
+                        <p class="single-item-title">Chế độ bảo hành: {{ $thongTinSP->che_do_bao_hanh }}</p><br />
+                        <p class="single-item-title">Ngày ra mắt: {{ $thongTinSP->created_at->format('d/m/Y') }}</p>
                         <div class="space30">&nbsp;</div>
                         <p>Số Lượng:</p>
                         <div class="single-item-options">
@@ -83,11 +88,16 @@
                         <div class="col-sm-4">
                             <div class="single-item">
                                 <div class="ribbon-wrapper">
+                                    @if( $sale->gia_khuyen_mai !=0 )
+                                <div class="ribbon-wrapper">
                                     <div class="ribbon sale">Sale</div>
+                                </div>
+                                @else
+                                @endif
                                 </div>
                                 <div class="single-item-header">
 
-                                    <a href="product.html"><img style="width: 230px;height: 250px;"
+                                    <a href="{{ route('products-detail',$sale->id) }}"><img style="width: 230px;height: 250px;"
                                             src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} "
                                             alt="{{ $sale->ten_sp }}" alt="{{ $sale->ten_sp }}"></a>
                                 </div>
@@ -106,7 +116,7 @@
                                 <div class="single-item-caption">
                                     <a class="add-to-cart pull-left" href="shopping_cart.html"><i
                                             class="fa fa-shopping-cart"></i></a>
-                                    <a class="beta-btn primary" href="product.html">Details <i
+                                    <a class="beta-btn primary" href="{{ route('products-detail',$sale->id) }}">Details <i
                                             class="fa fa-chevron-right"></i></a>
                                     <div class="clearfix"></div>
                                 </div>
@@ -124,7 +134,8 @@
                             @foreach( $tenThongSo as $tt)
                             <div class="media beta-sales-item">
                                 <div class="media-body">
-                                    <p>{{ $tt->thongSo->ten_thong_so }}:&nbsp;{{ $tt->gia_tri }}&nbsp;{{ $tt->thongSo->don_vi }}</p>
+                                    <p>{{ $tt->thongSo->ten_thong_so }}:&nbsp;{{ $tt->gia_tri }}&nbsp;{{ $tt->thongSo->don_vi }}
+                                    </p>
                                 </div>
                             </div>
                             @endforeach
