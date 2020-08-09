@@ -1877,7 +1877,7 @@ margin-bottom:20px
 
 .single-item-title {
 font-weight: bold;
-font-size:15px;
+font-size:18px;
 margin-bottom:5px
 }
 
@@ -1903,13 +1903,11 @@ line-height:35px
 
 .flash-del {
 text-decoration:line-through;
-margin-right:10px;
-font-size:15px;
+margin-right:10px
 }
 
 .flash-sale {
-color:#f90;
-font-size:15px;
+color:#f90
 }
 
 /* ==========================================================================

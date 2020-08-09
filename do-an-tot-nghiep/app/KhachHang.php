@@ -15,8 +15,4 @@ class KhachHang extends Model
         'email',
         'trang_thai'
     ];
-    public function donHang()
-    {
-        return $this->hasMany('App\DonHang','khach_hang_id','id');
-    }
 }

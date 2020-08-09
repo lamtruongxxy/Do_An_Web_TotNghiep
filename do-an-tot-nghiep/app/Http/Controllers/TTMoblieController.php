@@ -18,9 +18,9 @@ class TTMoblieController extends Controller
     {
         // San phẩm đang sale
         $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->get();
-        // dd($sanPhamSale);
+
         // Tất cả sản phẩm
-        $sanPham = SanPham::with('hinhAnhSP')->where('trang_thai',1)->orderBy('gia_sp', 'desc')->get();
+        $sanPham = SanPham::with('hinhAnhSP')->where('trang_thai',1)->get();
         return view('TTMobile/index',compact('sanPhamSale','sanPham'));
     }
 

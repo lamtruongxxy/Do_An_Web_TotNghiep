@@ -17,10 +17,6 @@ class ChiTietDonHang extends Model
     ];
     public function sanPham()
     {
-        return $this->belongsTo('App\SanPham','san_pham_id','id');
-    }
-    public function donHang()
-    {
-        return $this->belongsTo('App\DonHang','don_hang_id','id');
+        return $this->belongsTo('App\SanPham');
     }
 }
