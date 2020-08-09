@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DangNhapRequest;
 use App\Http\Requests\TaiKhoanRequest;
-use App\Http\Requests\TaiKhoanUpdateRequest;
 use App\TaiKhoan;
 use Illuminate\Support\Facades\Hash;
 
@@ -64,6 +63,7 @@ class TaiKhoanController extends Controller
      */
     public function create()
     {
+      
     }
 
     /**
@@ -77,7 +77,7 @@ class TaiKhoanController extends Controller
         $taiKhoan = new TaiKhoan();
 
         $taiKhoan->ten_tai_khoan = $request->ten_tai_khoan;
-        $taiKhoan->mat_khau = Hash::make($request->mat_khau);
+        $taiKhoan->mat_khau = Hash::make ($request->mat_khau);
         $taiKhoan->ho_ten = $request->ho_ten;
         $taiKhoan->email = $request->email;
         $taiKhoan->sdt = $request->sdt;
@@ -109,8 +109,7 @@ class TaiKhoanController extends Controller
      */
     public function edit($id)
     {
-        $taiKhoan = TaiKhoan::findOrFail($id);
-        return view('Admin.update-admin', compact('taiKhoan'));
+        //
     }
 
     /**
@@ -120,23 +119,9 @@ class TaiKhoanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TaiKhoanUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = [
-            'ten_tai_khoan' => $request->ten_tai_khoan,
-            'mat_khau'   => Hash::make($request->mat_khau),
-            'ho_ten' => $request->ho_ten,
-            'email'   => $request->email,
-            'sdt' => $request->sdt,
-            'dia_chi'   => $request->dia_chi,
-            'trang_thai' => 0,
-            'anh_dai_dien'   => 0,
-        ];
-        $ketQua = TaiKhoan::find($id)->update($data);
-        if ($ketQua) {
-            return redirect()->route('admin-danh-sach')->with('thong-bao', 'Cập nhật thông tin thành công');
-        }
-        return back()->withErrors('Cập nhật thất bại');
+        //
     }
 
     /**
@@ -145,19 +130,9 @@ class TaiKhoanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function chiTiet($id)
+    public function destroy($id)
     {
-        $chiTietTaiKhoan = TaiKhoan::findOrFail($id);
-        return view('Admin.chi-tiet-admin', compact('chiTietTaiKhoan'));
-    }
-    public function delete(Request $request)
-    {
-        $id = $request->id;
-        $ketQua = TaiKhoan::find($id)->delete();
-        if ($ketQua) {
-            return redirect()->route('admin-danh-sach')->with('thong-bao', 'Xóa thành công');
-        }
-        return back()->withErrors('Xóa thất bại')->withInput();
+        //
     }
 
     public function xyLyDangNhap(DangNhapRequest $request)
