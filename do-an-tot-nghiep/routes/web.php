@@ -31,6 +31,11 @@ Route::get('/products-type/{id}','TTMoblieController@products_type')->name('prod
 Route::get('/product-detail/{id}','TTMoblieController@products_detail')->name('products-detail');
 
 //end
+// them gio hang
+Route::get('/add-to-cart/{id}','TTMoblieController@getAddtoCart')->name('add-to-cart');
+Route::get('/delete-cart/{id}','TTMoblieController@getDeleteCart')->name('delete-cart');
+
+// end them gio hang
 Route::get('/checkout','TTMoblieController@checkout')->name('checkout');
 
 //end route ttmobile

@@ -22,7 +22,7 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     <div class="single-item-header">
-                                        <a href="product.html"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} " alt="{{ $sale->ten_sp }}"
+                                        <a href="{{ route('products-detail',$sale->id) }}"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} " alt="{{ $sale->ten_sp }}"
                                                 alt="{{ $sale->ten_sp }}"></a>
                                     </div>
                                     <div class="single-item-body">
@@ -38,9 +38,9 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
+                                        <a class="add-to-cart pull-left" href="{{ route('add-to-cart',$sale->id) }}"><i
                                                 class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product.html">Details <i
+                                        <a class="beta-btn primary" href="{{ route('products-detail',$sale->id) }}">Details <i
                                                 class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
@@ -78,7 +78,7 @@
                                     @else
                                     @endif
                                     <div class="single-item-header">
-                                        <a href="product.html"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sanPham->hinhAnhSP[1]->duong_dan }} " alt="{{ $sanPham->ten_sp }}"
+                                        <a href="{{ route('products-detail',$sanPham->id) }}"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sanPham->hinhAnhSP[1]->duong_dan }} " alt="{{ $sanPham->ten_sp }}"
                                                 alt="{{ $sanPham->ten_sp }}"></a>
                                     </div>
                                     <div class="single-item-body">
@@ -94,9 +94,9 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
+                                        <a class="add-to-cart pull-left" href="{{ route('add-to-cart',$sanPham->id) }}"><i
                                                 class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product.html">Details <i
+                                        <a class="beta-btn primary" href="{{ route('products-detail',$sanPham->id) }}">Details <i
                                                 class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>

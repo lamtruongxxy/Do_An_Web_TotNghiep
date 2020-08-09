@@ -10,6 +10,8 @@ use App\LoaiSanPham;
 use App\NhaSanXuat;
 use App\ChiTietThongSo;
 use App\BinhLuan;
+use App\Cart;
+use Session;
 class TTMoblieController extends Controller
 {
     /**
@@ -61,15 +63,17 @@ class TTMoblieController extends Controller
         $dsnhaSanXuat=NhaSanXuat::all();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
+    //lấy sp với loại sản phẩm
     public function products_type($id)
     {
-        //lấy sp với loại sản phẩm
+        
         $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('loai_san_pham_id',$id)->paginate(12);
         //dd($dsSP);
         $dsloaiSanPham=LoaiSanPham::all();
         $dsnhaSanXuat=NhaSanXuat::all();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
+    // chi tiet san pham
     public function products_detail($id)
     {
         $thongTinSP = SanPham::findOrFail($id);
@@ -79,6 +83,29 @@ class TTMoblieController extends Controller
         $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->inRandomOrder()->limit(3)->get();;
        // dd( $sanPhamSale);
         return view('TTMobile/product-detail',compact('sanPhamSale','thongTinSP','hinhAnh','tenThongSo'));
+    }
+
+    ///them gio hang
+    public function getAddtoCart(Request $req,$id){
+        $product = SanPham::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart( $oldCart);
+        $cart ->add ($product, $id);
+        $req->session()->put('cart',$cart);
+        return redirect()->back();
+    }
+    //xoa gio hang
+    public function getDeleteCart($id){
+        $oldCart = Session::has('cart')?Session::get('cart'):null; //tao bien old cart de kiem tra xem gio hang co hay khong co ,neu co thi get cart nguoc lai null
+        $cart = new Cart( $oldCart); //tao bien cart bang Cart 
+        $cart->removeItem($id);        // tro den phuogn thuc xoa di 1 san pham trong model Cart
+        if(count($cart->items)>0){      // kiem tra so luong=0 thi remove session di 
+            Session::put('cart',$cart);   //put lai gio hang cua minh bang cach tao lai session va put vao gio hang moi
+        }
+        else{
+            Session::forget('cart');      // nguoc lai huy no di
+        }
+        return redirect()->back();   //sao khi xoa cho return tro ve trang ban dau
     }
     public function checkout()
     {

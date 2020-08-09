@@ -73,7 +73,7 @@
                     </ul>
 
                     <div class="panel" id="tab-description">
-                        <p>{{ $thongTinSP->mo_ta_sp }}</p>
+                        <p style="font-size: 15px">{{ $thongTinSP->mo_ta_sp }}</p>
                     </div>
                     <div class="panel" id="tab-reviews">
                         <p>No Reviews</p>
@@ -114,7 +114,7 @@
                                     </p>
                                 </div>
                                 <div class="single-item-caption">
-                                    <a class="add-to-cart pull-left" href="shopping_cart.html"><i
+                                    <a class="add-to-cart pull-left" href="{{ route('add-to-cart',$sale->id) }}"><i
                                             class="fa fa-shopping-cart"></i></a>
                                     <a class="beta-btn primary" href="{{ route('products-detail',$sale->id) }}">Details <i
                                             class="fa fa-chevron-right"></i></a>
