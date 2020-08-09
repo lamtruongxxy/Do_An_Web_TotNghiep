@@ -38,6 +38,7 @@ Route::middleware("auth")->group(function () {
             Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z','TaiKhoanController@index')->name('danh-sach');
             Route::get('/lay-danh-sach','TaiKhoanController@getData')->name('lay-danh-sach');
             Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/create','TaiKhoanController@create_page')->name('create');
+            Route::post('/tXCY7AVdXm8udF3GP9imsDxIr1Z/them-moi','TaiKhoanController@store')->name('store');
         });
 
         Route::prefix('san-pham')->group(function () {

@@ -39,7 +39,6 @@ class KhachHangRequest extends FormRequest
             'dia_chi.required' => 'Địa chỉ bị trống',
     
             'sdt.required'=> 'Sdt bị trống',
-            'sdt.max'     => 'Sdt tối đa chỉ 10 ký tự ',
             'sdt.numeric' => 'Sdt không hợp lệ',
 
             'email.required' => 'Email bị bỏ trống',

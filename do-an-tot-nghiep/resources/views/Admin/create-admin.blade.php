@@ -4,17 +4,18 @@
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Request.errors')
+        @include('Request/errors')
+        @include('Request/complete')
         <div class="card">
             <div class="card-body">
                 <h4 class="mb-3 header-title">Thêm mới ADMIN</h4>
-                <form action="" method="POST">
+                <form action="{{ route('admin-store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <input type="text" class="form-control" id="ten_tai_khoan" name="ten_tai_khoan" placeholder="Tên tài khoản">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="mat_khau" name="mat_khau"  placeholder="Mật khẩu">
+                        <input type="password" class="form-control" id="mat_khau" name="mat_khau" placeholder="Mật khẩu">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="ho_ten" name="ho_ten" placeholder="Họ tên">

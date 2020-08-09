@@ -73,7 +73,6 @@
         @include('Components.errors')
         <div class="card">
             <div class="card-body">
-                <h4>Quản lý ADMIN</h4>
                 <a href="{{ route('admin-create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>

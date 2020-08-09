@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DangNhapRequest;
+use App\Http\Requests\TaiKhoanRequest;
 use App\TaiKhoan;
+use Illuminate\Support\Facades\Hash;
 
 class TaiKhoanController extends Controller
 {
@@ -61,7 +63,7 @@ class TaiKhoanController extends Controller
      */
     public function create()
     {
-        //
+      
     }
 
     /**
@@ -70,9 +72,22 @@ class TaiKhoanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TaiKhoanRequest $request)
     {
-        //
+        $taiKhoan = new TaiKhoan();
+
+        $taiKhoan->ten_tai_khoan = $request->ten_tai_khoan;
+        $taiKhoan->mat_khau = Hash::make ($request->mat_khau);
+        $taiKhoan->ho_ten = $request->ho_ten;
+        $taiKhoan->email = $request->email;
+        $taiKhoan->sdt = $request->sdt;
+        $taiKhoan->dia_chi = $request->dia_chi;
+        $taiKhoan->trang_thai = 0;
+        $taiKhoan->anh_dai_dien = 0;
+        $taiKhoan->save();
+
+        return redirect()->route('admin-create')
+            ->with('thong-bao', 'Thêm thành công');
     }
 
     /**
