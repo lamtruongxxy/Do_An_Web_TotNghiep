@@ -14,6 +14,7 @@ class CreateChiTietDonHangsTable extends Migration
     public function up()
     {
         Schema::create('chi_tiet_don_hang', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('don_hang_id');
             $table->integer('san_pham_id');
             $table->integer('so_luong');

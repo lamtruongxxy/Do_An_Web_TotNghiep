@@ -29,9 +29,8 @@
                 </form>
             </li>
             <li class="dropdown notification-list">
-                <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                 
-                    <button type="submit" class="btn btn-danger waves-effect waves-light delete-don-hang"> <i class="fas fa-user-cog"></i></button>
+                <a class="nav-link dropdown-toggle  waves-effect"  href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <button type="submit" class="btn btn-success waves-effect waves-light "> <i class="fas fa-user-cog"></i></button>
                 </a>
             
             </li>

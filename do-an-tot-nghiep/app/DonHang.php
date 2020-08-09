@@ -22,6 +22,6 @@ class DonHang extends Model
 
     public function chiTietDonHang()
     {
-        return $this->belongsTo('App\ChiTietDonHang','id');
+        return $this->hasMany('App\ChiTietDonHang','don_hang_id','id');
     }
-}
+} 
