@@ -14,6 +14,9 @@ class LoaiSanPham extends Model
         'trang_thai'
     ];
 
+    public function sanPham(){
+        return $this->hasMany('App\SanPham','loai_san_pham_id', 'id' );
+    }
     public function getTrangThaiFormatAttribute() {
         return $this->trang_thai ? "Hiện" : "Ẩn";
     }
