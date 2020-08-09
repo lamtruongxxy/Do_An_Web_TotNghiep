@@ -70,7 +70,8 @@
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Request.errors')
+        @include('Request.complete')
         <div class="card">
             <div class="card-body">
                 <a href="{{ route('admin-create') }}" class="btn btn-primary waves-effect waves-light">
