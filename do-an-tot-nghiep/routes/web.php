@@ -19,11 +19,11 @@
 use App\Http\Controllers\LoaiSPController;
 use App\LoaiSanPham;
 
-Route::get('/','TTMoblieController@index')->name('index');
-Route::get('/test','TTMoblieController@test')->name('index');
-Route::get('/products','TTMoblieController@products')->name('products');
-Route::get('/product-detail','TTMoblieController@products_detail')->name('products-detail');
-Route::get('/checkout','TTMoblieController@checkout')->name('checkout');
+Route::get('/', 'TTMoblieController@index')->name('index');
+Route::get('/test', 'TTMoblieController@test')->name('index');
+Route::get('/products', 'TTMoblieController@products')->name('products');
+Route::get('/product-detail', 'TTMoblieController@products_detail')->name('products-detail');
+Route::get('/checkout', 'TTMoblieController@checkout')->name('checkout');
 
 
 Route::get('admin', 'TaiKhoanController@admin_page')->name('admin-page')->middleware('guest');
@@ -35,10 +35,14 @@ Route::middleware("auth")->group(function () {
         Route::name('admin-')->group(function () {
             //ADMIN
             Route::get('/dashboard', 'DashBoardController@index')->name('dashboard');
-            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z','TaiKhoanController@index')->name('danh-sach');
-            Route::get('/lay-danh-sach','TaiKhoanController@getData')->name('lay-danh-sach');
-            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/create','TaiKhoanController@create_page')->name('create');
-            Route::post('/tXCY7AVdXm8udF3GP9imsDxIr1Z/them-moi','TaiKhoanController@store')->name('store');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z', 'TaiKhoanController@index')->name('danh-sach');
+            Route::get('/lay-danh-sach', 'TaiKhoanController@getData')->name('lay-danh-sach');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/create', 'TaiKhoanController@create_page')->name('create');
+            Route::post('/tXCY7AVdXm8udF3GP9imsDxIr1Z/them-moi', 'TaiKhoanController@store')->name('store');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/edit/{id}', 'TaiKhoanController@edit')->name('edit');
+            Route::put('/tXCY7AVdXm8udF3GP9imsDxIr1Z/update/{id}', 'TaiKhoanController@update')->name('update');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/chi-tiet/{id}', 'TaiKhoanController@chiTiet')->name('chi-tiet');
+            Route::delete('/tXCY7AVdXm8udF3GP9imsDxIr1Z/update/delete', 'TaiKhoanController@delete')->name('delete');
         });
 
         Route::prefix('san-pham')->group(function () {
@@ -51,8 +55,8 @@ Route::middleware("auth")->group(function () {
 
                 Route::get('/lay-thong-so', 'SanPhamController@getThongSo')->name('get-thong-so');
 
-                Route::get('/chi-tiet-thong-so/{id}','SanPhamController@chiTietThongSo')->name('chi-tiet-thong-so');
-                Route::get('/test/{id}','SanPhamController@test')->name('test');
+                Route::get('/chi-tiet-thong-so/{id}', 'SanPhamController@chiTietThongSo')->name('chi-tiet-thong-so');
+                Route::get('/test/{id}', 'SanPhamController@test')->name('test');
             });
         });
         Route::prefix('loai-san-pham')->group(function () {
