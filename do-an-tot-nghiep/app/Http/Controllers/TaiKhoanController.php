@@ -49,6 +49,10 @@ class TaiKhoanController extends Controller
             ->rawColumns(['action,trang_thai'])
             ->make(true);
     }
+    public function create_page()
+    {
+        return view('Admin.create-admin');
+    }
 
     /**
      * Show the form for creating a new resource.

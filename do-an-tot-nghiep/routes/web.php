@@ -37,6 +37,7 @@ Route::middleware("auth")->group(function () {
             Route::get('/dashboard', 'DashBoardController@index')->name('dashboard');
             Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z','TaiKhoanController@index')->name('danh-sach');
             Route::get('/lay-danh-sach','TaiKhoanController@getData')->name('lay-danh-sach');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/create','TaiKhoanController@create_page')->name('create');
         });
 
         Route::prefix('san-pham')->group(function () {
