@@ -16,4 +16,8 @@ class NhaSanXuat extends Model
     public function getTrangThaiFormatAttribute() {
         return $this->trang_thai ? "Hiện" : "Ẩn";
     }
+    public function sanPham()
+    {
+        return $this->hasMany('App\SanPham','nha_san_xuat_id','id');
+    }
 }
