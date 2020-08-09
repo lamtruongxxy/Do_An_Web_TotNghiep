@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\NhaSanXuat;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+      
     }
 
     /**
@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('TTMobile/Components/header',function($view){
+            $nhaSanXuat = NhaSanXuat::all();
+            $view->with('nhaSanXuat',$nhaSanXuat);
+        });
     }
 }
