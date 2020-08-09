@@ -32,9 +32,12 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <form action="{{ route('admin-danh-sach') }}">
-                    <button type="submit" class="btn btn-danger waves-effect waves-light" @if (Auth()->user()->trang_thai != 1) {{ 'hidden' }} @endif > 
+                        <button type="submit" class="btn btn-danger waves-effect waves-light" @if (Auth()->user()->trang_thai != 1) {{ 'hidden' }} @endif >
+                            <span class="btn-label">
+                                <i class="fas fa-user-cog"></i>
+                            </span>All admin
+                        </button>
                     </form>
-                    <i class="fas fa-user-cog"></i></button>
                 </a>
             </li>
             <li class="dropdown notification-list">

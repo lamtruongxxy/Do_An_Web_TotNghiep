@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" id="ten_tai_khoan" name="ten_tai_khoan" placeholder="Tên tài khoản">
                     </div>
                     <div class="form-group">
-                        <input type="password" id="mat_khau" name="mat_khau" class="form-mat_khau" placeholder="Mật khẩu">
+                        <input type="password" class="form-control" id="mat_khau" name="mat_khau"  placeholder="Mật khẩu">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="ho_ten" name="ho_ten" placeholder="Họ tên">
