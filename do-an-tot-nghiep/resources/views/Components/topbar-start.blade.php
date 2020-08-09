@@ -28,18 +28,22 @@
                     </div>
                 </form>
             </li>
+            @auth
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                 
-                    <button type="submit" class="btn btn-danger waves-effect waves-light delete-don-hang"> <i class="fas fa-user-cog"></i></button>
+                    <form action="{{ route('admin-danh-sach') }}">
+                        <button type="submit" class="btn btn-danger waves-effect waves-light" @if (Auth()->user()->trang_thai != 1) {{ 'hidden' }} @endif >
+                            <span class="btn-label">
+                                <i class="fas fa-user-cog"></i>
+                            </span>All admin
+                        </button>
+                    </form>
                 </a>
-            
             </li>
-
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    @auth
-                    <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
+
+                    <img src="{{ asset('assets/images/users/user.png') }}" alt="user-image" class="rounded-circle">
                     <span class="pro-user-name ml-1">
                         {{ Auth()->user()->ho_ten }}
                         <i class="mdi mdi-chevron-down"></i>
