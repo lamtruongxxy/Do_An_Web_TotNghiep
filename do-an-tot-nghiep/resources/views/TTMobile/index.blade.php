@@ -10,7 +10,7 @@
                     <div class="beta-products-list">
                         <h4>Điện Thoại Mới</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">438 Sản Phẩm</p>
+                            <p class="pull-left">Có {{ count($sanPhamSale) }} Sản Phẩm</p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
@@ -18,16 +18,24 @@
                             @foreach($sanPhamSale as $sale)
                             <div class="col-sm-3">
                                 <div class="single-item">
-                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
-
+                                    @if( $sale->gia_khuyen_mai !=0 )
+                                    <div class="ribbon-wrapper">
+                                        <div class="ribbon sale">Sale</div>
+                                    </div>
+                                    @else
+                                    @endif
                                     <div class="single-item-header">
-                                        <a href="product.html"><img  style="width: 230px;height: 250px;"src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} " alt="{{ $sale->ten_sp }}"></a>
+                                        <a href="product.html"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} " alt="{{ $sale->ten_sp }}"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $sale->ten_sp }}</p>
                                         <p class="single-item-price">
+                                            @if( $sale->gia_khuyen_mai==0 )
                                             <span class="flash-sale">{{ $sale->gia_sp }}</span>
-                                            <span class="flash-del">{{ $sale->gia_khuyen_mai }}</span>
+                                            @else
+                                            <span class="flash-sale">{{ $sale->gia_khuyen_mai }}</span>
+                                            <span class="flash-del">{{ $sale->gia_sp }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
@@ -38,10 +46,10 @@
                                 </div>
                             </div>
                             @endforeach
-                           
-                           {{-- end --}}
+
+                            {{-- end --}}
                         </div>
-                        
+
                     </div> <!-- .beta-products-list -->
 
                     <div class="space50">&nbsp;</div>
@@ -73,7 +81,9 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="single-item">
-                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                    <div class="ribbon-wrapper">
+                                        <div class="ribbon sale">Sale</div>
+                                    </div>
 
                                     <div class="single-item-header">
                                         <a href="product.html"><img src="{{ asset('ttmobile/images/products/2.jpg') }}" alt=""></a>
@@ -151,7 +161,9 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="single-item">
-                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                    <div class="ribbon-wrapper">
+                                        <div class="ribbon sale">Sale</div>
+                                    </div>
 
                                     <div class="single-item-header">
                                         <a href="product.html"><img src="{{ asset('ttmobile/images/products/2.jpg') }}" alt=""></a>
