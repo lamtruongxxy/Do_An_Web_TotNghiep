@@ -74,7 +74,7 @@
             <nav class="main-menu">
                 <ul class="l-inline ov">
                     <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="#">Điện Thoại</a>
+                <li><a href="{{ route('products') }}">Điện Thoại</a>
                         <ul class="sub-menu">
                             <li><a href="product_type.html">Iphone</a></li>
                             <li><a href="product_type.html">Samsung</a></li>

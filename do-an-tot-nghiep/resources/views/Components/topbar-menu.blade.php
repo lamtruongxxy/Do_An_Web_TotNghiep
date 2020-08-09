@@ -65,12 +65,14 @@
                         </li>
                     </ul>
                 </li>
-
+                
 
 
                 <li class="has-submenu">
                     <a href="{{ route('binh-luan.danh-sach') }}"> <i class="la la-comments"></i>Quản Lý Bình Luận</a>
                 </li>
+
+                
 
             </ul>
             <!-- End navigation menu -->

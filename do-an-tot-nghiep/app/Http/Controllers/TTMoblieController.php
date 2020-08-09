@@ -37,7 +37,21 @@ class TTMoblieController extends Controller
             
         return view('TTMobile/test',compact('sanPhamSale'));
     }
-
+    public function products()
+    {
+    
+        return view('TTMobile/products');
+    }
+    public function products_detail()
+    {
+    
+        return view('TTMobile/product-detail');
+    }
+    public function checkout()
+    {
+    
+        return view('TTMobile/checkout');
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -21,6 +21,10 @@ use App\LoaiSanPham;
 
 Route::get('/','TTMoblieController@index')->name('index');
 Route::get('/test','TTMoblieController@test')->name('index');
+Route::get('/products','TTMoblieController@products')->name('products');
+Route::get('/product-detail','TTMoblieController@products_detail')->name('products-detail');
+Route::get('/checkout','TTMoblieController@checkout')->name('checkout');
+
 
 Route::get('admin', 'TaiKhoanController@admin_page')->name('admin-page')->middleware('guest');
 Route::post('admin/dang-nhap', 'TaiKhoanController@xyLyDangNhap')->name('admin-xu-ly-dang-nhap');

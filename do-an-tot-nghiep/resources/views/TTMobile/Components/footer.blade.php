@@ -4,7 +4,8 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="widget">
-						<a class="widget-title"><img src="{{ asset('ttmobile/images/logo_footer.png')}}" alt="" /></a>
+                  <a class="widget-title"><img src="{{ asset('ttmobile/images/logo_footer.png')}}" alt="" /></a>
+                  <div id="beta-instagram-feed" style="color: #353535"><div></div></div>
 					</div>
 				</div>
 				<div class="col-sm-2">
@@ -37,7 +38,7 @@
 				<div class="col-sm-3">
 					<div class="widget">
 						<h4 class="widget-title">Đăng Ký Để Nhận Thêm Thông Tin</h4>
-						<form action="#" method="post">
+						<form action="" method="">
 							<input type="email" name="your_email">
 							<button class="pull-right" type="submit">Đăng Ký <i class="fa fa-chevron-right"></i></button>
 						</form>
