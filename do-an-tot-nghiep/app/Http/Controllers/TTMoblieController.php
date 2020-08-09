@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 use App\SanPham;
 use App\LoaiSanPham;
 use App\NhaSanXuat;
-
+use App\ChiTietThongSo;
+use App\BinhLuan;
 class TTMoblieController extends Controller
 {
     /**
@@ -62,17 +63,22 @@ class TTMoblieController extends Controller
     }
     public function products_type($id)
     {
-        //lấy sp với nsx
+        //lấy sp với loại sản phẩm
         $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('loai_san_pham_id',$id)->paginate(12);
         //dd($dsSP);
         $dsloaiSanPham=LoaiSanPham::all();
         $dsnhaSanXuat=NhaSanXuat::all();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
-    public function products_detail()
+    public function products_detail($id)
     {
-    
-        return view('TTMobile/product-detail');
+        $thongTinSP = SanPham::findOrFail($id);
+        $tenThongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
+        $hinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->get();
+        $binhLuan = BinhLuan::where('san_pham_id',$id)->get();
+        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->inRandomOrder()->limit(3)->get();;
+       // dd( $sanPhamSale);
+        return view('TTMobile/product-detail',compact('sanPhamSale','thongTinSP','hinhAnh','tenThongSo'));
     }
     public function checkout()
     {

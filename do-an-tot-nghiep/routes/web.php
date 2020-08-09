@@ -23,13 +23,19 @@ Route::get('/','TTMoblieController@index')->name('index');
 // Route::get('/test','TTMoblieController@test')->name('index');
 //load tat ca sarn pham
 Route::get('/products/all','TTMoblieController@product')->name('product');
-
 Route::get('/products/{id}','TTMoblieController@products')->name('products');
 Route::get('/products-type/{id}','TTMoblieController@products_type')->name('products-type');
-Route::get('/product-detail','TTMoblieController@products_detail')->name('products-detail');
+//end
+
+//load chitiet sanpham
+Route::get('/product-detail/{id}','TTMoblieController@products_detail')->name('products-detail');
+
+//end
 Route::get('/checkout','TTMoblieController@checkout')->name('checkout');
 
+//end route ttmobile
 
+//route admin
 Route::get('admin', 'TaiKhoanController@admin_page')->name('admin-page')->middleware('guest');
 Route::post('admin/dang-nhap', 'TaiKhoanController@xyLyDangNhap')->name('admin-xu-ly-dang-nhap');
 Route::get('admin/dang-xuat', 'TaiKhoanController@dangxuat')->name('admin-dang-xuat');

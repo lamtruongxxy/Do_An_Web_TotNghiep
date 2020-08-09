@@ -23,7 +23,10 @@
                                         <p><strong>Nhà sản xuất:</strong>&nbsp;{{ $thongTinSP->nhaSanXuat->ten_nha_sx }} &nbsp;|&nbsp;<strong> Loại:</strong>&nbsp;{{ $thongTinSP->loaiSanPham->ten_loai_sp }}</p>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <p><strong>Chế độ bảo hành</strong>&nbsp;{{ $thongTinSP->che_do_bao_hanh }}</p>
+                                        <p><strong>Chế độ bảo hành:</strong>&nbsp;{{ $thongTinSP->che_do_bao_hanh }}</p>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <p><strong>Số lượng còn:</strong>&nbsp;{{ $thongTinSP->so_luong_ton_kho }}</p>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <p><strong>Giá sản phẩm:</strong>&nbsp;{{ $thongTinSP->gia_sp }} &nbsp;|&nbsp;<strong> Giá khuyến mãi:</strong>&nbsp;{{ $thongTinSP->gia_khuyen_mai }}</p>
@@ -86,7 +89,6 @@
         </form>
     </div>
 </div>
-</form>
 </div> <!-- end card-->
 </div>
 <!-- end col -->

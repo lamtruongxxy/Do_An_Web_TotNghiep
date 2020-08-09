@@ -48,7 +48,7 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     <div class="single-item-header">
-                                        <a href="product.html"><img style="width: 230px;height: 250px;" src="  {{ asset('storage') }}/san-pham/{{ $dsSanPham->hinhAnhSP[1]->duong_dan }} " alt="{{ $dsSanPham->ten_sp }}"
+                                        <a href="{{ route('products-detail',$dsSanPham->id) }}"><img style="width: 230px;height: 250px;" src="  {{ asset('storage') }}/san-pham/{{ $dsSanPham->hinhAnhSP[1]->duong_dan }} " alt="{{ $dsSanPham->ten_sp }}"
                                                 alt="{{ $dsSanPham->ten_sp }}"></a>
                                     </div>
                                   
@@ -58,8 +58,7 @@
                                             @if( $dsSanPham->gia_khuyen_mai==0 )
                                             <span class="flash-sale">{{ number_format($dsSanPham->gia_sp,0) }} đ</span>
                                             @else
-                                            <span class="flash-sale">{{ number_format($dsSanPham->gia_khuyen_mai,0) }}
-                                                đ</span>
+                                            <span class="flash-sale">{{ number_format($dsSanPham->gia_khuyen_mai,0) }}đ</span>
                                             <span class="flash-del">{{ number_format($dsSanPham->gia_sp,0) }} đ</span>
                                             @endif
                                         </p>
@@ -67,7 +66,7 @@
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="shopping_cart.html"><i
                                                 class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product.html">Details <i
+                                        <a class="beta-btn primary" href="{{ route('products-detail',$dsSanPham->id) }}">Details <i
                                                 class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>

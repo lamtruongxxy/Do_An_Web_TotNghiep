@@ -11,6 +11,6 @@ class BinhLuanSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\BinhLuan::class, 100)->create();
+        factory(App\BinhLuan::class, 20)->create();
     }
 }
