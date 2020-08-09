@@ -6,8 +6,6 @@ use App\HinhAnhSanPham;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\SanPham;
-use App\LoaiSanPham;
-use App\NhaSanXuat;
 
 class TTMoblieController extends Controller
 {
@@ -18,13 +16,12 @@ class TTMoblieController extends Controller
      */
     public function index()
     {
-        // San phẩm đang sale lấy đaom 8 dòng
-        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->inRandomOrder()->limit(8)->get();;
-        //dd($sanPhamSale);
-        // Tất cả sản phẩm xắp xếp giảm dần và lấy ra 12 dòng đầu
-        $dssanPham = SanPham::with('hinhAnhSP')->where('trang_thai',1)->orderBy('gia_sp', 'desc')->take(12)->get();
-        //dd($dssanPham);
-        return view('TTMobile/index',compact('sanPhamSale','dssanPham'));
+        // San phẩm đang sale
+        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->get();
+        // dd($sanPhamSale);
+        // Tất cả sản phẩm
+        $sanPham = SanPham::with('hinhAnhSP')->where('trang_thai',1)->orderBy('gia_sp', 'desc')->get();
+        return view('TTMobile/index',compact('sanPhamSale','sanPham'));
     }
 
     /**
@@ -40,34 +37,10 @@ class TTMoblieController extends Controller
             
         return view('TTMobile/test',compact('sanPhamSale'));
     }
-    //tất cả  sản phẩm
-    public function product()
+    public function products()
     {
-        $dsnhaSanXuat=NhaSanXuat::all();
-        $dsloaiSanPham=LoaiSanPham::all();
-        //dd($dsnhaSanXuat);
-        $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->paginate(12);
-       // dd($dsSP);
-        return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
-    }
-    //lọc sản phẩm theo nhà sản xuất
-    public function products($id)
-    {
-        //lấy sp với nsx
-        $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('nha_san_xuat_id',$id)->paginate(12);
-        //dd($dsSP);
-        $dsloaiSanPham=LoaiSanPham::all();
-        $dsnhaSanXuat=NhaSanXuat::all();
-        return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
-    }
-    public function products_type($id)
-    {
-        //lấy sp với nsx
-        $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('loai_san_pham_id',$id)->paginate(12);
-        //dd($dsSP);
-        $dsloaiSanPham=LoaiSanPham::all();
-        $dsnhaSanXuat=NhaSanXuat::all();
-        return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
+    
+        return view('TTMobile/products');
     }
     public function products_detail()
     {
@@ -76,6 +49,7 @@ class TTMoblieController extends Controller
     }
     public function checkout()
     {
+    
         return view('TTMobile/checkout');
     }
     /**

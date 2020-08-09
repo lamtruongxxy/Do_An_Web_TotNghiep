@@ -20,12 +20,8 @@ use App\Http\Controllers\LoaiSPController;
 use App\LoaiSanPham;
 
 Route::get('/','TTMoblieController@index')->name('index');
-// Route::get('/test','TTMoblieController@test')->name('index');
-//load tat ca sarn pham
-Route::get('/products/all','TTMoblieController@product')->name('product');
-
-Route::get('/products/{id}','TTMoblieController@products')->name('products');
-Route::get('/products-type/{id}','TTMoblieController@products_type')->name('products-type');
+Route::get('/test','TTMoblieController@test')->name('index');
+Route::get('/products','TTMoblieController@products')->name('products');
 Route::get('/product-detail','TTMoblieController@products_detail')->name('products-detail');
 Route::get('/checkout','TTMoblieController@checkout')->name('checkout');
 
