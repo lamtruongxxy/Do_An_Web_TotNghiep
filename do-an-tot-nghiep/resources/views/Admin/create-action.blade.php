@@ -1,4 +1,5 @@
-<form action="" method="POST">
+<form action="{{ route('admin-delete') }}" method="POST" class="form-delete">
+    @csrf
     @method('DELETE')
 
     <input type="hidden" name="id" value="{{ $data->id }}">

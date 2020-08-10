@@ -149,6 +149,15 @@ class TaiKhoanController extends Controller
     {
         //
     }
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $ketQua = TaiKhoan::find($id)->delete();
+        if ($ketQua) {
+            return redirect()->route('admin-danh-sach')->with('thong-bao', 'Xóa thành công');
+        }
+        return back()->withErrors('Xóa thất bại')->withInput();
+    }
 
     public function xyLyDangNhap(DangNhapRequest $request)
     {
