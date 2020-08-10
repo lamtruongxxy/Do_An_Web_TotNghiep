@@ -71,14 +71,14 @@
                 <ul class="l-inline ov">
                     <li><a href="{{ route('index') }}">Trang chủ</a></li>
                     <li><a href="{{ route('product') }}">Điện Thoại</a>
-                        {{-- <ul class="sub-menu">
+                        <ul class="sub-menu">
                             @foreach ($nhaSanXuat as $dsNSX)
                             <li><a href="{{ route('products', $dsNSX->id) }}">{{$dsNSX->ten_nha_sx}}</a></li>
-                    @endforeach
-                </ul> --}}
-                </li>
-                <li><a href="about.html">Giới thiệu</a></li>
-                <li><a href="contacts.html">Liên hệ</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="contacts.html">Liên hệ</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </nav>

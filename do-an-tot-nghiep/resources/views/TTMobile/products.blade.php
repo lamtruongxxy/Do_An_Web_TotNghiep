@@ -14,11 +14,11 @@
         </div>
         <div class="clearfix"></div>
     </div>
+    <hr>    
 </div>
 <div class="container">
     <div id="content" class="space-top-none">
         <div class="main-content">
-            <div class="space60">&nbsp;</div>
             <div class="row">
                 <div class="col-sm-3">
                     <ul class="aside-menu">

@@ -15,12 +15,11 @@
         <div class="clearfix"></div>
     </div>
 </div>
-
+<hr>
 <div class="container">
     <div id="content">
         <div class="row">
             <div class="col-sm-9">
-
                 <div class="row">
                     <div class="col-sm-8">
                         @foreach( $hinhAnh as $ha)

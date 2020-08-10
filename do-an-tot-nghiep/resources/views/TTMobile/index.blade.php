@@ -9,6 +9,7 @@
                 <div class="col-sm-12">
                     <div class="beta-products-list">
                         <h4>Điện Thoại Khuyến Mãi</h4>
+                        <hr>
                         <div class="beta-products-details">
                             <p class="pull-left">Có {{ count($sanPhamSale) }} Sản Phẩm</p>
                             <div class="clearfix"></div>
@@ -57,12 +58,14 @@
                             </div> --}}
                             {{-- end --}}
                         </div>
+                        <hr>
                     </div> <!-- .beta-products-list -->
 
-                    <div class="space50">&nbsp;</div>
+                    <div class="space10">&nbsp;</div>
 
                     <div class="beta-products-list">
                         <h4>Top Điện Thoại</h4>
+                        <hr>
                         <div class="beta-products-details">
                             <p class="pull-left">Có {{ count($dssanPham) }} Sản Phẩm</p>
                             <div class="clearfix"></div>
@@ -107,6 +110,7 @@
                         </div>
                         <div class="space40">&nbsp;</div>
                     </div> <!-- .beta-products-list -->
+                    <hr>
                 </div>
             </div> <!-- end section with sidebar and main content -->
 
