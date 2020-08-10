@@ -30,12 +30,13 @@ class AppServiceProvider extends ServiceProvider
             
             $view->with('nhaSanXuat',$nhaSanXuat); 
         });
-        view()->composer('TTMobile/Components/header',function($view){
+        view()->composer(['TTMobile/Components/header','TTMobile.checkout'],function($view){
             if(Session('cart')){
                 $oldCart = Session::get('cart');
                 $cart = new Cart($oldCart);
                 $view->with(['cart'=>Session::get('cart'),'product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
             }
         });
+        
     }
 }

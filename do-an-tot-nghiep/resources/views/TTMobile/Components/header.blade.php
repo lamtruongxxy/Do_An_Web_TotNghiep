@@ -24,10 +24,12 @@
 
                             @foreach ($product_cart as $product)
                             <div class="cart-item">
-                            <a class="cart-item-delete" href="{{route('delete-cart',$product['item']['id'])}}"><i class="fa fa-times"></i> </a>
+                                <a class="cart-item-delete" href="{{route('delete-cart',$product['item']['id'])}}"><i
+                                        class="fa fa-times"></i> </a>
                                 <div class="media">
-                                    <a class="pull-left" >
-                                        <img style="width: 50%;" src="{{ asset('ttmobile/images/products/cart/1.png') }}" alt=""></a>
+                                    <a class="pull-left">
+                                        <img style="width: 50%;"
+                                            src="{{ asset('ttmobile/images/products/cart/1.png') }}" alt=""></a>
                                     {{-- {{$product['item']['image']}} --}}
                                     <div class="media-body">
                                         <span class="cart-item-title">{{$product['item']['ten_sp']}}</span>
@@ -41,12 +43,13 @@
 
                             <div class="cart-caption">
                                 <div class="cart-total text-right">Tổng tiền: <span
-                                        class="cart-total-value">{{number_format(Session('cart')->totalPrice)}} đồng</span></div>
+                                        class="cart-total-value">{{number_format(Session('cart')->totalPrice)}}
+                                        đồng</span></div>
                                 <div class="clearfix"></div>
 
                                 <div class="center">
                                     <div class="space10">&nbsp;</div>
-                                    <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i
+                                    <a href="{{ route('checkout') }}" class="beta-btn primary text-center">Đặt hàng <i
                                             class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>

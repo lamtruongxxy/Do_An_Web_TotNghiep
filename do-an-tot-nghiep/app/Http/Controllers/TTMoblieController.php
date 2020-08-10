@@ -107,7 +107,12 @@ class TTMoblieController extends Controller
         }
         return redirect()->back();   //sao khi xoa cho return tro ve trang ban dau
     }
-    public function checkout()
+    
+    public function getCheckout(Request $req)
+    {
+        return view('TTMobile/checkout');
+    }
+    public function postCheckout(Request $req)
     {
         return view('TTMobile/checkout');
     }

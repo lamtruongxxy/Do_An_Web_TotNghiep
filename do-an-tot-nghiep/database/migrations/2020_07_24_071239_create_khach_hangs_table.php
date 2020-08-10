@@ -16,9 +16,11 @@ class CreateKhachHangsTable extends Migration
         Schema::create('khach_hang', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_khach_hang');
+            $table->string('gioi_tinh');
             $table->string('dia_chi');
             $table->string('sdt');
             $table->string('email');
+            $table->string('ghi_chu');
             $table->boolean('trang_thai');
             $table->timestamps();
         });

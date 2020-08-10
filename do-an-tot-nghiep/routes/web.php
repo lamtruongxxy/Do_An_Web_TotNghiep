@@ -38,7 +38,10 @@ Route::get('/add-to-cart/{id}','TTMoblieController@getAddtoCart')->name('add-to-
 Route::get('/delete-cart/{id}','TTMoblieController@getDeleteCart')->name('delete-cart');
 
 // end them gio hang
-Route::get('/checkout', 'TTMoblieController@checkout')->name('checkout');
+Route::get('/checkout', 'TTMoblieController@getCheckout')->name('checkout');
+
+//dat hang
+Route::post('/checkout', 'TTMoblieController@postCheckout')->name('checkout');
 //end route ttmobile
 
 //route admin

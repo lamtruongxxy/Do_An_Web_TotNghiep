@@ -10,9 +10,11 @@ class KhachHang extends Model
 
     protected $fillable= [
         'ten_khach_hang',
+        'gioi_tinh',
         'dia_chi',
         'sdt',
         'email',
+        'ghi_chu',
         'trang_thai'
     ];
     public function donHang()
