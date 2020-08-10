@@ -68,8 +68,8 @@
                                         <img width="10%" src="{{ asset('ttmobile/images/products/cart/1.png') }}" alt="" class="pull-left">
                                         <div class="media-body">
                                             <p class="font-large" style="font-weight: bold">{{$product['item']['ten_sp']}}</p><br/>
-                                            <span class="color-gray your-order-info" style="font-size: 15px">Đơn giá: {{number_format($product['price'])}} đồng</span>
-                                            <span class="color-gray your-order-info" style="font-size: 15px">Số lượng: {{number_format($product['qty'])}}</span>
+                                            <span class="color-gray your-order-info" style="font-size: 15px">Đơn giá: @if($product['item']['gia_khuyen_mai']==0){{number_format($product['item']['gia_sp'])}}@else{{number_format($product['item']['gia_khuyen_mai'])}}@endif đồng</span>
+                                            <span class="color-gray your-order-info" style="font-size: 15px">Số lượng: {{$product['qty']}}</span>
                                         </div>
                                     </div>
                                     <!-- end one item -->
