@@ -23,24 +23,13 @@ Route::get('/','TTMoblieController@index')->name('index');
 // Route::get('/test','TTMoblieController@test')->name('index');
 //load tat ca sarn pham
 Route::get('/products/all','TTMoblieController@product')->name('product');
+
 Route::get('/products/{id}','TTMoblieController@products')->name('products');
 Route::get('/products-type/{id}','TTMoblieController@products_type')->name('products-type');
-//end
-
-//load chitiet sanpham
-Route::get('/product-detail/{id}','TTMoblieController@products_detail')->name('products-detail');
-
-//end
-// them gio hang
-Route::get('/add-to-cart/{id}','TTMoblieController@getAddtoCart')->name('add-to-cart');
-Route::get('/delete-cart/{id}','TTMoblieController@getDeleteCart')->name('delete-cart');
-
-// end them gio hang
+Route::get('/product-detail','TTMoblieController@products_detail')->name('products-detail');
 Route::get('/checkout','TTMoblieController@checkout')->name('checkout');
 
-//end route ttmobile
 
-//route admin
 Route::get('admin', 'TaiKhoanController@admin_page')->name('admin-page')->middleware('guest');
 Route::post('admin/dang-nhap', 'TaiKhoanController@xyLyDangNhap')->name('admin-xu-ly-dang-nhap');
 Route::get('admin/dang-xuat', 'TaiKhoanController@dangxuat')->name('admin-dang-xuat');
@@ -54,7 +43,10 @@ Route::middleware("auth")->group(function () {
             Route::get('/lay-danh-sach','TaiKhoanController@getData')->name('lay-danh-sach');
             Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/create','TaiKhoanController@create_page')->name('create');
             Route::post('/tXCY7AVdXm8udF3GP9imsDxIr1Z/them-moi','TaiKhoanController@store')->name('store');
-        });
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/edit/{id}', 'TaiKhoanController@edit')->name('edit');
+            Route::put('/tXCY7AVdXm8udF3GP9imsDxIr1Z/update/{id}', 'TaiKhoanController@update')->name('update');
+        
+         });
 
         Route::prefix('san-pham')->group(function () {
             Route::name('san-pham.')->group(function () {
