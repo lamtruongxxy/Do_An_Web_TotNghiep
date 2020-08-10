@@ -45,6 +45,7 @@ Route::middleware("auth")->group(function () {
             Route::post('/tXCY7AVdXm8udF3GP9imsDxIr1Z/them-moi', 'TaiKhoanController@store')->name('store');
             Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/edit/{id}', 'TaiKhoanController@edit')->name('edit');
             Route::put('/tXCY7AVdXm8udF3GP9imsDxIr1Z/update/{id}', 'TaiKhoanController@update')->name('update');
+            Route::get('/tXCY7AVdXm8udF3GP9imsDxIr1Z/chi-tiet/{id}', 'TaiKhoanController@chiTiet')->name('chi-tiet');
             Route::delete('/tXCY7AVdXm8udF3GP9imsDxIr1Z/delete', 'TaiKhoanController@delete')->name('delete');
         });
 

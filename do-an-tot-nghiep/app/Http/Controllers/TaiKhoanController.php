@@ -145,9 +145,10 @@ class TaiKhoanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function chiTiet($id)
     {
-        //
+        $chiTietTaiKhoan = TaiKhoan::findOrFail($id);
+        return view('Admin.chi-tiet-admin', compact('chiTietTaiKhoan'));
     }
     public function delete(Request $request)
     {

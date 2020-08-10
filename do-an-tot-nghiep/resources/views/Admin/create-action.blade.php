@@ -3,7 +3,7 @@
     @method('DELETE')
 
     <input type="hidden" name="id" value="{{ $data->id }}">
-    <a href="#" class="btn btn-primary waves-effect waves-light" @if ($data->trang_thai
+    <a href="{{ route('admin-chi-tiet', ['id' => $data->id]) }}" class="btn btn-primary waves-effect waves-light" @if ($data->trang_thai
         !=0) {{ 'hidden' }} @endif ><i class="far fa-eye"></i></a>
 
     <input type="hidden" name="id" value="{{ $data->id }}">
