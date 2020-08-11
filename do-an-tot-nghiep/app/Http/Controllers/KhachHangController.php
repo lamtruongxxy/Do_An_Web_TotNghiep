@@ -46,9 +46,11 @@ class KhachHangController extends Controller
         $khachHang = new KhachHang();
 
         $khachHang->ten_khach_hang = $request->ten_khach_hang;
+        $khachHang->gioi_tinh = $request->gioi_tinh;
         $khachHang->dia_chi = $request->dia_chi;
         $khachHang->sdt = $request->sdt;
         $khachHang->email = $request->email;
+        $khachHang->ghi_chu = $request->ghi_chu;
         $khachHang->trang_thai = 1;
 
         $khachHang->save();

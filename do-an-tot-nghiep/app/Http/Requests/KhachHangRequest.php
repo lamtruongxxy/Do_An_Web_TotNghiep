@@ -28,6 +28,7 @@ class KhachHangRequest extends FormRequest
             'dia_chi' => 'required',
             'sdt' => 'required|numeric',
             'email' => 'required|email|unique:khach_hang,email',
+            'ghi_chu' =>'required'
         ];
     }
     public function messages()
@@ -44,6 +45,8 @@ class KhachHangRequest extends FormRequest
             'email.required' => 'Email bị bỏ trống',
             'email.email' => 'Email không hợp lệ',
             'email.unique' => 'Email đã tồn tại',
+
+            'ghi_chu.required' =>' Ghi chú không được để trống'
         ];
     }
 }

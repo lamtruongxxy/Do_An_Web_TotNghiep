@@ -15,14 +15,22 @@
                         <div class="form-group col-md-2.5">
                             <input type="text" class="form-control" id="ten_khach_hang" name="ten_khach_hang" placeholder="Tên khách hàng">
                         </div>
-                        <div class="form-group col-md-4">
-                            <textarea class="form-control" id="dia_chi" name="dia_chi" rows="1" placeholder="Địa chỉ"></textarea>
-                        </div>
                         <div class="form-group col-md-2">
                             <input type="text" class="form-control" id="sdt" name="sdt" placeholder="SDT">
                         </div>
                         <div class="form-group col-md-3">
                             <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <textarea class="form-control" id="dia_chi" name="dia_chi" rows="1" placeholder="Địa chỉ"></textarea>
+                        </div>
+                        <div class="form-group col-md-3">
+                        <label>Giới tính </label>
+                        <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+                        <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="nữ" ><span>Nữ</span>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <textarea class="form-control" id="ghi_chu" name="ghi_chu" rows="1" placeholder="Ghi chú"></textarea>
                         </div>
                         <div class="form-group col-md-2">
                             <button type="submit" class="btn btn-info waves-effect waves-light"><i class="fe-check-square"></i></button>
