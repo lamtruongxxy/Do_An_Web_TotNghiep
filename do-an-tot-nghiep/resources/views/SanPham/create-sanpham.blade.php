@@ -168,9 +168,7 @@
                 </div>
             </div>
     </div>
-
     </form>
-
 </div> <!-- end card-->
 </div>
 <!-- end col -->

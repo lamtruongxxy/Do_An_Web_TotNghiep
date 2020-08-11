@@ -138,9 +138,12 @@ class SanPhamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function aedit($id)
+    public function editSP($id)
     {
-        //
+        $sanPham = SanPham::findOrFail($id);
+        $dsNhaSanXuat = NhaSanXuat::all();
+        $dsLoaiSanPham = LoaiSanPham::all();
+        return view('SanPham/update-sanpham', compact('sanPham', 'dsNhaSanXuat', 'dsLoaiSanPham'));
     }
 
     /**
@@ -150,9 +153,25 @@ class SanPhamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateSP(SanPhamRequest $request, $id)
     {
-        //
+        $exist = array_key_exists('trang_thai', $request->all());
+        $data = [
+            'nha_san_xuat_id' => $request->nha_san_xuat_id,
+            'ten_sp'   => $request->ten_sp,
+            'mo_ta_sp' => $request->mo_ta_sp,
+            'gia_sp'   => $request->gia_sp,
+            'gia_khuyen_mai' => $request->gia_khuyen_mai,
+            'so_luong_ton_kho'   => $request->so_luong_ton_kho,
+            'loai_san_pham_id' =>  $request->loai_san_pham_id,
+            'che_do_bao_hanh'   =>  $request->che_do_bao_hanh,
+            'trang_thai' => $exist,
+        ];
+        $ketQua = SanPham::find($id)->update($data);
+        if ($ketQua) {
+            return redirect()->route('san-pham.danh-sach')->with('thong-bao', 'Cập nhật thông tin thành công');
+        }
+        return back()->withErrors('Cập nhật thất bại');
     }
 
     /**

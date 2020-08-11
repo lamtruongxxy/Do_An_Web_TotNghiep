@@ -76,6 +76,9 @@ Route::middleware("auth")->group(function () {
                 Route::get('/lay-thong-so', 'SanPhamController@getThongSo')->name('get-thong-so');
 
                 Route::get('/chi-tiet-thong-so/{id}', 'SanPhamController@chiTietThongSo')->name('chi-tiet-thong-so');
+                Route::get('/edit/{id}', 'SanPhamController@editSP')->name('edit-sp');
+                Route::put('/update/{id}', 'SanPhamController@updateSP')->name('update-sp');
+                
                 Route::delete('/delete', 'SanPhamController@delete')->name('delete');
             });
         });
