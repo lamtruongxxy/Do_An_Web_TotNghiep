@@ -43,16 +43,16 @@ class TaiKhoanRequest extends FormRequest
             "mat_khau.max"  => "Mật khẩu tối đa 20 ký tự",
             'mat_khau.alpha_num'     => "Mật khẩu chỉ là chữ và số",
 
-            "ho_ten.required"   => "Tên tài khoản không được bỏ trống",
+            "ho_ten.required"   => "Họ tên không được bỏ trống",
 
             'email.required' => 'Email bị bỏ trống',
             'email.email' => 'Email không hợp lệ',
             'email.unique' => 'Email đã tồn tại',
 
-            "sdt.required"   => "Tên tài khoản không được bỏ trống",
+            "sdt.required"   => "Sdt không được bỏ trống",
             'sdt.numeric' => 'Sdt không hợp lệ',
 
-            "dia_chi.required"   => "Tên tài khoản không được bỏ trống",
+            "dia_chi.required"   => "Địa chỉ không được bỏ trống",
 
         ];
     }

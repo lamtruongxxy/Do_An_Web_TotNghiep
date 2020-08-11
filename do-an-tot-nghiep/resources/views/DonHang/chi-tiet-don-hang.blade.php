@@ -31,7 +31,7 @@
                                     <div class="form-group col-md-12">
                                         <h5><strong>Tổng tiền :&nbsp;<span class="text-danger my-4 text-center" data-plugin="counterup">{{ $chiTiet->tong_tien }}</span>&nbsp;VNĐ</strong></h5>
                                         </br>
-                                        <p><strong>Ngày lập: &nbsp;</strong>{{ $chiTiet->created_at }}</p>    
+                                        <p><strong>Ngày lập: &nbsp;</strong>{{ $chiTiet->created_at }}</p>
                                         @if ($chiTiet->trang_thai === 0)
                                         <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
                                         @else
@@ -71,7 +71,7 @@
                                                 <p><strong>Tên khách hàng:</strong>&nbsp;{{ $chiTiet->khachHang->ten_khach_hang }}</p>
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <p><strong>Địa chỉ:</strong>&nbsp;{{ $chiTiet->khachHang->dia_chi }}</p>
+                                                <p><strong>Giới tính:</strong>&nbsp;{{ $chiTiet->khachHang->gioi_tinh }}</p>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <p><strong>SĐT:</strong>&nbsp;{{ $chiTiet->khachHang->sdt }}</p>
@@ -79,12 +79,15 @@
                                             <div class="form-group col-md-12">
                                                 <p><strong>Email:</strong>&nbsp;{{ $chiTiet->khachHang->email }}</p>
                                             </div>
+                                            <div class="form-group col-md-12">
+                                                <p><strong>Địa chỉ:</strong>&nbsp;{{ $chiTiet->khachHang->dia_chi }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="form-group col-md-12">
-                                                <p><strong>Ghi chú</strong></br>{{ $chiTiet->ghi_chu }}</p>
+                                                <p><strong>Ghi chú đơn hàng</strong></br>{{ $chiTiet->ghi_chu }}</p>
                                             </div>
                                         </div>
                                     </div>
