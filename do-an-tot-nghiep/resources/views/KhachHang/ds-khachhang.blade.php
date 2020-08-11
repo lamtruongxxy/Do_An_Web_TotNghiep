@@ -54,6 +54,9 @@
             data: 'dia_chi',
             name: 'Địa chỉ'
         }, {
+            data: 'ghi_chu',
+            name: 'Ghi chú'
+        }, {
             data: 'action',
             name: 'action'
         }]
@@ -82,6 +85,7 @@
                             <th>Email</th>
                             <th>Giới tính</th>
                             <th>Địa Chỉ</th>
+                            <th>Ghi chú</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
@@ -93,6 +97,7 @@
                             <th>Email</th>
                             <th>Giới tính</th>
                             <th>Địa Chỉ</th>
+                            <th>Ghi chú</th>
                             <th>Hành động</th>
                         </tr>
                     </tfoot>
