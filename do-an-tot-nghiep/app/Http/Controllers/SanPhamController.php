@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\BinhLuan;
+use App\ChiTietDonHang;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -11,6 +13,7 @@ use App\NhaSanXuat;
 use App\ThongSo;
 use App\HinhAnhSanPham;
 use App\ChiTietThongSo;
+use App\Http\Requests\SanPhamRequest;
 
 class SanPhamController extends Controller
 {
@@ -63,7 +66,7 @@ class SanPhamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SanPhamRequest $request)
     {
         $dsHinhAnh = $this->uploadHinh($request->file('sp_hinh_anh'));
         $sanPham = [
@@ -74,7 +77,7 @@ class SanPhamController extends Controller
             'loai_san_pham_id'   => (int)$request->loai_san_pham_id,
             'che_do_bao_hanh' => $request->che_do_bao_hanh,
             'mo_ta_sp' => $request->mo_ta_sp,
-            'trang_thai'    => 1,
+            'trang_thai'    => 0,
             'gia_khuyen_mai'    => (int)$request->gia_khuyen_mai
         ];
         $sanPhamThem = SanPham::create($sanPham);
@@ -99,8 +102,8 @@ class SanPhamController extends Controller
             }
         }
         if ($sanPhamThem) {
-            return redirect()->route('san-pham.danh-sach')
-                ->with('msg', 'Thêm sản phẩm thành công');
+            return redirect()->route('san-pham.create')
+                ->with('thong-bao', 'Thêm sản phẩm thành công');
         }
     }
 
@@ -174,11 +177,19 @@ class SanPhamController extends Controller
 
         // return view('DonHang.chi-tiet-don-hang', compact('chiTiet','chiTietDonHang'));
     }
-    public function test($id)
+    public function delete(Request $request)
     {
-        $hinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->get();
-        $thongTinSP = SanPham::findOrFail($id);
-        $chiTietThongSo = chiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
-        return response()->json($hinhAnh);
+        $id = $request->id;
+        // dd($id);
+        $ketQua = SanPham::find($id)->delete();
+        $ketQuaXoaBinhLuan = BinhLuan::where('san_pham_id', $id)->delete();
+        $ketQuaXoaHinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->delete();
+        $ketQuaXoaCTTS = ChiTietThongSo::where('san_pham_id', $id)->delete();
+        $ketQuaXoaCTDH = ChiTietDonHang::where('san_pham_id', $id)->delete();
+
+        if ($ketQua) {
+            return redirect()->route('san-pham.danh-sach')->with('msg', 'Xóa sản phẩm thành công');
+        }
+        return back()->withErrors('Xóa sản phẩm thất bại')->withInput();
     }
 }

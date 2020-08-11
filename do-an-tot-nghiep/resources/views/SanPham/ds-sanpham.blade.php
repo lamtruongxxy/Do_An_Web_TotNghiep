@@ -30,42 +30,54 @@
 <script src="{{ asset ('assets/js/pages/datatables.init.js') }}"></script>
 <!-- truy van database -->
 <script>
-    $('#product-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('san-pham.lay-danh-sach') }}",
-        order: [],
-        columns: [{
-            data: 'id',
-            name: 'ID Sản phẩm'
-        }, {
-            data: 'ten_sp',
-            name: 'Tên sản phẩm'
-        }, {
-            data: 'loai_san_pham.ten_loai_sp',
-            name: 'Loại sản phẩm'
-        }, {
-            data: 'nha_san_xuat.ten_nha_sx',
-            name: 'Nhà sản xuất'
-        }, {
-            data: 'so_luong_ton_kho',
-            name: 'Số lượng tồn kho'
-        }, {
-            data: 'gia_sp',
-            name: 'Giá sản phẩm'
-        }, {
-            data: 'gia_khuyen_mai',
-            name: 'Giá khuyến mãi'
-        }, {
-            data: 'trang_thai',
-            name: 'Trạng thái'
-        }, {
-            data: 'che_do_bao_hanh',
-            name: 'Chế độ bảo hành'
-        }, {
-            data: 'action',
-            name: 'action'
-        }]
+    $(document).ready(function() {
+        $('#product-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('san-pham.lay-danh-sach') }}",
+            order: [],
+            columns: [{
+                data: 'id',
+                name: 'ID Sản phẩm'
+            }, {
+                data: 'ten_sp',
+                name: 'Tên sản phẩm'
+            }, {
+                data: 'loai_san_pham.ten_loai_sp',
+                name: 'Loại sản phẩm'
+            }, {
+                data: 'nha_san_xuat.ten_nha_sx',
+                name: 'Nhà sản xuất'
+            }, {
+                data: 'so_luong_ton_kho',
+                name: 'Số lượng tồn kho'
+            }, {
+                data: 'gia_sp',
+                name: 'Giá sản phẩm'
+            }, {
+                data: 'gia_khuyen_mai',
+                name: 'Giá khuyến mãi'
+            }, {
+                data: 'trang_thai',
+                name: 'Trạng thái'
+            }, {
+                data: 'che_do_bao_hanh',
+                name: 'Chế độ bảo hành'
+            }, {
+                data: 'action',
+                name: 'action'
+            }],
+            drawCallback: function() {
+                $(document).on('click', '.delete-san-pham', function(e) {
+                    const confirm = window.confirm("Bạn có chắc muốn xóa?");
+                    e.preventDefault();
+                    const th = $(this);
+                    if (confirm) {
+                        th.parent().submit();
+                    }
+                })
+            }
+        })
     })
 </script>
 @endsection

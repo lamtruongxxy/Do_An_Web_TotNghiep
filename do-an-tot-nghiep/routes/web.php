@@ -76,7 +76,7 @@ Route::middleware("auth")->group(function () {
                 Route::get('/lay-thong-so', 'SanPhamController@getThongSo')->name('get-thong-so');
 
                 Route::get('/chi-tiet-thong-so/{id}', 'SanPhamController@chiTietThongSo')->name('chi-tiet-thong-so');
-                Route::get('/test/{id}', 'SanPhamController@test')->name('test');
+                Route::delete('/delete', 'SanPhamController@delete')->name('delete');
             });
         });
         Route::prefix('loai-san-pham')->group(function () {

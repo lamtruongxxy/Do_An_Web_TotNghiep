@@ -60,9 +60,11 @@
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-body">
+                                    @include('Request/errors')
+                                    @include('Request/complete')
                                     <h4 class="mb-3 header-title">Thông tin sản phẩm</h4>
                                     <div class="form-group col-md-12">
-                                        <!-- <label for="inputEmail4" class="col-form-label">Phân loại</label> -->
+                                        <!-- <label for="inputEmail4" class="col-form-label">Nhà sản xuất</label> -->
                                         <select class="form-control" name="nha_san_xuat_id" placeholder="Nhà sản xuất">
                                             @foreach ($dsNhaSanXuat as $nhasx)
                                             <option value="{{ $nhasx->id }}">{{ $nhasx->ten_nha_sx}}</option>
@@ -70,7 +72,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <!-- <label for="inputEmail4" class="col-form-label">Phân loại</label> -->
+                                        <!-- <label for="inputEmail4" class="col-form-label">Loại sản phẩm</label> -->
                                         <select class="form-control" name="loai_san_pham_id" placeholder="Loại sản phẩm">
                                             @foreach ($dsLoaiSanPham as $loaisp)
                                             <option value="{{ $loaisp->id }}">{{ $loaisp->ten_loai_sp }}</option>
@@ -81,7 +83,10 @@
                                         <input type="text" class="form-control" name="ten_sp" placeholder="Tên sản phẩm">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <input type="number" class="form-control" name="gia_sp" placeholder="Giá sản phẩm">
+                                        <input type="number" class="form-control" name="gia_sp" placeholder="Giá sản phẩm" >
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="number" class="form-control" name="gia_khuyen_mai" placeholder="Giá khuyến mãi">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <input type="number" class="form-control" name="so_luong_ton_kho" placeholder="Số lượng">
@@ -89,9 +94,6 @@
 
                                     <div class="form-group col-md-12">
                                         <input type="text" class="form-control" name="che_do_bao_hanh" placeholder="Chế độ bảo hành">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <input type="text" class="form-control" name="gia_khuyen_mai" placeholder="Giá khuyến mãi">
                                     </div>
                                 </div>
                             </div>
