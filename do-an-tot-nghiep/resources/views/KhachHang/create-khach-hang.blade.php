@@ -25,9 +25,9 @@
                             <textarea class="form-control" id="dia_chi" name="dia_chi" rows="1" placeholder="Địa chỉ"></textarea>
                         </div>
                         <div class="form-group col-md-3">
-                        <label>Giới tính </label>
-                        <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
-                        <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="nữ" ><span>Nữ</span>
+                            <label>Giới tính </label>
+                            <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="Nam" checked="checked" style="width: 10%"><span style="margin-right: 5%">Nam</span>
+                            <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="Nữ" style="width: 10%"><span>Nữ</span>
                         </div>
                         <div class="form-group col-md-5">
                             <textarea class="form-control" id="ghi_chu" name="ghi_chu" rows="1" placeholder="Ghi chú"></textarea>

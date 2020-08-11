@@ -32,6 +32,15 @@
                         <label for="id">Email</label>
                         <input type="text" class="form-control" id="email" name="email" value="{{ $khachHang->email }}">
                     </div>
+                    <div class="form-group ">
+                        <label for="id">Ghi chú</label>
+                        <textarea class="form-control" id="ghi_chu" name="ghi_chu" rows="1">{{ $khachHang->ghi_chu }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Giới tính </label>
+                        <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="Nam" checked="checked" style="width: 5%"><span>Nam</span>
+                        <input id="gioi_tinh" type="radio" class="input-radio" name="gioi_tinh" value="Nữ" style="width: 5%"><span>Nữ</span>
+                    </div>
                     <div class="form-group">
                         <button type="sumit" class="btn btn-success waves-effect waves-light">
                             <span class="btn-label"><i class="mdi mdi-pen-minus"></i></span>Cập nhật

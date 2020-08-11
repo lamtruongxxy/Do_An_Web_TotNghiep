@@ -8,6 +8,7 @@ use App\Http\Requests\KhachHangRequest;
 use App\Http\Requests\KhachHangUpDateRequest;
 use Carbon\Carbon;
 use App\KhachHang;
+
 class KhachHangController extends Controller
 {
     /**
@@ -24,11 +25,11 @@ class KhachHangController extends Controller
     public function getData()
     {
         $dsKhachHang = KhachHang::all();
-        return Datatables()->of($dsKhachHang)->addColumn('action', function($data) {
+        return Datatables()->of($dsKhachHang)->addColumn('action', function ($data) {
             return view('KhachHang.create-action', compact('data'));
         })
-        ->rawColumns(['action'])
-        ->make(true);
+            ->rawColumns(['action'])
+            ->make(true);
     }
     /**
      * Store a newly created resource in storage.
@@ -89,12 +90,14 @@ class KhachHangController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(KhachHangUpDateRequest $request, $id)
-    {  
+    {
         $data = [
             'ten_khach_hang' => $request->ten_khach_hang,
+            'gioi_tinh' => $request->gioi_tinh,
             'dia_chi'   => $request->dia_chi,
             'sdt' => $request->sdt,
             'email'   => $request->email,
+            'ghi_chu' => $request->ghi_chu,
         ];
         $ketQua = KhachHang::find($id)->update($data);
         if ($ketQua) {
