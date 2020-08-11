@@ -83,7 +83,7 @@
                                         <input type="text" class="form-control" name="ten_sp" placeholder="Tên sản phẩm">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <input type="number" class="form-control" name="gia_sp" placeholder="Giá sản phẩm" >
+                                        <input type="number" class="form-control" name="gia_sp" placeholder="Giá sản phẩm">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <input type="number" class="form-control" name="gia_khuyen_mai" placeholder="Giá khuyến mãi">
@@ -161,8 +161,9 @@
             <div class="form-group col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="fe-check-square"></i>
-                            Thêm</button>
+                        <button type="submit" class="btn btn-info waves-effect waves-light"><i class="fe-check-square"></i></button>
+                        <button type="reset" class="btn btn-danger waves-effect waves-light"><i class="fas fa-redo"></i></button>
+                        <a href="{{ route('san-pham.danh-sach') }}" class="btn btn-primary waves-effect waves-light"><i class="la la-list-ul"></i></a>
                     </div>
                 </div>
             </div>

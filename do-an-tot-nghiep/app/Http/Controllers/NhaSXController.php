@@ -121,7 +121,7 @@ class NhaSXController extends Controller
         $ketQua = NhaSanXuat::find($id)->delete();
         $ketQuaXoaSanPham = SanPham::where('nha_san_xuat_id', $id)->delete();
         if ($ketQua) {
-            return redirect()->route('nha-san-xuat.danh-sach')->with('msg', 'Xóa nhà sản xuất thành công');
+            return redirect()->route('nha-san-xuat.danh-sach')->with('thong-bao', 'Xóa nhà sản xuất thành công');
         }
         return back()->withErrors('Cập nhật nhà sản xuất thất bại')->withInput();
     }

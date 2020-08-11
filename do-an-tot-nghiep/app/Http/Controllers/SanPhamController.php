@@ -188,7 +188,7 @@ class SanPhamController extends Controller
         $ketQuaXoaCTDH = ChiTietDonHang::where('san_pham_id', $id)->delete();
 
         if ($ketQua) {
-            return redirect()->route('san-pham.danh-sach')->with('msg', 'Xóa sản phẩm thành công');
+            return redirect()->route('san-pham.danh-sach')->with('thong-bao', 'Xóa sản phẩm thành công');
         }
         return back()->withErrors('Xóa sản phẩm thất bại')->withInput();
     }

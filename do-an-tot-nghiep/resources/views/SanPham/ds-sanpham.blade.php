@@ -85,7 +85,8 @@
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Request.errors')
+        @include('Request.complete')
         <div class="card">
             <div class="card-body">
                 <h4>Danh Sách Sản phẩm</h4>
