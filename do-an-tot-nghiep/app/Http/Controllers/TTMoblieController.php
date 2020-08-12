@@ -11,6 +11,9 @@ use App\NhaSanXuat;
 use App\ChiTietThongSo;
 use App\BinhLuan;
 use App\Cart;
+use App\KhachHang;
+use App\DonHang;
+use App\ChiTietDonHang;
 use Session;
 class TTMoblieController extends Controller
 {
@@ -107,14 +110,48 @@ class TTMoblieController extends Controller
         }
         return redirect()->back();   //sao khi xoa cho return tro ve trang ban dau
     }
-    
+
     public function getCheckout(Request $req)
     {
         return view('TTMobile/checkout');
     }
     public function postCheckout(Request $req)
     {
-        return view('TTMobile/checkout');
+        $cart = Session::get('cart');
+        //dd( $cart);
+        //luu thong tin khach hang truoc
+        $khachhang = new KhachHang;
+        $khachhang->ten_khach_hang = $req->ten_khach_hang;
+        $khachhang->gioi_tinh = $req->gioi_tinh;
+        $khachhang->dia_chi = $req->dia_chi;
+        $khachhang->sdt = $req->sdt;
+        $khachhang->email = $req->email;
+        $khachhang->ghi_chu = $req->ghi_chu;
+        $khachhang->trang_thai = 1;
+        $khachhang->save();
+
+        $donHang = new DonHang;
+        $donHang->khach_hang_id = $khachhang->id;
+        $donHang->tong_tien = $cart->totalPrice;
+        $donHang->hinh_thuc_thanh_toan = $req->hinh_thuc_thanh_toan;
+        $donHang->ghi_chu = $khachhang->ghi_chu;
+        $donHang->trang_thai = 1;
+        $donHang->save();
+
+        //foreach chi tiet don hang vi chi tiet don hang gom nhieu san pham 
+        foreach ($cart->items as $key => $value) {
+            $chiTietDonHang = new ChiTietDonHang;
+            $chiTietDonHang->don_hang_id = $donHang->id;
+            $chiTietDonHang->san_pham_id = $key;
+            $chiTietDonHang->so_luong = $value['qty'];
+            $chiTietDonHang->don_gia = $value['price']/$value['qty'];
+            $chiTietDonHang->trang_thai = 1;
+            $chiTietDonHang->save();
+        }
+
+        Session::forget('cart');
+      
+        return redirect()->back()->with('thongbao','Đặt Hàng Thành Công');
     }
     /**
      * Store a newly created resource in storage.
