@@ -145,7 +145,12 @@ class SanPhamController extends Controller
         $dsLoaiSanPham = LoaiSanPham::all();
         return view('SanPham/update-sanpham', compact('sanPham', 'dsNhaSanXuat', 'dsLoaiSanPham'));
     }
-
+    // public function editThongSo($id)
+    // {
+    //     $sanPham = SanPham::findOrFail($id);
+    //     $thongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
+    //     return view('SanPham/update-thongsosp', compact('sanPham', 'thongSo'));
+    // }
     /**
      * Update the specified resource in storage.
      *
@@ -173,7 +178,20 @@ class SanPhamController extends Controller
         }
         return back()->withErrors('Cập nhật thất bại');
     }
-
+    // public function updateThongSo(Request $request, $id)
+    // {
+    //     $thongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
+    //     foreach ($thongSo as $ts) {
+    //         $data = [
+    //             'gia_tri' => $request->a,
+    //         ];
+    //     }
+    //     $ketQua = ChiTietThongSo::where('san_pham_id', $id)->update($data);
+    //     if ($ketQua) {
+    //         return redirect()->route('san-pham.danh-sach')->with('thong-bao', 'Cập nhật thông số thành công');
+    //     }
+    //     return back()->withErrors('Cập nhật thất bại');
+    // }
     /**
      * Remove the specified resource from storage.
      *

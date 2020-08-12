@@ -26,7 +26,7 @@ class SanPhamRequest extends FormRequest
         return [
             'ten_sp' => 'required',
             'gia_sp' => 'required|numeric|min:1',
-            'gia_khuyen_mai' => 'required|numeric|min:0|after:gia_sp',
+            'gia_khuyen_mai' => 'required|numeric|min:0',
             'so_luong_ton_kho' => 'required|numeric|min:0',
             'che_do_bao_hanh' => 'required',
             'mo_ta_sp' => 'required',
@@ -43,7 +43,6 @@ class SanPhamRequest extends FormRequest
 
             'gia_khuyen_mai.required' => 'Giá khuyến mãi không được bỏ trống',
             'gia_khuyen_mai.min' => 'Giá sản phẩm phải là số dương',
-            'gia_khuyen_mai.after' => 'Giá khuyến mãi không được lớn hơn giá sản phẩm',
 
             'so_luong_ton_kho.required' => 'Số lượng không được bỏ trống',
             'so_luong_ton_kho.min' => 'Số lượng phải là số dương',
