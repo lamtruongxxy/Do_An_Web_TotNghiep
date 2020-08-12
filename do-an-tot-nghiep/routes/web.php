@@ -45,6 +45,8 @@ Route::post('/checkout', 'TTMoblieController@postCheckout')->name('checkout');
 
 //tim kiem
 Route::get('/search','TTMoblieController@getSearch')->name('search');
+//post comment
+Route::post('/putcomment', 'TTMoblieController@postComments')->name('putcomment');
 //end route ttmobile
 
 //route admin

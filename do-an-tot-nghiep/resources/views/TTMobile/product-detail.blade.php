@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('index')}}">Home</a> / <span>Thông tin sản phẩm</span>
+                <a href="{{route('index')}}">Home</a> / <span>Thông tin sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -44,9 +44,10 @@
                         <p class="single-item-title">Chế độ bảo hành: {{ $thongTinSP->che_do_bao_hanh }}</p><br />
                         <p class="single-item-title">Ngày ra mắt: {{ $thongTinSP->created_at->format('d/m/Y') }}</p>
                         <div class="space30">&nbsp;</div>
-                       
+
                         <div class="single-item-options">
-                            <a class="add-to-cart" href="{{ route('add-to-cart',$thongTinSP->id) }}"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="add-to-cart" href="{{ route('add-to-cart',$thongTinSP->id) }}"><i
+                                    class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -56,82 +57,131 @@
                 <div class="woocommerce-tabs">
                     <ul class="tabs">
                         <li><a href="#tab-description">Mô Tả Sản Phẩm</a></li>
-                        <li><a href="#tab-reviews">Bình Luận</a></li>
+                        <li><a href="#tab-reviews">Bình Luận @if($binhLuan){{ count($binhLuan) }} @else @endif</a></li>
                     </ul>
 
                     <div class="panel" id="tab-description">
                         <p style="font-size: 15px">{{ $thongTinSP->mo_ta_sp }}</p>
                     </div>
                     <div class="panel" id="tab-reviews">
-                        <p>No Reviews</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="comments-list">
+                                        @if($binhLuan!=null)
+                                        @foreach ($binhLuan as $binhluansp)
+                                        <div class="media">
+                                        <p class="pull-right"><small>{{$binhluansp->created_at}}</small></p>
+                                            <a class="media-left">
+                                                <img style="width:6%" src="{{ asset('ttmobile/images/icon-cmt.png') }}">
+                                            </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading user_name" style="font-size:15px;
+                                              font-weight: bold;">{{$binhluansp->nguoi_binh_luan}}</h4>
+                                                <p style="font-size: 14px">{{$binhluansp->noi_dung_bl}}<p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        @endforeach
+                                        @else
+                                        <p>No Reviews</p>
+                                        @endif
+                                        <div class="media">
+                                        <form action="{{route('putcomment')}}" method="post" class="beta-form-checkout">
+                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                        <p style="font-size: 15px;font-weight: bold;">Comments</p>
+                                                        <div class="space20">&nbsp;</div>
+                                                        <input type="hidden" name="san_pham_id" value="{{ $thongTinSP->id }}">
+                                                        <div class="form-block">
+                                                            <label for="nguoi_binh_luan">Họ tên*</label>
+                                                            <input type="text" id="nguoi_binh_luan" name="nguoi_binh_luan" maxlength="50" placeholder="Họ tên" required>
+                                                        </div>
+                                                        <div class="form-block">
+                                                            <label for="sdt_nguoi_bl">Điện thoại*</label>
+                                                            <input type="text" maxlength="11" id="sdt_nguoi_bl" name="sdt_nguoi_bl" placeholder="Số điện thoại"required>
+                                                        </div>
+                                                        <div class="form-block">
+                                                            <label for="noi_dung_bl">Nội Dung:</label>
+                                                            <textarea id="noi_dung_bl" name="noi_dung_bl" required></textarea>
+                                                        </div>
+                                                <div class="text-center">
+                                                    <button type="submit" class="beta-btn primary" href="#">Comments</i></button>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="space50">&nbsp;</div>
-                <div class="beta-products-list">
-                    <h4>Sản Phẩm Tương Tự</h4>
-                    <div class="row">
-                        {{-- load sản phẩm --}}
-                        @foreach($sanPhamSale as $sale)
-                        <div class="col-sm-4">
-                            <div class="single-item">
-                                <div class="ribbon-wrapper">
-                                    @if( $sale->gia_khuyen_mai !=0 )
+            </div>
+            <div class="space50">&nbsp;</div>
+            <div class="beta-products-list">
+                <h4>Sản Phẩm Tương Tự</h4>
+                <div class="row">
+                    {{-- load sản phẩm --}}
+                    @foreach($sanPhamSale as $sale)
+                    <div class="col-sm-4">
+                        <div class="single-item">
+                            <div class="ribbon-wrapper">
+                                @if( $sale->gia_khuyen_mai !=0 )
                                 <div class="ribbon-wrapper">
                                     <div class="ribbon sale">Sale</div>
                                 </div>
                                 @else
                                 @endif
-                                </div>
-                                <div class="single-item-header">
+                            </div>
+                            <div class="single-item-header">
 
-                                    <a href="{{ route('products-detail',$sale->id) }}"><img style="width: 230px;height: 250px;"
-                                            src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} "
-                                            alt="{{ $sale->ten_sp }}" alt="{{ $sale->ten_sp }}"></a>
-                                </div>
-                                <div class="single-item-body">
-                                    <p class="single-item-title">{{ $sale->ten_sp }}</p>
-                                    <p class="single-item-price">
-                                        @if( $sale->gia_khuyen_mai==0 )
-                                        <span class="flash-sale">{{ number_format($sale->gia_sp,0) }} đ</span>
-                                        @else
-                                        <span class="flash-sale">{{ number_format($sale->gia_khuyen_mai,0) }}
-                                            đ</span>
-                                        <span class="flash-del">{{ number_format($sale->gia_sp,0) }} đ</span>
-                                        @endif
-                                    </p>
-                                </div>
-                                <div class="single-item-caption">
-                                    <a class="add-to-cart pull-left" href="{{ route('add-to-cart',$sale->id) }}"><i
-                                            class="fa fa-shopping-cart"></i></a>
-                                    <a class="beta-btn primary" href="{{ route('products-detail',$sale->id) }}">Details <i
-                                            class="fa fa-chevron-right"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
+                                <a href="{{ route('products-detail',$sale->id) }}"><img
+                                        style="width: 230px;height: 250px;"
+                                        src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} "
+                                        alt="{{ $sale->ten_sp }}" alt="{{ $sale->ten_sp }}"></a>
+                            </div>
+                            <div class="single-item-body">
+                                <p class="single-item-title">{{ $sale->ten_sp }}</p>
+                                <p class="single-item-price">
+                                    @if( $sale->gia_khuyen_mai==0 )
+                                    <span class="flash-sale">{{ number_format($sale->gia_sp,0) }} đ</span>
+                                    @else
+                                    <span class="flash-sale">{{ number_format($sale->gia_khuyen_mai,0) }}
+                                        đ</span>
+                                    <span class="flash-del">{{ number_format($sale->gia_sp,0) }} đ</span>
+                                    @endif
+                                </p>
+                            </div>
+                            <div class="single-item-caption">
+                                <a class="add-to-cart pull-left" href="{{ route('add-to-cart',$sale->id) }}"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                                <a class="beta-btn primary" href="{{ route('products-detail',$sale->id) }}">Details <i
+                                        class="fa fa-chevron-right"></i></a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div> <!-- .beta-products-list -->
+        </div>
+        <div class="col-sm-3 aside">
+            <div class="widget">
+                <h3 class="widget-title">Thông Số Sản Phẩm</h3>
+                <div class="widget-body" style="font-size: 13px;">
+                    <div class="beta-lists">
+                        @foreach( $tenThongSo as $tt)
+                        <div class="media beta-sales-item">
+                            <div class="media-body">
+                                <p>{{ $tt->thongSo->ten_thong_so }}:&nbsp;{{ $tt->gia_tri }}&nbsp;{{ $tt->thongSo->don_vi }}
+                                </p>
                             </div>
                         </div>
                         @endforeach
                     </div>
-                </div> <!-- .beta-products-list -->
-            </div>
-            <div class="col-sm-3 aside">
-                <div class="widget">
-                    <h3 class="widget-title">Thông Số Sản Phẩm</h3>
-                    <div class="widget-body" style="font-size: 13px;">
-                        <div class="beta-lists">
-                            @foreach( $tenThongSo as $tt)
-                            <div class="media beta-sales-item">
-                                <div class="media-body">
-                                    <p>{{ $tt->thongSo->ten_thong_so }}:&nbsp;{{ $tt->gia_tri }}&nbsp;{{ $tt->thongSo->don_vi }}
-                                    </p>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div> <!-- best sellers widget -->
-            </div>
+                </div>
+            </div> <!-- best sellers widget -->
         </div>
-    </div> <!-- #content -->
+    </div>
+</div> <!-- #content -->
 </div> <!-- .container -->
 
 @endsection

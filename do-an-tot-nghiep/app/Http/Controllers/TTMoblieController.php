@@ -82,10 +82,11 @@ class TTMoblieController extends Controller
         $thongTinSP = SanPham::findOrFail($id);
         $tenThongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
         $hinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->get();
-        $binhLuan = BinhLuan::where('san_pham_id',$id)->get();
+        $binhLuan = BinhLuan::where('san_pham_id',$id)->where('trang_thai',1)->get();
+        //dd($binhLuan);
         $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->inRandomOrder()->limit(3)->get();;
        // dd( $sanPhamSale);
-        return view('TTMobile/product-detail',compact('sanPhamSale','thongTinSP','hinhAnh','tenThongSo'));
+        return view('TTMobile/product-detail',compact('sanPhamSale','thongTinSP','hinhAnh','tenThongSo','binhLuan'));
     }
 
     ///them gio hang
@@ -120,7 +121,6 @@ class TTMoblieController extends Controller
         $cart = Session::get('cart');
         //dd( $cart);
         //luu thong tin khach hang truoc
-        
         $khachhang = new KhachHang;
         $khachhang->ten_khach_hang = $req->ten_khach_hang;
         $khachhang->gioi_tinh = $req->gioi_tinh;
@@ -161,6 +161,18 @@ class TTMoblieController extends Controller
         $dsloaiSanPham=LoaiSanPham::all();
         $dsnhaSanXuat=NhaSanXuat::all();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
+    }
+
+    //luu comments vao databasse
+    public function postComments(Request $req){
+        $binhluan = new BinhLuan();
+        $binhluan->san_pham_id = $req->san_pham_id;
+        $binhluan->nguoi_binh_luan = $req->nguoi_binh_luan;
+        $binhluan->sdt_nguoi_bl = $req->sdt_nguoi_bl;
+        $binhluan->noi_dung_bl = $req->noi_dung_bl;
+        $binhluan->trang_thai = 1;
+        $binhluan->save();
+        return redirect()->back();
     }
     /**
      * Store a newly created resource in storage.
