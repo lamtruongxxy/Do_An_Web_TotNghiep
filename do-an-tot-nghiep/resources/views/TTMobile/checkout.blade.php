@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="index.html">Trang chủ</a> / <span>Đặt hàng</span>
+                <a href="{{route('index')}}">Home</a> / <span>Đặt hàng</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -83,7 +83,7 @@
                                     <p class="your-order-f18">Tổng tiền:</p>
                                 </div>
                                 <div class="pull-right">
-                                    <h5 class="color-black"> @if(Session::has('cart')){{number_format($totalPrice)}}@endif đồng</h5>
+                                    <h5 class="color-black"> @if(Session::has('cart')){{number_format($totalPrice)}} đồng @else 0 đồng  @endif </h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
