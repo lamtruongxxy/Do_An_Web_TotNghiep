@@ -132,8 +132,12 @@
                             </ul>
                         </div>
 
-                        <div class="text-center"><button type="submit" class="beta-btn primary" href="#">Đặt hàng <i
+                        @if(Session::has('cart')) <div class="text-center"><button type="submit" class="beta-btn primary" href="#">Đặt hàng <i
                                     class="fa fa-chevron-right"></i></button></div>
+                        @else
+                        <div class="text-center"><a class="beta-btn primary" href="{{route('product')}}">Mua hàng
+                            </a></div>
+                        @endif
                     </div> <!-- .your-order -->
                 </div>
             </div>

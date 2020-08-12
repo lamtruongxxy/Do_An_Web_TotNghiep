@@ -82,7 +82,7 @@ class TTMoblieController extends Controller
         $thongTinSP = SanPham::findOrFail($id);
         $tenThongSo = ChiTietThongSo::with('thongSo')->where('san_pham_id', $id)->get();
         $hinhAnh = HinhAnhSanPham::where('san_pham_id', $id)->get();
-        $binhLuan = BinhLuan::where('san_pham_id',$id)->where('trang_thai',1)->get();
+        $binhLuan = BinhLuan::where('san_pham_id',$id)->where('trang_thai',1)->orderBy('created_at', 'desc')->get();
         //dd($binhLuan);
         $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('gia_khuyen_mai','<>',0)->inRandomOrder()->limit(3)->get();;
        // dd( $sanPhamSale);
