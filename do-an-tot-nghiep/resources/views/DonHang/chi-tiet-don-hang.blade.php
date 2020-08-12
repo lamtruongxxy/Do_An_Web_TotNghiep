@@ -20,7 +20,7 @@
                                         <p><strong>Số lượng:</strong>&nbsp;x{{ $donhang->so_luong}}</p>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <p><strong>Đơn giá:</strong>&nbsp;
-                                            {{ $donhang->don_gia}}
+                                            {{ number_format($donhang->don_gia)}} đ
                                         </p>
                                     </div>
                                     @endforeach
@@ -29,7 +29,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group col-md-12">
-                                        <h5><strong>Tổng tiền :&nbsp;<span class="text-danger my-4 text-center" data-plugin="counterup">{{ $chiTiet->tong_tien }}</span>&nbsp;VNĐ</strong></h5>
+                                        <h5><strong>Tổng tiền :&nbsp;<span class="text-danger my-4 text-center" data-plugin="counterup">{{ number_format($chiTiet->tong_tien) }}</span>&nbsp;VNĐ</strong></h5>
                                         </br>
                                         <p><strong>Ngày lập: &nbsp;</strong>{{ $chiTiet->created_at }}</p>
                                         @if ($chiTiet->hinh_thuc_thanh_toan === 0)

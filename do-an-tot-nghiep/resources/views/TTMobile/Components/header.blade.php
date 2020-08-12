@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="beta-comp">
-                   
+
                     <div class="cart">
                         <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng
                             (@if(Session::has('cart')){{Session('cart')->totalQty}}@else Trống @endif) <i
@@ -34,7 +34,7 @@
                                     <div class="media-body">
                                         <span class="cart-item-title">{{$product['item']['ten_sp']}}</span>
                                         <span
-                                            class="cart-item-amount">{{$product['qty']}}*<span>@if($product['item']['gia_khuyen_mai']==0){{number_format($product['item']['gia_sp'])}}@else{{number_format($product['item']['gia_khuyen_mai'])}}@endif</span></span>
+                                            class="cart-item-amount">{{$product['qty']}} x <span>@if($product['item']['gia_khuyen_mai']==0){{number_format($product['item']['gia_sp'])}}@else{{number_format($product['item']['gia_khuyen_mai'])}}@endif</span></span>
                                     </div>
                                 </div>
                             </div>
