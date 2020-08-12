@@ -42,6 +42,9 @@ Route::get('/checkout', 'TTMoblieController@getCheckout')->name('checkout');
 
 //dat hang
 Route::post('/checkout', 'TTMoblieController@postCheckout')->name('checkout');
+
+//tim kiem
+Route::get('/search','TTMoblieController@getSearch')->name('search');
 //end route ttmobile
 
 //route admin

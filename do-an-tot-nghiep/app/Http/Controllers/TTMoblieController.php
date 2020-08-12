@@ -130,7 +130,7 @@ class TTMoblieController extends Controller
         $khachhang->ghi_chu = $req->ghi_chu;
         $khachhang->trang_thai = 1;
         $khachhang->save();
-
+        // sao do moi luu don hang
         $donHang = new DonHang;
         $donHang->khach_hang_id = $khachhang->id;
         $donHang->tong_tien = $cart->totalPrice;
@@ -152,7 +152,15 @@ class TTMoblieController extends Controller
 
         Session::forget('cart');
       
-        return redirect()->back()->with('thongbao','Đặt Hàng Thành Công');
+        return redirect()->back()->with('thongbao','Đặt Hàng Thành Công'); // dat thanh con cho quay ve trang dat hang
+    }
+    //chuc nang tim kiem
+    public function getSearch(Request $req){
+        $dsSP = SanPham::with('nhaSanXuat')->where('ten_sp','like','%'.$req->key.'%')->paginate(12);
+        //dd($dsSP);
+        $dsloaiSanPham=LoaiSanPham::all();
+        $dsnhaSanXuat=NhaSanXuat::all();
+        return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
     /**
      * Store a newly created resource in storage.
