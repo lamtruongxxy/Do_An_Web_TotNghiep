@@ -76,7 +76,14 @@ Route::middleware("auth")->group(function () {
                 Route::get('/lay-thong-so', 'SanPhamController@getThongSo')->name('get-thong-so');
 
                 Route::get('/chi-tiet-thong-so/{id}', 'SanPhamController@chiTietThongSo')->name('chi-tiet-thong-so');
-                Route::get('/test/{id}', 'SanPhamController@test')->name('test');
+                
+                Route::get('/edit/{id}', 'SanPhamController@editSP')->name('edit-sp');
+                Route::put('/update/{id}', 'SanPhamController@updateSP')->name('update-sp');
+                
+                // Route::get('/edit-thong-so/{id}', 'SanPhamController@editThongSo')->name('edit-thong-so');
+                // Route::put('/update-thong-so/{id}', 'SanPhamController@updateThongSo')->name('update-thong-so');
+                
+                Route::delete('/delete', 'SanPhamController@delete')->name('delete');
             });
         });
         Route::prefix('loai-san-pham')->group(function () {

@@ -42,14 +42,20 @@
             data: 'ten_khach_hang',
             name: 'Tên khách hàng'
         }, {
-            data: 'dia_chi',
-            name: 'Địa chỉ'
-        }, {
             data: 'sdt',
             name: 'SDT'
         }, {
             data: 'email',
             name: 'Email'
+        }, {
+            data: 'gioi_tinh',
+            name: 'Giới tính'
+        }, {
+            data: 'dia_chi',
+            name: 'Địa chỉ'
+        }, {
+            data: 'ghi_chu',
+            name: 'Ghi chú'
         }, {
             data: 'action',
             name: 'action'
@@ -63,8 +69,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-            @include('Request.complete')
-            @include('Request.errors')
+                @include('Request.complete')
+                @include('Request.errors')
                 <h4>Danh Sách Khách Hàng</h4>
                 <a href="{{ route('khach-hang.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
@@ -75,9 +81,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên Khách Hàng</th>
-                            <th>Địa Chỉ</th>
                             <th>Số Điện Thoại</th>
                             <th>Email</th>
+                            <th>Giới tính</th>
+                            <th>Địa Chỉ</th>
+                            <th>Ghi chú</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
@@ -85,9 +93,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên Khách Hàng</th>
-                            <th>Địa Chỉ</th>
                             <th>Số Điện Thoại</th>
                             <th>Email</th>
+                            <th>Giới tính</th>
+                            <th>Địa Chỉ</th>
+                            <th>Ghi chú</th>
                             <th>Hành động</th>
                         </tr>
                     </tfoot>
