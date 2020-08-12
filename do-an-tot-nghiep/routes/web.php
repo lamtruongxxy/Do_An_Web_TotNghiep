@@ -148,8 +148,8 @@ Route::middleware("auth")->group(function () {
                 Route::get('/', 'DonHangController@index')->name('danh-sach');
                 Route::get('/lay-don-hang', 'DonHangController@getData')->name('lay-danh-sach');
                 Route::get('/chi-tiet/{id}', 'DonHangController@chiTietDonHang')->name('chi-tiet');
-
-
+                Route::get('/edit/{id}', 'DonHangController@edit')->name('edit');
+                Route::put('/update/{id}', 'DonHangController@update')->name('update');
                 Route::delete('/delete', 'DonHangController@delete')->name('delete');
             });
         });

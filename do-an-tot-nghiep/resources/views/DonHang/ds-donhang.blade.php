@@ -79,14 +79,15 @@
 @section('main-content')
 <div class="row">
     <div class="col-12">
-        @include('Components.errors')
+        @include('Request.errors')
+        @include('Request.complete')
         <div class="card">
             <div class="card-body">
                 <h4>Danh Sách Đơn Hàng</h4>
-                <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
+                <!-- <a href="{{ route('loai-san-pham.create') }}" class="btn btn-primary waves-effect waves-light">
                     <span class="btn-label"><i class="fe-plus-circle"></i>
                     </span>Thêm mới</a>
-                <p></p>
+                <p></p> -->
                 <table id="product-table" class="table dt-responsive nowrap">
                     <thead>
                         <tr>

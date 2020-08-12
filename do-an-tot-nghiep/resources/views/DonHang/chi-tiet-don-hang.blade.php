@@ -32,10 +32,10 @@
                                         <h5><strong>Tổng tiền :&nbsp;<span class="text-danger my-4 text-center" data-plugin="counterup">{{ $chiTiet->tong_tien }}</span>&nbsp;VNĐ</strong></h5>
                                         </br>
                                         <p><strong>Ngày lập: &nbsp;</strong>{{ $chiTiet->created_at }}</p>
-                                        @if ($chiTiet->trang_thai === 0)
+                                        @if ($chiTiet->hinh_thuc_thanh_toan === 0)
                                         <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
                                         @else
-                                        <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-success">Chuyển khoản</span></p>
+                                        <p><strong>Hình thức thanh toán: </strong>&nbsp;<span class="badge badge-success">Chuyển khoản</span></p>
                                         @endif
                                         <strong>Trạng thái: </strong>&nbsp;
                                         @if ($chiTiet->trang_thai === 0)

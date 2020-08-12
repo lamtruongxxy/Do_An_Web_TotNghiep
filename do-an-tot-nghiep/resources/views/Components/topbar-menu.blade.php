@@ -21,9 +21,9 @@
                         <li>
                             <a href="{{ route('thong-so.danh-sach') }}">Thông số</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="{{ route('hinh-anh.danh-sach') }}">Hình ảnh</a>
-                        </li>
+                        </li> -->
                         <!-- {{-- <li><a href="{{ route('nha-san-xuat.danh-sach') }}">Nhà sản xuất</a></li> --}} -->
                     </ul>
                 </li>
@@ -46,9 +46,9 @@
                     <a href="{{ route('don-hang.danh-sach') }}">
                         <i class="la la-cube"></i>Đơn Hàng<div class="arrow-down"></div></a>
                     <ul class="submenu">
-                        <li>
+                        <!-- <li>
                             <a href="#">Thêm Đơn Hàng</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{ route('don-hang.danh-sach') }}">Danh Sách Đơn Hàng</a>
                         </li>

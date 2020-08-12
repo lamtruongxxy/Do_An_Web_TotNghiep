@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\KhachHang;
 use App\ChiTietDonHang;
+
 class DonHangController extends Controller
 {
     /**
@@ -36,15 +37,15 @@ class DonHangController extends Controller
                 return view("DonHang.hinh-thuc-thanh-toan", compact('data'));
             })
             ->rawColumns(['action, trang_thai, hinh_thuc_thanh_toan'])
-        ->make(true);
+            ->make(true);
     }
     public function chiTietDonHang($id)
     {
         $chiTiet = DonHang::findOrFail($id);
-        $chiTietDonHang = ChiTietDonHang::with('sanPham')->where('don_hang_id',$id)->get();
+        $chiTietDonHang = ChiTietDonHang::with('sanPham')->where('don_hang_id', $id)->get();
         // $chiTietDonHang = ChiTietDonHang::join('don_hang','chi_tiet_don_hang.don_hang_id' , '=', 'don_hang.id')
         // ->where('chi_tiet_don_hang.don_hang_id',$id)->get();
-        return view('DonHang.chi-tiet-don-hang', compact('chiTiet','chiTietDonHang'));
+        return view('DonHang.chi-tiet-don-hang', compact('chiTiet', 'chiTietDonHang'));
     }
     /**
      * Show the form for creating a new resource.
@@ -53,7 +54,6 @@ class DonHangController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -86,7 +86,8 @@ class DonHangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $donHang = DonHang::findOrFail($id);
+        return view('DonHang/update-trang-thai-dh', compact('donHang'));
     }
 
     /**
@@ -98,7 +99,14 @@ class DonHangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'trang_thai'    => $request->trang_thai
+        ];
+        $ketQua = DonHang::find($id)->update($data);
+        if ($ketQua) {
+            return redirect()->route('don-hang.danh-sach')->with('msg', 'Cập nhật đơn hàng thành công');
+        }
+        return back()->withErrors('Cập nhật đơn hàng thất bại')->withInput();
     }
     public function delete(Request $request)
     {
@@ -107,7 +115,7 @@ class DonHangController extends Controller
         $ketQua = DonHang::find($id)->delete();
         $ketQuaXoaCTDH = ChiTietDonHang::where('don_hang_id', $id)->delete();
         if ($ketQua) {
-            return redirect()->route('don-hang.danh-sach')->with('msg', 'Xóa đơn hàng thành công');
+            return redirect()->route('don-hang.danh-sach')->with('thong-bao', 'Xóa đơn hàng thành công');
         }
         return back()->withErrors('Xóa đơn hàng thất bại')->withInput();
     }
