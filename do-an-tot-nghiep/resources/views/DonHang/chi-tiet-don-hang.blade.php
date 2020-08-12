@@ -35,7 +35,7 @@
                                         @if ($chiTiet->trang_thai === 0)
                                         <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
                                         @else
-                                        <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-success">Tại cửa hàng</span></p>
+                                        <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-success">Chuyển khoản</span></p>
                                         @endif
                                         <strong>Trạng thái: </strong>&nbsp;
                                         @if ($chiTiet->trang_thai === 0)
