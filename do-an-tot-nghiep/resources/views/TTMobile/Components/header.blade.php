@@ -15,13 +15,13 @@
                 </div>
 
                 <div class="beta-comp">
-                    @if(Session::has('cart'))
+                   
                     <div class="cart">
                         <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng
                             (@if(Session::has('cart')){{Session('cart')->totalQty}}@else Trống @endif) <i
                                 class="fa fa-chevron-down"></i></div>
+                        @if(Session::has('cart'))
                         <div class="beta-dropdown cart-body">
-
                             @foreach ($product_cart as $product)
                             <div class="cart-item">
                                 <a class="cart-item-delete" href="{{route('delete-cart',$product['item']['id'])}}"><i

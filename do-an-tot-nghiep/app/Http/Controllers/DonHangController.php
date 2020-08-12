@@ -104,7 +104,7 @@ class DonHangController extends Controller
         ];
         $ketQua = DonHang::find($id)->update($data);
         if ($ketQua) {
-            return redirect()->route('don-hang.danh-sach')->with('msg', 'Cập nhật đơn hàng thành công');
+            return redirect()->route('don-hang.danh-sach')->with('thong-bao', 'Cập nhật đơn hàng thành công');
         }
         return back()->withErrors('Cập nhật đơn hàng thất bại')->withInput();
     }

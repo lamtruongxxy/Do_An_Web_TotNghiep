@@ -44,21 +44,9 @@
                         <p class="single-item-title">Chế độ bảo hành: {{ $thongTinSP->che_do_bao_hanh }}</p><br />
                         <p class="single-item-title">Ngày ra mắt: {{ $thongTinSP->created_at->format('d/m/Y') }}</p>
                         <div class="space30">&nbsp;</div>
-                        <p>Số Lượng:</p>
+                       
                         <div class="single-item-options">
-                            <select class="wc-select" name="size">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                            <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="add-to-cart" href="{{ route('add-to-cart',$thongTinSP->id) }}"><i class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>

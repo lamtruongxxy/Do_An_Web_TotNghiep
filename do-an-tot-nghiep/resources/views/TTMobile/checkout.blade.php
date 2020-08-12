@@ -33,7 +33,7 @@
 
                     <div class="form-block">
                         <label for="ten_khach_hang">Họ tên*</label>
-                        <input type="text" id="ten_khach_hang" name="ten_khach_hang" placeholder="Họ tên" required>
+                        <input type="text" maxlength="50" id="ten_khach_hang" name="ten_khach_hang" placeholder="Họ tên" required>
                     </div>
                     <div class="form-block">
                         <label>Giới tính </label>
@@ -45,11 +45,11 @@
 
                     <div class="form-block">
                         <label for="dia_chi">Địa chỉ*</label>
-                        <input type="text" id="dia_chi" name="dia_chi" placeholder="Địa chỉ" required>
+                        <input type="text" maxlength="200" id="dia_chi" name="dia_chi" placeholder="Địa chỉ" required>
                     </div>
                     <div class="form-block">
                         <label for="sdt">Số điện thoại*</label>
-                        <input type="text" id="sdt" name="sdt" required>
+                        <input type="text" id="sdt" name="sdt" maxlength="11" required>
                     </div>
                     <div class="form-block">
                         <label for="email">Email*</label>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="form-block">
                         <label for="ghi_chu">Ghi chú</label>
-                        <textarea id="ghi_chu" name="ghi_chu" value="null"></textarea>
+                        <textarea id="ghi_chu" name="ghi_chu" required></textarea>
                     </div>
                 </div>
                 <div class="col-sm-6">

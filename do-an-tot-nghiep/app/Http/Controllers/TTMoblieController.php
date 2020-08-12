@@ -120,6 +120,7 @@ class TTMoblieController extends Controller
         $cart = Session::get('cart');
         //dd( $cart);
         //luu thong tin khach hang truoc
+        
         $khachhang = new KhachHang;
         $khachhang->ten_khach_hang = $req->ten_khach_hang;
         $khachhang->gioi_tinh = $req->gioi_tinh;
