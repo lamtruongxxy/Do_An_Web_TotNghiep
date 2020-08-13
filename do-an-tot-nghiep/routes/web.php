@@ -50,6 +50,9 @@ Route::post('/putcomment', 'TTMoblieController@postComments')->name('putcomment'
 
 //contants
 Route::get('/contacts', 'TTMoblieController@contacts')->name('contacts');
+
+//about 
+Route::get('/about', 'TTMoblieController@about')->name('about');
 //end route ttmobile
 
 //route admin

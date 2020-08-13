@@ -35,6 +35,9 @@ class TTMoblieController extends Controller
     public function contacts(){
         return view('TTMobile/contacts');
     }
+    public function about(){
+        return view('TTMobile/about');
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -77,7 +77,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                     <li><a href="{{ route('contacts') }}">Liên hệ</a></li>
                 </ul>
                 <div class="clearfix"></div>
