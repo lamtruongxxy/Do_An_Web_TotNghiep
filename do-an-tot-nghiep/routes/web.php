@@ -47,6 +47,9 @@ Route::post('/checkout', 'TTMoblieController@postCheckout')->name('checkout');
 Route::get('/search','TTMoblieController@getSearch')->name('search');
 //post comment
 Route::post('/putcomment', 'TTMoblieController@postComments')->name('putcomment');
+
+//contants
+Route::get('/contacts', 'TTMoblieController@contacts')->name('contacts');
 //end route ttmobile
 
 //route admin

@@ -32,7 +32,9 @@ class TTMoblieController extends Controller
         //dd($dssanPham);
         return view('TTMobile/index',compact('sanPhamSale','dssanPham'));
     }
-
+    public function contacts(){
+        return view('TTMobile/contacts');
+    }
     /**
      * Show the form for creating a new resource.
      *
