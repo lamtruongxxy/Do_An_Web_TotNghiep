@@ -72,9 +72,7 @@
                                         @foreach ($binhLuan as $binhluansp)
                                         <div class="media">
                                         <p class="pull-right"><small>{{$binhluansp->created_at}}</small></p>
-                                            <a class="media-left">
-                                                <img style="width:6%" src="{{ asset('ttmobile/images/icon-cmt.png') }}">
-                                            </a>
+                                         
                                             <div class="media-body">
                                                 <h4 class="media-heading user_name" style="font-size:15px;
                                               font-weight: bold;">{{$binhluansp->nguoi_binh_luan}}</h4>
