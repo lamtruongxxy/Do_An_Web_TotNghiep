@@ -23,7 +23,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             @if(Session::has('thongbao'))
             <div class="row">
-                <div class="alert alert-info">{{Session::get('thongbao')}} Xem Thêm Sản Phẩm <a href="{{route('index')}}" style="color: red"> Trang Chủ</a></div>
+                <div class="alert alert-info">{{Session::get('thongbao')}} Đặt Hàng Thành Công Xem Thêm Sản Phẩm <a href="{{route('index')}}" style="color: red"> Trang Chủ</a></div>
             </div>
             @endif
             <div class="row">

@@ -27,7 +27,7 @@
                     Ra đời vào tháng 8 năm 2020, TTmobile đã sớm có một vị trí vững chắc trên thị trường thương mại điện tử trong nước, trở thành địa chỉ mua sắm online đầy tin cậy, tiện lợi cho khách hàng tại TP.HCM và các tỉnh thành khác trên toàn quốc. <br>
                 </p>
                 <div class="space10">&nbsp;</div>
-                <p> TTTmobile là một website mua sắm điện thoại online, phục vụ nhu cầu mua sắm trực tuyến bao gồm: chọn và mua hàng trực tuyến nhanh chóng, thanh toán trực tuyến an toàn, giao hàng tận nơi, chăm sóc và tư vấn thân thiện. Với mong muốn đem đến cho khách hàng những sản phẩm chất lượng,thời trang với giá cả hơp lý nhất, mang ứng dụng cao, hiện đại, năng động, phù hợp với văn hóa, gu thẩm mỹ của người Việt Nam.</p>
+                <p> TTmobile là một website mua sắm điện thoại online, phục vụ nhu cầu mua sắm trực tuyến bao gồm: chọn và mua hàng trực tuyến nhanh chóng, thanh toán trực tuyến an toàn, giao hàng tận nơi, chăm sóc và tư vấn thân thiện. Với mong muốn đem đến cho khách hàng những sản phẩm chất lượng,thời trang với giá cả hơp lý nhất, mang ứng dụng cao, hiện đại, năng động, phù hợp với văn hóa, gu thẩm mỹ của người Việt Nam.</p>
                 <div class="space20">&nbsp;</div>
                 <h6 class="contact-title">Tầm nhìn</h6>
                 <div class="space10">&nbsp;</div>
