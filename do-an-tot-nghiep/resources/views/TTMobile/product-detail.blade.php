@@ -133,7 +133,7 @@
 
                                 <a href="{{ route('products-detail',$sale->id) }}"><img
                                         style="width: 230px;height: 250px;"
-                                        src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} "
+                                        src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[0]->duong_dan }} "
                                         alt="{{ $sale->ten_sp }}" alt="{{ $sale->ten_sp }}"></a>
                             </div>
                             <div class="single-item-body">

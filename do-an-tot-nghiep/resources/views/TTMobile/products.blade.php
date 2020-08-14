@@ -59,7 +59,7 @@
                                     <div class="single-item-header">
                                         <a href="{{ route('products-detail',$dsSanPham->id) }}"><img
                                                 style="width: 230px;height: 250px;"
-                                                src="{{ asset('storage') }}/san-pham/{{ $dsSanPham->hinhAnhSP[1]->duong_dan }} "
+                                                src="{{ asset('storage') }}/san-pham/{{ $dsSanPham->hinhAnhSP[0]->duong_dan }} "
                                                 alt="{{ $dsSanPham->ten_sp }}" alt="{{ $dsSanPham->ten_sp }}"></a>
                                     </div>
 

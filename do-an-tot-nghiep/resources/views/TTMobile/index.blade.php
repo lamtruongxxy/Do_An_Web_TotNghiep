@@ -23,7 +23,7 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     <div class="single-item-header">
-                                        <a href="{{ route('products-detail',$sale->id) }}"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[1]->duong_dan }} " alt="{{ $sale->ten_sp }}"
+                                        <a href="{{ route('products-detail',$sale->id) }}"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sale->hinhAnhSP[0]->duong_dan }} " alt="{{ $sale->ten_sp }}"
                                                 alt="{{ $sale->ten_sp }}"></a>
                                     </div>
                                     <div class="single-item-body">
@@ -81,7 +81,7 @@
                                     @else
                                     @endif
                                     <div class="single-item-header">
-                                        <a href="{{ route('products-detail',$sanPham->id) }}"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sanPham->hinhAnhSP[1]->duong_dan }} " alt="{{ $sanPham->ten_sp }}"
+                                        <a href="{{ route('products-detail',$sanPham->id) }}"><img style="width: 230px;height: 250px;" src="{{ asset('storage') }}/san-pham/{{ $sanPham->hinhAnhSP[0]->duong_dan }} " alt="{{ $sanPham->ten_sp }}"
                                                 alt="{{ $sanPham->ten_sp }}"></a>
                                     </div>
                                     <div class="single-item-body">
