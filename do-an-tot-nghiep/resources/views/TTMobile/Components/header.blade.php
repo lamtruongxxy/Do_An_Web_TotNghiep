@@ -6,14 +6,21 @@
                         width="200px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
+    
+                
                 <div class="space10">&nbsp;</div>
+                <div class="beta-comp">
+                    <form role="search" method="get" id="searchform" action="{{ route('search-order') }}">
+                        <input type="text" value="" name="keysearch" id="s" placeholder="Nhập sdt tra cứu đơn hàng..." />
+                        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+                    </form>
+                </div>
                 <div class="beta-comp">
                     <form role="search" method="get" id="searchform" action="{{ route('search') }}">
                         <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." />
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>
-
                 <div class="beta-comp">
 
                     <div class="cart">

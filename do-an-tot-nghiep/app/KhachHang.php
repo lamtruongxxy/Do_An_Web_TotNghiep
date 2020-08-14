@@ -19,6 +19,6 @@ class KhachHang extends Model
     ];
     public function donHang()
     {
-        return $this->hasMany('App\DonHang','khach_hang_id','id');
+        return $this->hasMany('App\DonHang');
     }
 }

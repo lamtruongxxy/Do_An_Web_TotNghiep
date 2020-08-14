@@ -53,6 +53,10 @@ Route::get('/contacts', 'TTMoblieController@contacts')->name('contacts');
 
 //about 
 Route::get('/about', 'TTMoblieController@about')->name('about');
+// check don hang
+Route::get('/search-order','TTMoblieController@searchOrder')->name('search-order');
+Route::get('/list-order', 'TTMoblieController@listOrder')->name('list-order');
+Route::get('/test','TTMoblieController@test');
 //end route ttmobile
 
 //route admin

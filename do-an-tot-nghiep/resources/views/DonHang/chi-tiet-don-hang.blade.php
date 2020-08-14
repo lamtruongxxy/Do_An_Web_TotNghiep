@@ -101,6 +101,7 @@
         </form>
     </div>
 </div>
+{{-- end --}}
 </form>
 </div> <!-- end card-->
 </div>

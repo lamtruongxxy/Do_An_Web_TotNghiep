@@ -43,14 +43,7 @@ class TTMoblieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function test()
-    {
-        $sanPhamSale = SanPham::with('hinhAnhSP')->where('trang_thai',1)->get();
-        // $sanPhamSale = HinhAnhSanPham::join('san_pham', 'hinh_anh_san_pham.san_pham_id', '=', 'san_pham.id')
-        //     ->where('san_pham.trang_thai', 1)->where('san_pham.gia_khuyen_mai','<>',0)->first();
-            
-        return view('TTMobile/test',compact('sanPhamSale'));
-    }
+    
     //tất cả  sản phẩm
     public function product()
     {
@@ -178,6 +171,20 @@ class TTMoblieController extends Controller
         $binhluan->trang_thai = 1;
         $binhluan->save();
         return redirect()->back();
+    }
+    //check list don hang
+    public function listOrder(){
+        return view('TTMobile/list-order');
+    }
+    public function searchOrder(Request $req){
+        $dsDonHang = KhachHang::with('donHang')->where('sdt',$req->keysearch)->get();
+        //dd($dsDonHang);
+        return view('TTMobile/list-order',compact('dsDonHang'));
+    }
+    public function test(){
+        $dsDonHang = KhachHang::with('donHang')->where('sdt','0964653993')->get();
+        //dd($dsDonHang);
+        return view('TTMobile/test',compact('dsDonHang'));
     }
     /**
      * Store a newly created resource in storage.
