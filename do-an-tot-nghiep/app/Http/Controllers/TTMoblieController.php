@@ -100,7 +100,7 @@ class TTMoblieController extends Controller
     public function getDeleteCart($id){
         $oldCart = Session::has('cart')?Session::get('cart'):null; //tao bien old cart de kiem tra xem gio hang co hay khong co ,neu co thi get cart nguoc lai null
         $cart = new Cart( $oldCart); //tao bien cart bang Cart 
-        $cart->removeItem($id);        // tro den phuogn thuc xoa di 1 san pham trong model Cart
+        $cart->reduceByOne($id);        // tro den phuogn thuc xoa di 1 san pham trong model Cart
         if(count($cart->items)>0){      // kiem tra so luong=0 thi remove session di 
             Session::put('cart',$cart);   //put lai gio hang cua minh bang cach tao lai session va put vao gio hang moi
         }

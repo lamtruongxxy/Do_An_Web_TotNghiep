@@ -30,6 +30,7 @@
                                 <th>Ngày Đặt</th>
                                 <th>Tổng tiền</th>
                                 <th>Thanh Toán</th>
+                                <th>SDT</th>
                                 <th>Ghi Chú</th>
                                 <th>Trạng thái</th>
                                 <th></th>
@@ -44,6 +45,7 @@
                                 <td>{{$item->created_at->format('d/m/Y')}}</td>
                                 <td>{{number_format($item->tong_tien)}} VND</td>
                                 <td style="color: blue"> @if($item->hinh_thuc_thanh_toan===0) Ship COD @else Chuyển Khoản @endif</td>
+                                <td>{{($ds->sdt)}}</td>
                                 <td>{{$item->ghi_chu}}</td>
                                 <td style="color: orange">@if($item->trang_thai===0) Đã Hủy @elseif($item->trang_thai===1) Chờ Xác Nhận @elseif($item->trang_thai===2) Đã Xác Nhận @else Hoàn Thành @endif</td>
                                 <td><a href="{{ route('order-details',$item->id) }}" style="color: royalblue">Xem Chi Tiết</a>
@@ -58,6 +60,7 @@
                                 <th>Ngày Đặt</th>
                                 <th>Tổng tiền</th>
                                 <th>Thanh Toán</th>
+                                <th>SDT</th>
                                 <th>Ghi Chú</th>
                                 <th>Trạng thái</th>
                                 <th></th>
