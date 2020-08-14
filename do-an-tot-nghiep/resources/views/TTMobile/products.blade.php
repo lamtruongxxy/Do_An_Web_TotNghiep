@@ -90,7 +90,9 @@
                             @endforeach
                             <div class="space40">&nbsp;</div>
                             <div class="row">
+                                <div class="col-sm-12">
                                 <div style="text-align: center"> {{ $dsSP->links() }}</div>
+                                </div>
                             </div>
                             {{-- end --}}
                         </div>
