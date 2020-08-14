@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <div class="form-group col-md-12">
                                         <h5><strong>Tổng tiền :&nbsp;<span class="text-danger my-4 text-center" data-plugin="counterup">{{ number_format($chiTiet->tong_tien) }}</span>&nbsp;VNĐ</strong></h5>
-                                        </br>
+                                        <br/>
                                         <p><strong>Ngày lập: &nbsp;</strong>{{ $chiTiet->created_at }}</p>
                                         @if ($chiTiet->hinh_thuc_thanh_toan === 0)
                                         <p><strong>Phương thức thanh toán: </strong>&nbsp;<span class="badge badge-primary">Ship COD</span></p>
@@ -87,7 +87,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="form-group col-md-12">
-                                                <p><strong>Ghi chú đơn hàng</strong></br>{{ $chiTiet->ghi_chu }}</p>
+                                                <p><strong>Ghi chú đơn hàng</strong><br/>{{ $chiTiet->ghi_chu }}</p>
                                             </div>
                                         </div>
                                     </div>

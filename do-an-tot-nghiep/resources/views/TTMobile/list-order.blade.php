@@ -46,7 +46,7 @@
                                 <td style="color: blue"> @if($item->hinh_thuc_thanh_toan===0) Ship COD @else Chuyển Khoản @endif</td>
                                 <td>{{$item->ghi_chu}}</td>
                                 <td style="color: orange">@if($item->trang_thai===0) Đã Hủy @elseif($item->trang_thai===1) Chờ Xác Nhận @elseif($item->trang_thai===2) Đã Xác Nhận @else Hoàn Thành @endif</td>
-                                <td><a href="#" style="color: royalblue">Xem Chi Tiết</a>
+                                <td><a href="{{ route('order-details',$item->id) }}" style="color: royalblue">Xem Chi Tiết</a>
                                 </td>
                             </tr>
                         </tbody>

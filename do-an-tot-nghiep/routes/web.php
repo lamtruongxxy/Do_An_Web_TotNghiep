@@ -57,6 +57,10 @@ Route::get('/about', 'TTMoblieController@about')->name('about');
 Route::get('/search-order','TTMoblieController@searchOrder')->name('search-order');
 Route::get('/list-order', 'TTMoblieController@listOrder')->name('list-order');
 Route::get('/test','TTMoblieController@test');
+
+//chi tiet don hang
+Route::get('/order-details/{id}', 'TTMoblieController@orderDetails')->name('order-details');
+
 //end route ttmobile
 
 //route admin
