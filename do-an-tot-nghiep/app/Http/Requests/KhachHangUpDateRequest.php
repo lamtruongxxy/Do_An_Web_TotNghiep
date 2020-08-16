@@ -26,7 +26,7 @@ class KhachHangUpDateRequest extends FormRequest
         return [
             'ten_khach_hang' => 'required|string',
             'dia_chi' => 'required',
-            'sdt' => 'required|numeric',
+            'sdt' => 'required|regex:/(0)[1-9]{1}[0-9]{8}/',
             'email' => 'required|email',
             'ghi_chu' =>'required',
         ];
@@ -40,8 +40,7 @@ class KhachHangUpDateRequest extends FormRequest
             'dia_chi.required' => 'Địa chỉ bị trống',
     
             'sdt.required'=> 'Sdt bị trống',
-            'sdt.max'     => 'Sdt tối đa chỉ 10 ký tự ',
-            'sdt.numeric' => 'Sdt không hợp lệ',
+            'sdt.regex' => 'Sdt không hợp lệ',
 
             'email.required' => 'Email bị bỏ trống',
             'email.email' => 'Email không hợp lệ',
