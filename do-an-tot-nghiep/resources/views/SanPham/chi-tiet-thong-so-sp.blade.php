@@ -48,7 +48,7 @@
                                 <div class="card-body">
                                     <h4 class="mb-2 header-title">Hình ảnh sản phẩm</h4>
                                     @foreach( $hinhAnh as $ha)
-                                        <img src="{{ asset('storage') }}/san-pham/{{ $ha->duong_dan }}" height="220px" width="220px" />
+                                        <img style="float: left" src="{{ asset('storage') }}/san-pham/{{ $ha->duong_dan }}" height="220px" width="220px" />
                                     @endforeach
                                 </div>
                             </div>
