@@ -178,10 +178,11 @@ class TTMoblieController extends Controller
     }
     //tìm kiếm đơn hàng theo sdt
     public function searchOrder(Request $req){
-        $dsDonHang = KhachHang::with('donHang')->where('sdt',$req->keysearch)->get();
+        $dsDonHang = KhachHang::with('donHang')->where('sdt',$req->keysearch)->orderBy('created_at', 'desc')->get();
         //dd($dsDonHang);
         return view('TTMobile/list-order',compact('dsDonHang'));
     }
+    // chi tiết đơn hàng
     public function orderDetails($id){
         $chiTiet = DonHang::findOrFail($id);
         $chiTietDonHang = ChiTietDonHang::with('sanPham')->where('don_hang_id', $id)->get();

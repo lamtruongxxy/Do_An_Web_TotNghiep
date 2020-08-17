@@ -105,6 +105,7 @@
                                         <div class="card-body">
                                             <h4 class="mb-3 header-title">Thông số sản phẩm</h4>
                                             <div class="form-group col-md-12" v-for="thongSo in dsThongSoAdded">
+                                                <label>@{{thongSo.ten_thong_so}}:</label>
                                                 <input type="text" class="form-control" name="thong_so_values[]" :placeholder="thongSo.ten_thong_so" required>
                                                 <input type="hidden" :value="thongSo.id" class="form-control" name="thong_so_ids[]" required>
                                             </div>

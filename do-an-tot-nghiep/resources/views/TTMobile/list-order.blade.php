@@ -8,7 +8,7 @@
             <h6 class="inner-title">Đơn hàng của bạn</h6>
         </div>
         <div class="pull-right">
-            <div class="beta-breadcrumb">
+            <div class="beta-breadcrumb font-large">
                 <a href="{{route('index')}}">Home</a> / <span>Đơn hàng</span>
             </div>
         </div>
