@@ -24,13 +24,12 @@ class SoDienThoaiRequest extends FormRequest
     public function rules()
     {
         return [
-            'sdt' => 'required|regex:/(0)[1-9]{1}[0-9]{8}/',
+            'sdt' => 'regex:/(0)[1-9]{1}[0-9]{8}/',
         ];
     }
     public function messages()
     {
         return [
-            'sdt.required' => 'Sdt bị trống',
             'sdt.regex' => 'Sdt không hợp lệ',
         ];
     }
