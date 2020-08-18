@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 14, 2020 lúc 05:50 PM
+-- Thời gian đã tạo: Th8 18, 2020 lúc 09:21 AM
 -- Phiên bản máy phục vụ: 10.4.13-MariaDB
 -- Phiên bản PHP: 7.4.7
 
@@ -66,7 +66,13 @@ INSERT INTO `binh_luan` (`id`, `san_pham_id`, `nguoi_binh_luan`, `noi_dung_bl`, 
 (21, 7, 'LAm truong', 'sssssssssssssssssssssssssss', '0978965517', 1, '2020-08-12 19:01:05', '2020-08-12 19:01:05'),
 (22, 1, 'LAm truong', 'cũng được', '0978965517', 1, '2020-08-12 19:11:57', '2020-08-12 19:11:57'),
 (23, 1, 'anh tú', 'Điện thoại xài ngon chất lượng', '01234567891', 1, '2020-08-13 05:14:59', '2020-08-13 05:16:23'),
-(24, 9, 'LAm truong', 'Điện thoại tốt', '0978965517', 1, '2020-08-14 14:03:12', '2020-08-14 14:03:12');
+(24, 9, 'LAm truong', 'Điện thoại tốt', '0978965517', 1, '2020-08-14 14:03:12', '2020-08-14 14:03:12'),
+(25, 17, 'LAm truong', 'điện thoại nắp gập chất nhất hành tinh', '0978965517', 1, '2020-08-14 19:19:44', '2020-08-14 19:19:44'),
+(26, 17, 'anh tú', 'điện thoại mắc', '01234567891', 1, '2020-08-14 19:20:00', '2020-08-14 19:20:00'),
+(27, 20, 'LAm truong', 'điẹn thoại chất', '0978965517', 0, '2020-08-15 07:09:47', '2020-08-15 07:10:31'),
+(28, 11, 'usserr100', 'tesst', '54545555555', 1, '2020-08-17 14:38:07', '2020-08-17 14:38:07'),
+(29, 31, 'usserr100', 'Điện thoại samsung là đỉnh cao', '54545555555', 1, '2020-08-17 16:14:19', '2020-08-17 16:14:19'),
+(30, 26, 'LAm truong', 'ok', '0978965517', 1, '2020-08-17 16:21:07', '2020-08-17 16:21:07');
 
 -- --------------------------------------------------------
 
@@ -103,7 +109,22 @@ INSERT INTO `chi_tiet_don_hang` (`id`, `don_hang_id`, `san_pham_id`, `so_luong`,
 (12, 9, 7, 1, 17990000, 1, '2020-08-12 19:02:18', '2020-08-12 19:02:18'),
 (13, 10, 7, 1, 17990000, 1, '2020-08-12 19:03:53', '2020-08-12 19:03:53'),
 (14, 11, 5, 1, 29990000, 1, '2020-08-12 19:06:16', '2020-08-12 19:06:16'),
-(15, 12, 1, 1, 8490000, 1, '2020-08-12 19:17:21', '2020-08-12 19:17:21');
+(15, 12, 1, 1, 8490000, 1, '2020-08-12 19:17:21', '2020-08-12 19:17:21'),
+(16, 13, 12, 1, 36000000, 1, '2020-08-14 18:14:59', '2020-08-14 18:14:59'),
+(17, 14, 17, 1, 70000000, 1, '2020-08-14 19:21:11', '2020-08-14 19:21:11'),
+(18, 14, 24, 1, 1000000, 1, '2020-08-14 19:21:11', '2020-08-14 19:21:11'),
+(19, 15, 1, 1, 8490000, 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(20, 15, 3, 1, 13990000, 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(21, 15, 4, 1, 22990000, 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(22, 15, 5, 1, 29990000, 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(23, 15, 24, 1, 1000000, 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(24, 15, 12, 1, 36000000, 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(25, 16, 31, 2, 23990000, 1, '2020-08-17 16:21:44', '2020-08-17 16:21:44'),
+(26, 17, 31, 1, 23990000, 1, '2020-08-18 03:45:24', '2020-08-18 03:45:24'),
+(27, 18, 12, 1, 36000000, 1, '2020-08-18 03:54:47', '2020-08-18 03:54:47'),
+(28, 19, 22, 1, 3390000, 1, '2020-08-18 04:02:19', '2020-08-18 04:02:19'),
+(29, 20, 4, 1, 22990000, 1, '2020-08-18 04:20:41', '2020-08-18 04:20:41'),
+(30, 20, 12, 1, 36000000, 1, '2020-08-18 04:20:41', '2020-08-18 04:20:41');
 
 -- --------------------------------------------------------
 
@@ -323,7 +344,27 @@ INSERT INTO `chi_tiet_thong_so` (`id`, `san_pham_id`, `thong_so_id`, `gia_tri`, 
 (195, 28, 5, '48', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28'),
 (196, 28, 6, 'Kirin 710F 8 nhân 2,4', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28'),
 (197, 28, 7, '178', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28'),
-(198, 28, 8, '4000', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28');
+(198, 28, 8, '4000', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28'),
+(199, 29, 1, '3', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(200, 29, 2, '4,7', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(201, 29, 3, '64', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(202, 29, 4, '7', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(203, 29, 5, '12', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(204, 29, 6, 'Apple A13 Bionic 6 nhân 3.1', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(205, 29, 7, '168', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(206, 29, 8, '1821', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(207, 30, 1, '3', 1, '2020-08-15 07:22:41', '2020-08-15 07:22:41'),
+(208, 30, 2, '4,7', 1, '2020-08-15 07:22:41', '2020-08-15 07:22:41'),
+(209, 30, 3, '256', 1, '2020-08-15 07:22:41', '2020-08-15 07:22:41'),
+(210, 30, 8, '1821', 1, '2020-08-15 07:22:41', '2020-08-15 07:22:41'),
+(211, 31, 1, '8', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(212, 31, 2, '6,7', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(213, 31, 3, '256', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(214, 31, 4, '10', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(215, 31, 5, '64', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(216, 31, 6, 'Exynos 990 8 nhân', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(217, 31, 7, '192', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(218, 31, 8, '4300', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05');
 
 -- --------------------------------------------------------
 
@@ -367,7 +408,7 @@ CREATE TABLE `don_hang` (
 
 INSERT INTO `don_hang` (`id`, `khach_hang_id`, `tong_tien`, `ghi_chu`, `hinh_thuc_thanh_toan`, `trang_thai`, `created_at`, `updated_at`) VALUES
 (2, 504, 72470000, 'khong co ghi chu nha', 0, 0, '2020-08-12 15:52:31', '2020-08-12 16:30:19'),
-(3, 505, 40990000, 'khongg', 0, 1, '2020-08-12 16:03:26', '2020-08-12 16:03:26'),
+(3, 505, 40990000, 'khongg', 0, 1, '2020-08-12 16:03:26', '2020-08-14 18:11:27'),
 (4, 506, 8490000, 'khong', 0, 1, '2020-08-12 16:11:52', '2020-08-12 16:11:52'),
 (5, 507, 8490000, 'sddsdsd', 1, 1, '2020-08-12 16:15:54', '2020-08-12 16:15:54'),
 (6, 508, 17990000, 'hjfhjdhfjshdkfjhsdkf', 1, 1, '2020-08-12 16:19:33', '2020-08-12 16:19:33'),
@@ -376,7 +417,15 @@ INSERT INTO `don_hang` (`id`, `khach_hang_id`, `tong_tien`, `ghi_chu`, `hinh_thu
 (9, 511, 17990000, 'sssssssssssssssssssssss', 0, 1, '2020-08-12 19:02:18', '2020-08-12 19:02:18'),
 (10, 512, 17990000, 'ddddddddddddddddddddddddddddđ', 0, 1, '2020-08-12 19:03:53', '2020-08-12 19:03:53'),
 (11, 514, 29990000, 'ddddddddddd', 1, 1, '2020-08-12 19:06:16', '2020-08-12 19:06:16'),
-(12, 515, 8490000, 'không', 0, 1, '2020-08-12 19:17:21', '2020-08-12 19:17:21');
+(12, 515, 8490000, 'không', 0, 1, '2020-08-12 19:17:21', '2020-08-12 19:17:21'),
+(13, 516, 36000000, 'không có ghi chú', 0, 2, '2020-08-14 18:14:59', '2020-08-17 16:15:27'),
+(14, 517, 71000000, 'giao buổi sáng nha shop', 0, 1, '2020-08-14 19:21:11', '2020-08-14 19:21:11'),
+(15, 518, 112460000, 'giao buổ sáng', 0, 3, '2020-08-15 07:15:01', '2020-08-15 07:17:18'),
+(16, 519, 47980000, 'không', 1, 1, '2020-08-17 16:21:44', '2020-08-17 16:21:44'),
+(17, 520, 23990000, 'aaaaa', 0, 1, '2020-08-18 03:45:24', '2020-08-18 03:45:24'),
+(18, 521, 36000000, 'khong', 0, 1, '2020-08-18 03:54:47', '2020-08-18 03:54:47'),
+(19, 522, 3390000, 'khoong', 0, 1, '2020-08-18 04:02:19', '2020-08-18 04:02:19'),
+(20, 523, 58990000, 'giao sáng', 0, 1, '2020-08-18 04:20:41', '2020-08-18 04:20:41');
 
 -- --------------------------------------------------------
 
@@ -461,7 +510,17 @@ INSERT INTO `hinh_anh_san_pham` (`id`, `san_pham_id`, `duong_dan`, `trang_thai`,
 (47, 26, '140820223425357350967-san-pham.png', 1, '2020-08-14 15:34:25', '2020-08-14 15:34:25'),
 (48, 27, '1408202235321085474090-san-pham.png', 1, '2020-08-14 15:35:32', '2020-08-14 15:35:32'),
 (49, 28, '1408202245281749998780-san-pham.png', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28'),
-(50, 28, '1408202245282145787285-san-pham.png', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28');
+(50, 28, '1408202245282145787285-san-pham.png', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:28'),
+(51, 29, '1508200231251906827964-san-pham.png', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(52, 29, '150820023125497980962-san-pham.png', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:25'),
+(53, 30, '150820142241563076064-san-pham.png', 1, '2020-08-15 07:22:41', '2020-08-15 07:22:41'),
+(54, 30, '150820142241978055289-san-pham.png', 1, '2020-08-15 07:22:41', '2020-08-15 07:22:41'),
+(55, 31, '170820231204905927687-san-pham.png', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(56, 31, '1708202312051909591379-san-pham.png', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(57, 31, '1708202312051138707952-san-pham.png', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(58, 31, '1708202312051841448675-san-pham.png', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(59, 31, '1708202312051134932825-san-pham.png', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05'),
+(60, 31, '1708202312051642617550-san-pham.png', 1, '2020-08-17 16:12:05', '2020-08-17 16:12:05');
 
 -- --------------------------------------------------------
 
@@ -496,10 +555,7 @@ INSERT INTO `khach_hang` (`id`, `ten_khach_hang`, `gioi_tinh`, `dia_chi`, `sdt`,
 (7, 'Shanel Schmidt', 'nam', 'Blanditiis praesentium et nulla quo reiciendis itaque hic.', '0123456789', 'abcdedd@gmail.com', 'không', 1, '2020-08-08 21:57:52', '2020-08-08 21:57:52'),
 (8, 'Jessy Larson III', 'nam', 'Et quibusdam dolore mollitia corrupti earum cupiditate odit voluptatem.', '0123456789', 'abcdedd@gmail.com', 'không', 1, '2020-08-08 21:57:52', '2020-08-08 21:57:52'),
 (9, 'Miss Mariane Champlin DDS', 'nam', 'Sunt aliquam ea saepe sint voluptas libero.', '0123456789', 'abcdedd@gmail.com', 'không', 1, '2020-08-08 21:57:52', '2020-08-08 21:57:52'),
-(501, 'truong', 'nam', 'bdsfgsdfgjsdf', '0978965517', 'lamtruongxxy@gmail.com', 'dsdsdsd', 1, '2020-08-12 15:48:41', '2020-08-12 15:48:41'),
-(502, 'truong', 'nam', 'TPHCM', '0978965517', 'lamtruongxxy@gmail.com', 'khong', 1, '2020-08-12 15:50:59', '2020-08-12 15:50:59'),
-(503, 'lam truong', 'nam', 'TPHCM', '0978965517', 'lamtruongxxy@gmail.com', 'khong co ghi chu', 1, '2020-08-12 15:51:44', '2020-08-12 15:51:44'),
-(504, 'Lam Truong', 'nam', 'TPHCM', '0978965517', 'lamtruongxxy@gmail.com', 'khong co ghi chu nha', 1, '2020-08-12 15:52:31', '2020-08-12 15:52:31'),
+(504, 'Lam Truong', 'nam', 'TPHCM', '0964653993', 'lamtruongxxy@gmail.com', 'khong co ghi chu nha', 1, '2020-08-12 15:52:31', '2020-08-12 15:52:31'),
 (505, 'Anh Tú', 'Nam', '\"TPHCM\"', '0978965517', 'lamtruongxxy@gmail.com', 'khongg', 1, '2020-08-12 16:03:26', '2020-08-12 16:04:28'),
 (506, 'Lam Truong', 'nam', 'TPHCM', '0978965517', 'lamtruongxxy@gmail.com', 'khong', 1, '2020-08-12 16:11:52', '2020-08-12 16:11:52'),
 (507, 'lam truong', 'nữ', 'TPHCM', '0978965517', 'lamtruongxxy@gmail.com', 'sddsdsd', 1, '2020-08-12 16:15:54', '2020-08-12 16:15:54'),
@@ -510,7 +566,15 @@ INSERT INTO `khach_hang` (`id`, `ten_khach_hang`, `gioi_tinh`, `dia_chi`, `sdt`,
 (512, 'thanh vinh', 'nam', 'binh tan', '09876567899', 'thanhvinh@gmail.com', 'ddddddddddddddddddddddddddddđ', 1, '2020-08-12 19:03:53', '2020-08-12 19:03:53'),
 (513, 'van ý', 'nam', 'vũng tàu', '09876678909', 'vany@gmail.com', 'sssssssssssssssssssssssssssssssssssssssssssssss', 1, '2020-08-12 19:05:14', '2020-08-12 19:05:14'),
 (514, 'van ý', 'nam', 'vũng tàu', '23242342343', 'vany@gmail.com', 'ddddddddddd', 1, '2020-08-12 19:06:16', '2020-08-12 19:06:16'),
-(515, 'duong coc man', 'nam', 'quan 11', '12323232132', 'cocman@gmail.com', 'không', 1, '2020-08-12 19:17:21', '2020-08-12 19:17:21');
+(515, 'duong coc man', 'nam', 'quan 11', '12323232132', 'cocman@gmail.com', 'không', 1, '2020-08-12 19:17:21', '2020-08-12 19:17:21'),
+(516, 'Lam Truong', 'nam', 'vũng tàu', '0978965517', 'lamtruongxxy@gmail.com', 'không có ghi chú', 1, '2020-08-14 18:14:59', '2020-08-14 18:14:59'),
+(517, 'windy', 'nữ', 'quận 11 tphcm', '0842969667', 'windy@gmail.com', 'giao buổi sáng nha shop', 1, '2020-08-14 19:21:11', '2020-08-14 19:21:11'),
+(518, 'lam truong', 'nam', 'quận 1 tphcm', '0978965517', 'lamtruongxxy@gmail.com', 'giao buổ sáng', 1, '2020-08-15 07:15:01', '2020-08-15 07:15:01'),
+(519, 'lam truong', 'nam', 'TPHCM', '0842969667', 'lamtruongxxy@gmail.com', 'không', 1, '2020-08-17 16:21:44', '2020-08-17 16:21:44'),
+(520, 'aa', 'nam', 'aaa', '09646539933', 'lamtruongxxy@gmail.com', 'aaaaa', 1, '2020-08-18 03:45:24', '2020-08-18 03:45:24'),
+(521, 'van y', 'nam', 'vũng tàu', '0978965517', 'anhtu@gmail.com', 'khong', 1, '2020-08-18 03:54:47', '2020-08-18 03:54:47'),
+(522, 'van ý', 'nam', 'bình thạnh', '0842969667', 'vany@gmail.com', 'khoong', 1, '2020-08-18 04:02:19', '2020-08-18 04:02:19'),
+(523, 'thu ngoc mai', 'nữ', 'vũng tàu', '0377427610', 'ngocmai@gmail.com', 'giao sáng', 1, '2020-08-18 04:20:41', '2020-08-18 04:20:41');
 
 -- --------------------------------------------------------
 
@@ -662,7 +726,10 @@ INSERT INTO `san_pham` (`id`, `nha_san_xuat_id`, `ten_sp`, `mo_ta_sp`, `gia_sp`,
 (25, 5, 'Nokia 210', 'Đặc điểm nổi bật của Nokia 210\r\n\r\nBộ sản phẩm chuẩn: Hộp, Sạc, Tai nghe, Sách hướng dẫn\r\n\r\nMang đến MWC 2019 ngoài những chiếc smartphone hấp dẫn Nokia còn trình làng chiếc điện thoại phím Nokia 210 dành cho những người thích sử dụng thiết bị nghe, gọi đơn giản.\r\nThiết kế nhỏ gọn tinh tế\r\nChiếc điện thoại Nokia 210 có thiết kế nhỏ gọn với hai đường cong ở hai bên thân máy cho cảm giác thoải mái khi sử dụng.', 790000, 0, 100, 3, '1 năm', 1, '2020-08-14 15:33:18', '2020-08-14 15:37:22'),
 (26, 5, 'Nokia 150 (2020)', 'Nokia 150 (2020) là phiên bản tiếp theo của người anh Nokia 150 (2017) đã rất thành công trước đó. Được cải tiến nhiều nhất về thiết kế, nâng cấp bộ nhớ danh bạ đến 800 số và có bàn phím T9 lớn hơn dễ sử dụng.\r\nThiết kế hoài cổ nhưng đầy hiện đại\r\nLà dòng điện thoại phổ thông tuy nhiên Nokia 150 (2020) mang hơi hướng hiện đại, gọn gàng với trọng lượng nhẹ chỉ khoảng 90.54 g (khoảng 1/2 chiếc smartphone thông thường), với màu sắc trẻ trung, đẹp mắt phù hợp hầu hết đối tượng.', 600000, 0, 100, 3, '1 năm', 1, '2020-08-14 15:34:25', '2020-08-14 15:40:45'),
 (27, 5, 'Nokia 110 (2019)', 'Nhắc đến những chiếc điện thoại cơ bản với thời lượng pin trâu để sử dụng nhiều ngày thì không thể không nhắc tới Nokia và mới đây hãng này cũng tiếp tục giới thiệu chiếc Nokia 110 (2019) để tiếp nối ưu điểm này.', 400000, 0, 100, 3, '1 năm', 1, '2020-08-14 15:35:32', '2020-08-14 15:41:08'),
-(28, 6, 'Huawei Y9s', 'Huawei Y9s là phiên bản nâng cấp của chiếc Huawei Y9 đã ra mắt năm ngoái với nhiều cải tiến hơn, hiệu năng mạnh mẽ hơn cho bạn có thể sử dụng lâu dài.', 5990000, 5490000, 100, 1, '1 năm', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:49');
+(28, 6, 'Huawei Y9s', 'Huawei Y9s là phiên bản nâng cấp của chiếc Huawei Y9 đã ra mắt năm ngoái với nhiều cải tiến hơn, hiệu năng mạnh mẽ hơn cho bạn có thể sử dụng lâu dài.', 5990000, 5490000, 100, 1, '1 năm', 1, '2020-08-14 15:45:28', '2020-08-14 15:45:49'),
+(29, 1, 'iPhone SE 64GB (2020)', 'iPhone SE 2020 đã bất ngờ ra mắt với thiết kế 4.7 inch nhỏ gọn, chip A13 Bionic mạnh mẽ như trên iPhone 11 và đặc biệt sở hữu mức giá tốt chưa từng có.\r\nThiết kế nhỏ gọn và cao cấp\r\nCảm biến vân tay Touch ID huyền thoại đã quay trở lại trên iPhone SE 2020, cùng với đó là thiết kế gần như sao y của iPhone 8.', 12990000, 0, 100, 1, '1 năm', 1, '2020-08-14 19:31:25', '2020-08-14 19:31:44'),
+(30, 1, 'iPhone SE 256GB (2020)', 'iPhone SE 256GB 2020 cuối cùng đã được Apple ra mắt, với ngoại hình nhỏ gọn được sao chép từ iPhone 8 nhưng mang trong mình một hiệu năng mạnh mẽ với vi xử lý A13 Bionic, mức giá hấp dẫn hứa hẹn sẽ là yếu tố “hút khách” của smartphone đình đám đến từ nhà Táo khuyết.\r\nGọn nhẹ chắc chắn thoải mái sử dụng\r\niPhone SE 2020 có thiết kế khá nhỏ bé khi đặt cạnh các smartphone màn hình khủng hiện nay, nhưng với những ai không thích kiểu thiết kế tràn viền và màn hình lớn, thì đây sẽ là lựa chọn tốt nhất cho họ.\r\n\r\nVới màn hình 4.7 inch, viền màn hình khá dày, cùng cảm biến vân tay Touch ID, các cạnh bo cong hoàn hảo, iPhone SE 2020 mang lại cảm giác cầm nắm quen thuộc, kích thước nhỏ gọn để bạn sử dụng 1 tay một cách dễ dàng.', 17990000, 0, 100, 1, '1 năm', 1, '2020-08-15 07:22:41', '2020-08-15 07:23:07'),
+(31, 2, 'Galaxy Note 20', 'siêu phẩm Samsung Galaxy Note 20 Series đã có hàng trải nghiệm tại siêu thị hiện đang chờ bạn đến khám phá', 23990000, 0, 100, 1, '1 năm', 1, '2020-08-17 16:12:05', '2020-08-17 16:13:39');
 
 -- --------------------------------------------------------
 
@@ -823,19 +890,19 @@ ALTER TABLE `thong_so`
 -- AUTO_INCREMENT cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `chi_tiet_thong_so`
 --
 ALTER TABLE `chi_tiet_thong_so`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
 -- AUTO_INCREMENT cho bảng `chuong_trinh_khuyen_mai`
@@ -847,7 +914,7 @@ ALTER TABLE `chuong_trinh_khuyen_mai`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `gio_hang`
@@ -859,13 +926,13 @@ ALTER TABLE `gio_hang`
 -- AUTO_INCREMENT cho bảng `hinh_anh_san_pham`
 --
 ALTER TABLE `hinh_anh_san_pham`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT cho bảng `khach_hang`
 --
 ALTER TABLE `khach_hang`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=516;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=524;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyen_mai_san_pham`
@@ -895,7 +962,7 @@ ALTER TABLE `nha_san_xuat`
 -- AUTO_INCREMENT cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `tai_khoan`

@@ -151,7 +151,7 @@ class TTMoblieController extends Controller
 
         Session::forget('cart');
         
-        return redirect()->back()->with('thongbao','Đặt Hàng Thành Công'); // dat thanh con cho quay ve trang dat hang
+        return redirect()->back()->with('thongbao',''); // dat thanh con cho quay ve trang dat hang
     }
     //chuc nang tim kiem
     public function getSearch(Request $req){
