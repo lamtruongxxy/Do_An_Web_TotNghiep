@@ -29,6 +29,10 @@
                         @else
                         <label>Hình thức thanh toán: </strong>&nbsp;<span class="badge badge-success">Chuyển khoản</span></label>
                         @endif
+                        <select class="form-control" id="hinh_thuc_thanh_toan" name="hinh_thuc_thanh_toan" placeholder="Phương thức thanh toán">
+                            <option value="0">Ship COD</option>
+                            <option value="1">Chuyển khoản</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Trạng thái</label>

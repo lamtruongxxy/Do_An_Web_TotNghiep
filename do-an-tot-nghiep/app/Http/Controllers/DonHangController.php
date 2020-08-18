@@ -100,7 +100,8 @@ class DonHangController extends Controller
     public function update(Request $request, $id)
     {
         $data = [
-            'trang_thai'    => $request->trang_thai
+            'hinh_thuc_thanh_toan' =>$request->hinh_thuc_thanh_toan,
+            'trang_thai'    => $request->trang_thai,
         ];
         $ketQua = DonHang::find($id)->update($data);
         if ($ketQua) {
