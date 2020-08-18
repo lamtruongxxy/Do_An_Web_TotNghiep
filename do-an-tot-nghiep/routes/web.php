@@ -146,6 +146,7 @@ Route::middleware("auth")->group(function () {
 
                 Route::get('/edit/{id}', 'KhachHangController@edit')->name('edit');
                 Route::put('/update/{id}', 'KhachHangController@update')->name('update');
+                Route::get('/chi-tiet-don-hang/{id}', 'KhachHangController@chiTietDonHang')->name('chi-tiet-don-hang');
                 // Route::delete('/delete', 'LoaiSPController@delete')->name('delete');
             });
         });

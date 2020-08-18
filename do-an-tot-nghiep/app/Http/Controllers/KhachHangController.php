@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DonHang;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\KhachHangRequest;
@@ -65,9 +66,11 @@ class KhachHangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function chiTietDonHang($id)
     {
-        //
+        $khachHang = KhachHang::findOrFail($id);
+        $donHangCuaKhach = KhachHang::with('donHang')->where('id', $id)->get();
+        return view('KhachHang.chi-tiet-don-hang',compact('khachHang','donHangCuaKhach'));
     }
 
     /**
