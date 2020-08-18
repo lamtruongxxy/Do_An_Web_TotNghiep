@@ -26,9 +26,9 @@ class KhachHangUpDateRequest extends FormRequest
         return [
             'ten_khach_hang' => 'required|string',
             'dia_chi' => 'required',
-            'sdt' => 'required|regex:/(0)[1-9]{1}[0-9]{8}/',
+            'sdt' => 'required|regex:/(0)[1-9]{1}[0-9]{8}/|size:10',
             'email' => 'required|email',
-            'ghi_chu' =>'required',
+            'ghi_chu' => 'required',
         ];
     }
     public function messages()
@@ -38,13 +38,14 @@ class KhachHangUpDateRequest extends FormRequest
             'ten_khach_hang.string'   => 'Tên khách hàng chỉ là chữ',
 
             'dia_chi.required' => 'Địa chỉ bị trống',
-    
-            'sdt.required'=> 'Sdt bị trống',
+
+            'sdt.required' => 'Sdt bị trống',
             'sdt.regex' => 'Sdt không hợp lệ',
+            'sdt.size' => 'Sdt là 10 số',
 
             'email.required' => 'Email bị bỏ trống',
             'email.email' => 'Email không hợp lệ',
-            'ghi_chu.required' =>' Ghi chú không được để trống',
+            'ghi_chu.required' => ' Ghi chú không được để trống',
         ];
     }
 }

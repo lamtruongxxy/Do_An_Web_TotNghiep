@@ -14,6 +14,7 @@ use App\Cart;
 use App\KhachHang;
 use App\DonHang;
 use App\ChiTietDonHang;
+use App\Http\Requests\SoDienThoaiRequest;
 use Session;
 class TTMoblieController extends Controller
 {
@@ -114,7 +115,7 @@ class TTMoblieController extends Controller
     {
         return view('TTMobile/checkout');
     }
-    public function postCheckout(Request $req)
+    public function postCheckout(SoDienThoaiRequest $req)
     {
         $cart = Session::get('cart');
         //dd( $cart);

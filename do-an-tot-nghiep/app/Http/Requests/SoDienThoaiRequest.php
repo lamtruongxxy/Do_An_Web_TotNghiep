@@ -24,13 +24,14 @@ class SoDienThoaiRequest extends FormRequest
     public function rules()
     {
         return [
-            'sdt' => 'regex:/(0)[1-9]{1}[0-9]{8}/',
+            'sdt' => 'required|regex:/(0)[1-9]{1}[0-9]{8}/|size:10',
         ];
     }
     public function messages()
     {
         return [
             'sdt.regex' => 'Sdt không hợp lệ',
+            'sdt.size' => 'Sdt là 10 số',
         ];
     }
 }
