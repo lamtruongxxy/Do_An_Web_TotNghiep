@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('TTMobile/Components/header',function($view){
-            $nhaSanXuat = NhaSanXuat::all();
+            $nhaSanXuat = NhaSanXuat::where('trang_thai',1)->get();
             
             $view->with('nhaSanXuat',$nhaSanXuat); 
         });

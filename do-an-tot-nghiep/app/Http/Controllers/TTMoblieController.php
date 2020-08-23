@@ -48,8 +48,8 @@ class TTMoblieController extends Controller
     //tất cả  sản phẩm
     public function product()
     {
-        $dsnhaSanXuat=NhaSanXuat::all();
-        $dsloaiSanPham=LoaiSanPham::all();
+        $dsnhaSanXuat=NhaSanXuat::where('trang_thai',1)->get();
+        $dsloaiSanPham=LoaiSanPham::where('trang_thai',1)->get();
         //dd($dsnhaSanXuat);
         $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->paginate(12);
        // dd($dsSP);
@@ -61,8 +61,8 @@ class TTMoblieController extends Controller
         //lấy sp với nsx
         $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('nha_san_xuat_id',$id)->paginate(12);
         //dd($dsSP);
-        $dsloaiSanPham=LoaiSanPham::all();
-        $dsnhaSanXuat=NhaSanXuat::all();
+        $dsloaiSanPham=LoaiSanPham::where('trang_thai',1)->get();
+        $dsnhaSanXuat=NhaSanXuat::where('trang_thai',1)->get();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
     //lấy sp với loại sản phẩm
@@ -71,8 +71,8 @@ class TTMoblieController extends Controller
         
         $dsSP = SanPham::with('hinhAnhSP')->where('trang_thai',1)->where('loai_san_pham_id',$id)->paginate(12);
         //dd($dsSP);
-        $dsloaiSanPham=LoaiSanPham::all();
-        $dsnhaSanXuat=NhaSanXuat::all();
+        $dsloaiSanPham=LoaiSanPham::where('trang_thai',1)->get();
+        $dsnhaSanXuat=NhaSanXuat::where('trang_thai',1)->get();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
     // chi tiet san pham
@@ -155,10 +155,10 @@ class TTMoblieController extends Controller
     }
     //chuc nang tim kiem
     public function getSearch(Request $req){
-        $dsSP = SanPham::with('nhaSanXuat')->where('ten_sp','like','%'.$req->key.'%')->paginate(12);
+        $dsSP = SanPham::with('nhaSanXuat')->where('trang_thai',1)->where('ten_sp','like','%'.$req->key.'%')->paginate(12);
         //dd($dsSP);
-        $dsloaiSanPham=LoaiSanPham::all();
-        $dsnhaSanXuat=NhaSanXuat::all();
+        $dsloaiSanPham=LoaiSanPham::where('trang_thai',1)->get();
+        $dsnhaSanXuat=NhaSanXuat::where('trang_thai',1)->get();
         return view('TTMobile/products',compact('dsSP','dsnhaSanXuat','dsloaiSanPham'));
     }
 
